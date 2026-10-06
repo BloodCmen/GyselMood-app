@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D">
+
+    <!-- CABECERA -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtTituloEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar producto"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtSubtituloEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Modifica los datos del producto"
+            android:textColor="#8E8E93"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollEditarProducto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <!-- SECCIÓN 1: IMÁGENES -->
+            <TextView
+                android:id="@+id/txtTituloImagenes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Imágenes del producto"
+                android:textColor="#E01C1C"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerImagenesEditar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <Button
+                android:id="@+id/btnAgregarImagenes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#1C1C1E"
+                android:text="+ Agregar imágenes"
+                android:textColor="#E01C1C"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+            <TextView
+                android:id="@+id/txtImagenPrincipalEditar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="⭐ No hay imagen principal"
+                android:textColor="#F5C542"
+                android:textSize="12sp" />
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="#2C2C2E" />
+
+            <!-- SECCIÓN 2: INFORMACIÓN BÁSICA -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Información básica"
+                android:textColor="#E01C1C"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- Título del producto -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Nombre del producto *"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/edtTituloEditar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Ej. Casaca Cuero Oversize"
+                android:inputType="text"
+                android:paddingHorizontal="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#48484A"
+                android:textSize="14sp" />
+
+            <!-- Descripción -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Descripción *"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/edtDescripcionEditar"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:gravity="top"
+                android:hint="Describe la prenda..."
+                android:inputType="textMultiLine"
+                android:padding="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#48484A"
+                android:textSize="14sp" />
+
+            <!-- Información Adicional -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Información adicional"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/edtAdicionalEditar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:gravity="top"
+                android:hint="Cuidados de la prenda, composición, etc."
+                android:inputType="textMultiLine"
+                android:padding="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#48484A"
+                android:textSize="14sp" />
+
+            <!-- SECCIÓN 3: PRECIOS EN PARALELO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Precio unidad *"
+                        android:textColor="#E5E5EA"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/edtPrecioUnidadEditar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="0.00"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#48484A"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Precio total *"
+                        android:textColor="#E5E5EA"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/edtPrecioTotalEditar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="0.00"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#48484A"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="#2C2C2E" />
+
+            <!-- SECCIÓN 4: CATEGORÍA Y TALLAS -->
+            <TextView
+                android:id="@+id/txtCategoriaEditar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categoría *"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field">
+
+                <Spinner
+                    android:id="@+id/spinnerCategoriaEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#FFFFFF"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtTallasEditar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Tallas disponibles"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/contenedorTallasEditar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+
+            <!-- BOTÓN GUARDAR CAMBIOS -->
+            <Button
+                android:id="@+id/btnGuardarCambios"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#E01C1C"
+                android:text="GUARDAR CAMBIOS"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="14dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- NAVEGACIÓN INFERIOR -->
+    <include
+        android:id="@+id/bottom_navigation"
+        layout="@layout/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

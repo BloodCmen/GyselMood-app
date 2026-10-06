@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="130dp"
+    android:layout_height="205dp"
+    android:layout_marginEnd="10dp"
+
+    app:cardBackgroundColor="#1C1C1E"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/imgPreview"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Vista previa del producto"/>
+
+        <TextView
+            android:id="@+id/txtPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Imagen"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"/>
+
+        <Button
+            android:id="@+id/btnMarcarPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Principal"
+            android:textSize="9sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#E01C1C"/>
+
+        <Button
+            android:id="@+id/btnEliminarImagen"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Eliminar"
+            android:textSize="9sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#555555"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

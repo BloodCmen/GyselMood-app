@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "348011872131",
+    "project_id": "gyselmoodapp",
+    "storage_bucket": "gyselmoodapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348011872131:android:a573cece596c6d45ff00b6",
+        "android_client_info": {
+          "package_name": "com.ada.gyselmode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348011872131-loks2lmr9lt02e4t887kdp33crlf7tiv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ada.gyselmode",
+            "certificate_hash": "d96bf43f6865675dc6f4559ecc4ab798c400c454"
+          }
+        },
+        {
+          "client_id": "348011872131-3unmtvbcbspt07srjnsdo7ukuhvivcjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxjQgjqMHExxNiP-N83AbBfpQfqQWbIE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348011872131-3unmtvbcbspt07srjnsdo7ukuhvivcjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

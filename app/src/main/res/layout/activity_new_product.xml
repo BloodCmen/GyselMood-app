@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D">
+
+    <!-- ENCABEZADO / TOP BAR -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NUEVO PRODUCTO"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Completa los datos de la prenda"
+                android:textColor="#8E8E93"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollCrearProducto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/navContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <!-- SECCIÓN 1: IMÁGENES -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Imágenes del producto"
+                android:textColor="#E5E5EA"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Carrusel horizontal de imágenes subidas -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerImagenes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <Button
+                android:id="@+id/btnSeleccionarImagenes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#1C1C1E"
+                android:text="+ Cargar Imágenes"
+                android:textColor="#E01C1C"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+            <TextView
+                android:id="@+id/txtImagenPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Selecciona una imagen principal"
+                android:textColor="#8E8E93"
+                android:textSize="12sp" />
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="#2C2C2E" />
+
+            <!-- SECCIÓN 2: INFORMACIÓN BÁSICA -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Información básica"
+                android:textColor="#E01C1C"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- Título del producto -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Nombre del producto *"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/edtTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/transparent"
+                android:hint="Ej. Casaca Cuero Oversize"
+                android:paddingHorizontal="16dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#48484A"
+                android:textSize="14sp" />
+
+            <!-- Descripción -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Descripción *"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/edtDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:hint="Describe la tela, ajuste, estilo..."
+                android:inputType="textMultiLine"
+                android:padding="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#48484A"
+                android:textSize="14sp" />
+
+            <!-- Adicional -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Información adicional"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/edtAdicional"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:hint="Cuidados de la prenda, composición, etc."
+                android:inputType="textMultiLine"
+                android:padding="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#48484A"
+                android:textSize="14sp" />
+
+            <!-- SECCIÓN 3: PRECIOS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Precio unitario *"
+                        android:textColor="#E5E5EA"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/edtPrecioUnidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:color/transparent"
+                        android:hint="0.00"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#48484A"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Precio total *"
+                        android:textColor="#E5E5EA"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/edtPrecioTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@android:color/transparent"
+                        android:hint="0.00"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#48484A"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SECCIÓN 4: CATEGORÍA Y TALLAS -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Categoría *"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:background="#1C1C1E">
+
+                <Spinner
+                    android:id="@+id/spinnerCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#FFFFFF"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Tallas disponibles"
+                android:textColor="#E5E5EA"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/contenedorTallas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+
+            <!-- BOTÓN FINAL -->
+            <Button
+                android:id="@+id/btnGuardarProducto"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#E01C1C"
+                android:text="GUARDAR PRODUCTO"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="14dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- NAVEGACIÓN INFERIOR -->
+    <FrameLayout
+        android:id="@+id/navContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/bottom_navigation" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

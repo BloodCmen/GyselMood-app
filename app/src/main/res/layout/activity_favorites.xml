@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gysel_black">
+
+    <!-- TOP NAVIGATION -->
+    <include
+        android:id="@+id/includeTopNavigation"
+        layout="@layout/top_navigation"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ICONO -->
+    <TextView
+        android:id="@+id/txtIcono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="♡"
+        android:textColor="@color/gysel_red"
+        android:textSize="75sp"
+        app:layout_constraintTop_toBottomOf="@id/includeTopNavigation"
+        app:layout_constraintBottom_toTopOf="@id/txtMensaje"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- MENSAJE -->
+    <TextView
+        android:id="@+id/txtMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aún no tienes favoritos"
+        android:textColor="@color/gysel_white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/txtIcono"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- DESCRIPCIÓN -->
+    <TextView
+        android:id="@+id/txtDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Guarda tus productos favoritos aquí"
+        android:textColor="@color/gysel_light_gray"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/txtMensaje"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- BOTTOM NAVIGATION -->
+    <include
+        android:id="@+id/includeBottomNavigation"
+        layout="@layout/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

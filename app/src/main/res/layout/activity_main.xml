@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gysel_black">
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <ScrollView
+        android:id="@+id/scrollHome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/includeBottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <!-- BARRA SUPERIOR -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GYSELMOOD"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.06" />
+
+                <ImageButton
+                    android:id="@+id/btnSearch"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Buscar"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="@color/gysel_white" />
+
+                <ImageButton
+                    android:id="@+id/btnCart"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Carrito"
+                    android:src="@android:drawable/ic_menu_add"
+                    app:tint="@color/gysel_white" />
+
+            </LinearLayout>
+
+            <!-- BANNER -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/gysel_red"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GYSELMOOD"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="VISTE TU ESTILO"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.15" />
+
+            </LinearLayout>
+
+            <!-- CATEGORÍAS -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="CATEGORÍAS"
+                android:textColor="@color/gysel_white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/gysel_dark_gray"
+                        android:gravity="center"
+                        android:text="POLOS"
+                        android:textColor="@color/gysel_white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/gysel_dark_gray"
+                        android:gravity="center"
+                        android:text="POLERAS"
+                        android:textColor="@color/gysel_white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/gysel_dark_gray"
+                        android:gravity="center"
+                        android:text="PIJAMAS"
+                        android:textColor="@color/gysel_white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        android:background="@color/gysel_dark_gray"
+                        android:gravity="center"
+                        android:text="CONJUNTOS"
+                        android:textColor="@color/gysel_white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <!-- PRODUCTOS DESTACADOS -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="PRODUCTOS DESTACADOS"
+                android:textColor="@color/gysel_white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- ESPACIO TEMPORAL PARA PRODUCTOS -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/gysel_dark_gray"
+                android:gravity="center"
+                android:text="AQUÍ IRÁN LOS PRODUCTOS"
+                android:textColor="@color/gysel_light_gray" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- NAVBAR INFERIOR REUTILIZABLE -->
+    <include
+        android:id="@+id/includeBottomNavigation"
+        layout="@layout/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

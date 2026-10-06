@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomNavigation"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/gysel_dark_gray"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <!-- INICIO -->
+    <TextView
+        android:id="@+id/navInicio"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="⌂\nInicio"
+        android:textColor="@color/gysel_red"
+        android:textSize="13sp" />
+
+    <!-- FAVORITOS -->
+    <TextView
+        android:id="@+id/navFavoritos"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="♡\nFavoritos"
+        android:textColor="@color/gysel_white"
+        android:textSize="13sp" />
+
+    <!-- CARRITO -->
+    <TextView
+        android:id="@+id/navCarrito"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="🛒\nCarrito"
+        android:textColor="@color/gysel_white"
+        android:textSize="13sp" />
+
+    <!-- CUENTA -->
+    <TextView
+        android:id="@+id/navCuenta"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="♙\nCuenta"
+        android:textColor="@color/gysel_white"
+        android:textSize="13sp" />
+    <!-- CUENTA -->
+    <TextView
+        android:id="@+id/navMantenimiento"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="|||\nMantenimiento"
+        android:textColor="@color/gysel_white"
+        android:textSize="13sp" />
+
+</LinearLayout>
