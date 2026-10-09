@@ -17,19 +17,19 @@ object NavigationHelper {
     fun setupBottomNavigation(activity: Activity) {
 
         val navInicio = activity.findViewById<TextView?>(R.id.navInicio)
-        val navFavoritos = activity.findViewById<TextView?>(R.id.navFavoritos)
+        val navProductos = activity.findViewById<TextView?>(R.id.navProductos)
         val navCarrito = activity.findViewById<TextView?>(R.id.navCarrito)
         val navCuenta = activity.findViewById<TextView?>(R.id.navCuenta)
         val navMantenimiento = activity.findViewById<TextView?>(R.id.navMantenimiento)
 
         // Si la barra no está en la pantalla o faltan los IDs, salimos sin romper la app
-        if (navInicio == null && navFavoritos == null && navCarrito == null && navCuenta == null && navMantenimiento == null) {
+        if (navInicio == null && navProductos == null && navCarrito == null && navCuenta == null && navMantenimiento == null) {
             return
         }
 
         // Todos en blanco primero (usando el operador safe-call '?.')
         navInicio?.setTextColor(activity.getColor(R.color.gysel_white))
-        navFavoritos?.setTextColor(activity.getColor(R.color.gysel_white))
+        navProductos?.setTextColor(activity.getColor(R.color.gysel_white))
         navCarrito?.setTextColor(activity.getColor(R.color.gysel_white))
         navCuenta?.setTextColor(activity.getColor(R.color.gysel_white))
         navMantenimiento?.setTextColor(activity.getColor(R.color.gysel_white))
@@ -39,8 +39,8 @@ object NavigationHelper {
             is MainActivity -> {
                 navInicio?.setTextColor(activity.getColor(R.color.gysel_red))
             }
-            is FavoritesActivity -> {
-                navFavoritos?.setTextColor(activity.getColor(R.color.gysel_red))
+            is ProductosActivity -> {
+                navProductos?.setTextColor(activity.getColor(R.color.gysel_red))
             }
             is CartActivity -> {
                 navCarrito?.setTextColor(activity.getColor(R.color.gysel_red))
@@ -62,9 +62,9 @@ object NavigationHelper {
             }
         }
 
-        navFavoritos?.setOnClickListener {
-            if (activity !is FavoritesActivity) {
-                activity.startActivity(Intent(activity, FavoritesActivity::class.java))
+        navProductos?.setOnClickListener {
+            if (activity !is ProductosActivity) {
+                activity.startActivity(Intent(activity, ProductosActivity::class.java))
             }
         }
 

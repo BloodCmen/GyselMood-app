@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gysel_black"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/txtCheckoutTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CONFIRMAR PEDIDO"
+        android:textColor="@color/gysel_white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCheckoutResumen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/gysel_white"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@id/txtCheckoutTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/edtDireccionEntrega"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Dirección de entrega"
+        android:inputType="textPostalAddress"
+        android:minHeight="55dp"
+        android:padding="12dp"
+        android:backgroundTint="@color/gysel_red"
+        android:textColor="@color/gysel_white"
+        android:textColorHint="@color/gysel_light_gray"
+        app:layout_constraintTop_toBottomOf="@id/txtCheckoutResumen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/edtReferenciaEntrega"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Referencia (opcional)"
+        android:inputType="textCapSentences"
+        android:minHeight="55dp"
+        android:padding="12dp"
+        android:backgroundTint="@color/gysel_red"
+        android:textColor="@color/gysel_white"
+        android:textColorHint="@color/gysel_light_gray"
+        app:layout_constraintTop_toBottomOf="@id/edtDireccionEntrega"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCheckoutTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="end"
+        android:textColor="@color/gysel_red"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/edtReferenciaEntrega"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnConfirmarPedido"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/gysel_red"
+        android:text="CONFIRMAR PEDIDO"
+        android:textColor="@color/gysel_white"
+        app:layout_constraintTop_toBottomOf="@id/txtCheckoutTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressCheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnConfirmarPedido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

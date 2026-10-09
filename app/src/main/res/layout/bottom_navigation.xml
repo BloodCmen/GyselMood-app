@@ -22,12 +22,12 @@
 
     <!-- FAVORITOS -->
     <TextView
-        android:id="@+id/navFavoritos"
+        android:id="@+id/navProductos"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/bottom_nav_favorites"
+        android:text="Productos"
         android:textColor="@color/gysel_white"
         android:textSize="13sp" />
 

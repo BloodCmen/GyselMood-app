@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="#1C1C1E"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/txtProductoCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del producto"
+            android:textColor="@color/gysel_white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtTallaCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Talla: M"
+            android:textColor="@color/gysel_light_gray"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/txtPrecioCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="S/ 25.00"
+            android:textColor="@color/gysel_red"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btnRestarCantidad"
+                android:layout_width="45dp"
+                android:layout_height="42dp"
+                android:text="-"
+                android:textColor="@color/gysel_white"
+                android:backgroundTint="#444444" />
+
+            <TextView
+                android:id="@+id/txtCantidadCarrito"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/gysel_white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnSumarCantidad"
+                android:layout_width="45dp"
+                android:layout_height="42dp"
+                android:text="+"
+                android:textColor="@color/gysel_white"
+                android:backgroundTint="@color/gysel_red" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnEliminarCarrito"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:text="Eliminar"
+                android:textColor="@color/gysel_white"
+                android:backgroundTint="#555555" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtSubtotalItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subtotal: S/ 25.00"
+            android:textColor="@color/gysel_white"
+            android:gravity="end"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

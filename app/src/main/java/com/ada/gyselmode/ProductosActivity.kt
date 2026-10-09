@@ -30,19 +30,26 @@ class ProductosActivity : AppCompatActivity() {
     }
 
     private fun cargarProductos() {
-
         lifecycleScope.launch {
-
             try {
-
                 val productos =
-                    RetrofitClient.apiService.listarProductos()
+                    RetrofitClient.apiService.listarProductosActivos()
 
-                recyclerProductos.adapter =
-                    ProductAdapter(productos)
+                recyclerProductos.adapter = ProductAdapter(productos) { producto ->
+                    val intent = android.content.Intent(
+                        this@ProductosActivity,
+                        DetalleProductoUsuarioActivity::class.java
+                    )
+
+                    intent.putExtra(
+                        DetalleProductoUsuarioActivity.EXTRA_PRODUCTO,
+                        producto
+                    )
+
+                    startActivity(intent)
+                }
 
             } catch (e: Exception) {
-
                 e.printStackTrace()
 
                 android.widget.Toast.makeText(
@@ -53,4 +60,4 @@ class ProductosActivity : AppCompatActivity() {
             }
         }
     }
-}
+    }

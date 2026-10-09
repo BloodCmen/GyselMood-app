@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gysel_black">
+
+    <TextView
+        android:id="@+id/txtTituloPantalla"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="Detalle del producto"
+        android:textColor="@color/gysel_white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloPantalla"
+        app:layout_constraintBottom_toTopOf="@id/includeBottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imgProductoDetalleUsuario"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:contentDescription="Imagen del producto"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtNombreProductoUsuario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/gysel_white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/imgProductoDetalleUsuario"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtCategoriaProductoUsuario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/gysel_light_gray"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtNombreProductoUsuario"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtPrecioProductoUsuario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/gysel_red"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/txtCategoriaProductoUsuario"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtDescripcionProductoUsuario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/gysel_white"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/txtPrecioProductoUsuario"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtAdicionalProductoUsuario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/gysel_light_gray"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtDescripcionProductoUsuario"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtEtiquetaTalla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Selecciona tu talla"
+                android:textColor="@color/gysel_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/txtAdicionalProductoUsuario"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerTallasUsuario"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/gysel_white"
+                app:layout_constraintTop_toBottomOf="@id/txtEtiquetaTalla"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/txtEtiquetaCantidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Cantidad"
+                android:textColor="@color/gysel_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/spinnerTallasUsuario"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnRestarCantidadUsuario"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="−"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/txtEtiquetaCantidad"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/txtCantidadUsuario"
+                android:layout_width="60dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/gysel_white"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/btnRestarCantidadUsuario"
+                app:layout_constraintBottom_toBottomOf="@id/btnRestarCantidadUsuario"
+                app:layout_constraintStart_toEndOf="@id/btnRestarCantidadUsuario" />
+
+            <Button
+                android:id="@+id/btnSumarCantidadUsuario"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="+"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="@id/btnRestarCantidadUsuario"
+                app:layout_constraintBottom_toBottomOf="@id/btnRestarCantidadUsuario"
+                app:layout_constraintStart_toEndOf="@id/txtCantidadUsuario" />
+
+            <Button
+                android:id="@+id/btnAgregarCarritoUsuario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:text="AÑADIR AL CARRITO"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/btnRestarCantidadUsuario"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/includeBottomNavigation"
+        layout="@layout/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
