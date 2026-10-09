@@ -6,15 +6,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.ada.gyselmode.R
 import com.ada.gyselmode.model.Producto
-import coil.load
 
 class ProductAdapter(
-    private var productos: List<Producto>
+    private val productos: List<Producto>,
+    private val onProductoClick: (Producto) -> Unit = {}
 ) : RecyclerView.Adapter<ProductAdapter.ProductoViewHolder>() {
 
-    class ProductoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ProductoViewHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView) {
 
         val imgProducto: ImageView =
             itemView.findViewById(R.id.imgProducto)
@@ -33,7 +35,6 @@ class ProductAdapter(
         parent: ViewGroup,
         viewType: Int
     ): ProductoViewHolder {
-
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_product, parent, false)
 
@@ -59,9 +60,11 @@ class ProductAdapter(
             placeholder(R.drawable.ic_launcher_background)
             error(R.drawable.ic_launcher_background)
         }
+
+        holder.itemView.setOnClickListener {
+            onProductoClick(producto)
+        }
     }
 
-    override fun getItemCount(): Int {
-        return productos.size
-    }
+    override fun getItemCount(): Int = productos.size
 }

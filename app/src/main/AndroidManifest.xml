@@ -43,7 +43,8 @@
         <activity android:name=".maintenance.CrearTallaActivity" android:exported="false" />
         <activity android:name=".maintenance.GestionarCategoriasActivity" android:exported="false" />
         <activity android:name=".maintenance.CrearCategoriaActivity" android:exported="false" />
-
+        <activity android:name=".DetalleProductoUsuarioActivity" android:exported="false" />
+        <activity android:name=".CheckoutActivity" android:exported="false" />
     </application>
 
 </manifest>
