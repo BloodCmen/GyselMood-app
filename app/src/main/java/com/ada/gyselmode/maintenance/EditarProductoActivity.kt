@@ -83,7 +83,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this,
-                    "El producto puede tener máximo 3 imágenes",
+                    getString(R.string.form_max_images),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -99,7 +99,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
             Toast.makeText(
                 this,
-                "${nuevasSeleccionadas.size} imagen(es) nueva(s) seleccionada(s)",
+                getString(R.string.form_new_images_selected, nuevasSeleccionadas.size),
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -119,7 +119,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
             Toast.makeText(
                 this,
-                "No se encontró el producto",
+                getString(R.string.form_product_not_found),
                 Toast.LENGTH_LONG
             ).show()
 
@@ -196,7 +196,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this,
-                    "El producto puede tener máximo 3 imágenes",
+                    getString(R.string.form_max_images),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -250,7 +250,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
             Toast.makeText(
                 this,
-                "Este producto no tiene imágenes",
+                getString(R.string.form_product_no_images),
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -346,12 +346,12 @@ class EditarProductoActivity : AppCompatActivity() {
         if (principal != null) {
 
             txtImagenPrincipal.text =
-                "⭐ Imagen principal seleccionada"
+                getString(R.string.form_main_image_selected)
 
         } else {
 
             txtImagenPrincipal.text =
-                "⭐ No hay imagen principal"
+                getString(R.string.form_no_main_image)
         }
     }
 
@@ -399,7 +399,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@EditarProductoActivity,
-                    "Error al cargar categorías: ${e.message}",
+                    getString(R.string.categories_load_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -421,7 +421,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@EditarProductoActivity,
-                    "Error al cargar tallas: ${e.message}",
+                    getString(R.string.sizes_load_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -491,7 +491,7 @@ class EditarProductoActivity : AppCompatActivity() {
         if (titulo.isEmpty()) {
 
             edtTitulo.error =
-                "Ingresa el nombre del producto"
+                getString(R.string.form_name_required_edit)
 
             edtTitulo.requestFocus()
 
@@ -501,7 +501,7 @@ class EditarProductoActivity : AppCompatActivity() {
         if (precioUnidad == null) {
 
             edtPrecioUnidad.error =
-                "Ingresa un precio válido"
+                getString(R.string.form_price_enter_valid)
 
             edtPrecioUnidad.requestFocus()
 
@@ -511,7 +511,7 @@ class EditarProductoActivity : AppCompatActivity() {
         if (precioTotal == null) {
 
             edtPrecioTotal.error =
-                "Ingresa un precio válido"
+                getString(R.string.form_price_enter_valid)
 
             edtPrecioTotal.requestFocus()
 
@@ -526,7 +526,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
             Toast.makeText(
                 this,
-                "No se cargaron las categorías",
+                getString(R.string.form_categories_not_loaded_edit),
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -589,7 +589,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this,
-                    "Selecciona una imagen principal",
+                    getString(R.string.form_select_main_image),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -633,7 +633,7 @@ class EditarProductoActivity : AppCompatActivity() {
                 if (nuevasImagenes.isNotEmpty()) {
 
                     btnGuardarCambios.text =
-                        "SUBIENDO IMÁGENES..."
+                        getString(R.string.form_uploading_images)
 
                     for (uri in nuevasImagenes) {
 
@@ -680,7 +680,7 @@ class EditarProductoActivity : AppCompatActivity() {
                  */
 
                 btnGuardarCambios.text =
-                    "GUARDANDO CAMBIOS..."
+                    getString(R.string.form_saving_changes)
 
                 val request =
                     ProductoUpdateRequest(
@@ -707,7 +707,7 @@ class EditarProductoActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@EditarProductoActivity,
-                    "Producto actualizado correctamente",
+                    getString(R.string.form_product_updated),
                     Toast.LENGTH_LONG
                 ).show()
 
@@ -724,11 +724,11 @@ class EditarProductoActivity : AppCompatActivity() {
                     true
 
                 btnGuardarCambios.text =
-                    "GUARDAR CAMBIOS"
+                    getString(R.string.form_save_changes)
 
                 Toast.makeText(
                     this@EditarProductoActivity,
-                    "Error al actualizar: ${e.message}",
+                    getString(R.string.form_update_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }

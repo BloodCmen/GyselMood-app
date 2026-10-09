@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NUEVO PRODUCTO"
+                android:text="@string/new_product_title"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="Completa los datos de la prenda"
+                android:text="@string/new_product_subtitle"
                 android:textColor="#8E8E93"
                 android:textSize="13sp" />
         </LinearLayout>
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Imágenes del producto"
+                android:text="@string/form_images_title"
                 android:textColor="#E5E5EA"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -86,7 +86,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
                 android:backgroundTint="#1C1C1E"
-                android:text="+ Cargar Imágenes"
+                android:text="@string/form_upload_images"
                 android:textColor="#E01C1C"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:gravity="center"
-                android:text="Selecciona una imagen principal"
+                android:text="@string/form_select_main_image"
                 android:textColor="#8E8E93"
                 android:textSize="12sp" />
 
@@ -113,7 +113,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Información básica"
+                android:text="@string/form_basic_info"
                 android:textColor="#E01C1C"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:text="Nombre del producto *"
+                android:text="@string/form_name_label"
                 android:textColor="#E5E5EA"
                 android:textSize="13sp" />
 
@@ -133,7 +133,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="6dp"
                 android:background="@android:color/transparent"
-                android:hint="Ej. Casaca Cuero Oversize"
+                android:hint="@string/form_name_example"
                 android:paddingHorizontal="16dp"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#48484A"
@@ -144,7 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:text="Descripción *"
+                android:text="@string/form_description_label"
                 android:textColor="#E5E5EA"
                 android:textSize="13sp" />
 
@@ -155,7 +155,7 @@
                 android:layout_marginTop="6dp"
                 android:background="@android:color/transparent"
                 android:gravity="top"
-                android:hint="Describe la tela, ajuste, estilo..."
+                android:hint="@string/form_description_hint_new"
                 android:inputType="textMultiLine"
                 android:padding="14dp"
                 android:textColor="#FFFFFF"
@@ -167,7 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:text="Información adicional"
+                android:text="@string/detail_additional"
                 android:textColor="#E5E5EA"
                 android:textSize="13sp" />
 
@@ -178,7 +178,7 @@
                 android:layout_marginTop="6dp"
                 android:background="@android:color/transparent"
                 android:gravity="top"
-                android:hint="Cuidados de la prenda, composición, etc."
+                android:hint="@string/form_additional_hint"
                 android:inputType="textMultiLine"
                 android:padding="14dp"
                 android:textColor="#FFFFFF"
@@ -203,7 +203,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Precio unitario *"
+                        android:text="@string/form_unit_price_new"
                         android:textColor="#E5E5EA"
                         android:textSize="13sp" />
 
@@ -231,7 +231,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Precio total *"
+                        android:text="@string/form_total_price"
                         android:textColor="#E5E5EA"
                         android:textSize="13sp" />
 
@@ -255,7 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Categoría *"
+                android:text="@string/form_category_label"
                 android:textColor="#E5E5EA"
                 android:textSize="13sp" />
 
@@ -278,7 +278,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Tallas disponibles"
+                android:text="@string/detail_available_sizes"
                 android:textColor="#E5E5EA"
                 android:textSize="13sp" />
 
@@ -297,7 +297,7 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginBottom="12dp"
                 android:backgroundTint="#E01C1C"
-                android:text="GUARDAR PRODUCTO"
+                android:text="@string/form_save_product"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 android:textStyle="bold"

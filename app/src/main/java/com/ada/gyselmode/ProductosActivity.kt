@@ -47,7 +47,7 @@ class ProductosActivity : AppCompatActivity() {
 
                 android.widget.Toast.makeText(
                     this@ProductosActivity,
-                    "Error al cargar productos: ${e.message}",
+                    getString(R.string.products_load_error, e.message),
                     android.widget.Toast.LENGTH_LONG
                 ).show()
             }

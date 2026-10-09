@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TÍTULO"
+        android:text="@string/top_nav_title_placeholder"
         android:textColor="@color/gysel_white"
         android:textSize="20sp"
         android:textStyle="bold"

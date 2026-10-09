@@ -15,7 +15,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
-        android:text="MANTENIMIENTO"
+        android:text="@string/maint_title"
         android:textColor="@color/gysel_white"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -30,7 +30,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="20dp"
-        android:text="Panel de administración de catálogo"
+        android:text="@string/maint_subtitle"
         android:textColor="@color/gysel_light_gray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:gravity="center"
-                            android:text="Nuevo\nProducto"
+                            android:text="@string/maint_new_product"
                             android:textColor="@color/gysel_white"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -140,7 +140,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:gravity="center"
-                            android:text="Gestionar\nProductos"
+                            android:text="@string/maint_manage_products"
                             android:textColor="@color/gysel_white"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -180,7 +180,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:gravity="center"
-                            android:text="Nueva\nCategoría"
+                            android:text="@string/maint_new_category"
                             android:textColor="@color/gysel_white"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -220,7 +220,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:gravity="center"
-                            android:text="Nueva\nTalla"
+                            android:text="@string/maint_new_size"
                             android:textColor="@color/gysel_white"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -260,7 +260,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
-                            android:text="Gestionar imágenes del catálogo"
+                            android:text="@string/maint_manage_images_card"
                             android:textColor="@color/gysel_white"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -277,7 +277,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:text="GYSELMOOD  •  PANEL DE ADMINISTRACIÓN"
+                android:text="@string/maint_footer"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="11sp" />
 

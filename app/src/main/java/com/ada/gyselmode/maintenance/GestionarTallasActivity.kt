@@ -71,7 +71,7 @@ class GestionarTallasActivity : AppCompatActivity() {
                         )
 
                     texto.text =
-                        "No hay tallas registradas"
+                        getString(R.string.sizes_empty)
 
                     texto.textSize = 16f
 
@@ -134,7 +134,7 @@ class GestionarTallasActivity : AppCompatActivity() {
                             this@GestionarTallasActivity
                         )
 
-                    btnEliminar.text = "Eliminar"
+                    btnEliminar.text = getString(R.string.common_delete)
 
                     btnEliminar.setTextColor(
                         getColor(R.color.gysel_white)
@@ -162,7 +162,7 @@ class GestionarTallasActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@GestionarTallasActivity,
-                    "Error al cargar tallas: ${e.message}",
+                    getString(R.string.sizes_load_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -184,7 +184,7 @@ class GestionarTallasActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@GestionarTallasActivity,
-                    "Talla $nombre eliminada",
+                    getString(R.string.size_deleted, nombre),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -194,7 +194,7 @@ class GestionarTallasActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@GestionarTallasActivity,
-                    "Error al eliminar: ${e.message}",
+                    getString(R.string.delete_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }

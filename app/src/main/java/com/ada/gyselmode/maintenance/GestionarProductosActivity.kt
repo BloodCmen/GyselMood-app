@@ -59,7 +59,7 @@ class GestionarProductosActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@GestionarProductosActivity,
-                    "Error al cargar productos: ${e.message}",
+                    getString(R.string.products_load_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }

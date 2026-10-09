@@ -47,7 +47,7 @@ class CrearTallaActivity : AppCompatActivity() {
         if (nombre.isEmpty()) {
 
             edtNombre.error =
-                "Ingresa el nombre de la talla"
+                getString(R.string.size_name_required)
 
             edtNombre.requestFocus()
 
@@ -71,7 +71,7 @@ class CrearTallaActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@CrearTallaActivity,
-                    "Talla creada correctamente",
+                    getString(R.string.size_created),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -83,7 +83,7 @@ class CrearTallaActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@CrearTallaActivity,
-                    "Error al crear talla: ${e.message}",
+                    getString(R.string.size_create_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }

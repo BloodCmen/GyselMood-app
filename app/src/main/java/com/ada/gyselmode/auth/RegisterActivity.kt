@@ -1,6 +1,8 @@
 
 package com.ada.gyselmode.auth
 
+import com.ada.gyselmode.R
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -33,7 +35,7 @@ class RegisterActivity : AppCompatActivity() {
             if (nombre.isEmpty() || correo.isEmpty() || password.isEmpty()) {
                 Toast.makeText(
                     this,
-                    "Completa todos los campos",
+                    getString(R.string.login_fill_all),
                     Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener
@@ -42,7 +44,7 @@ class RegisterActivity : AppCompatActivity() {
             if (password.length < 6) {
                 Toast.makeText(
                     this,
-                    "La contraseña debe tener mínimo 6 caracteres",
+                    getString(R.string.register_password_min),
                     Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener
@@ -80,7 +82,7 @@ class RegisterActivity : AppCompatActivity() {
 
                             Toast.makeText(
                                 this,
-                                "¡Cuenta creada correctamente!",
+                                getString(R.string.register_success),
                                 Toast.LENGTH_SHORT
                             ).show()
 
@@ -99,7 +101,7 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(
                         this,
                         task.exception?.localizedMessage
-                            ?: "No se pudo crear la cuenta",
+                            ?: getString(R.string.register_error),
                         Toast.LENGTH_LONG
                     ).show()
                 }
