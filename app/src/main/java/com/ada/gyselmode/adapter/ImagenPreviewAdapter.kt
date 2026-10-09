@@ -60,12 +60,12 @@ class ImagenPreviewAdapter(
         val esPrincipal = position == posicionPrincipal
 
         holder.texto.text =
-            if (esPrincipal) "★ Principal"
-            else "Imagen ${position + 1}"
+            if (esPrincipal) holder.itemView.context.getString(R.string.image_main_star)
+            else holder.itemView.context.getString(R.string.image_number, position + 1)
 
         holder.boton.text =
-            if (esPrincipal) "Principal ✓"
-            else "Marcar principal"
+            if (esPrincipal) holder.itemView.context.getString(R.string.image_main_check)
+            else holder.itemView.context.getString(R.string.image_set_main)
 
         holder.boton.setOnClickListener {
 

@@ -72,7 +72,7 @@ class GestionarCategoriasActivity : AppCompatActivity() {
                         )
 
                     texto.text =
-                        "No hay categorías registradas"
+                        getString(R.string.categories_empty)
 
                     texto.textSize = 16f
 
@@ -136,7 +136,7 @@ class GestionarCategoriasActivity : AppCompatActivity() {
                         )
 
                     btnEliminar.text =
-                        "Eliminar"
+                        getString(R.string.common_delete)
 
                     btnEliminar.setTextColor(
                         getColor(R.color.gysel_white)
@@ -164,7 +164,7 @@ class GestionarCategoriasActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@GestionarCategoriasActivity,
-                    "Error al cargar categorías: ${e.message}",
+                    getString(R.string.categories_load_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -186,7 +186,7 @@ class GestionarCategoriasActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@GestionarCategoriasActivity,
-                    "Categoría $nombre eliminada",
+                    getString(R.string.category_deleted, nombre),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -196,7 +196,7 @@ class GestionarCategoriasActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@GestionarCategoriasActivity,
-                    "Error al eliminar: ${e.message}",
+                    getString(R.string.delete_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }

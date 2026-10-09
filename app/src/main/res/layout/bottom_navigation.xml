@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="⌂\nInicio"
+        android:text="@string/bottom_nav_home"
         android:textColor="@color/gysel_red"
         android:textSize="13sp" />
 
@@ -27,7 +27,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="♡\nFavoritos"
+        android:text="@string/bottom_nav_favorites"
         android:textColor="@color/gysel_white"
         android:textSize="13sp" />
 
@@ -38,7 +38,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="🛒\nCarrito"
+        android:text="@string/bottom_nav_cart"
         android:textColor="@color/gysel_white"
         android:textSize="13sp" />
 
@@ -49,7 +49,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="♙\nCuenta"
+        android:text="@string/bottom_nav_account"
         android:textColor="@color/gysel_white"
         android:textSize="13sp" />
     <!-- CUENTA -->
@@ -59,7 +59,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="|||\nMantenimiento"
+        android:text="@string/bottom_nav_maintenance"
         android:textColor="@color/gysel_white"
         android:textSize="13sp" />
 

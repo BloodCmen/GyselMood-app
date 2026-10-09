@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Comunes / Common -->
+    <string name="tagline">VISTA SEU ESTILO</string>
+    <string name="common_back">‹ Voltar</string>
+    <string name="common_delete">Excluir</string>
+    <string name="top_nav_title_placeholder">TÍTULO</string>
+    <string name="bottom_nav_home">⌂\nInício</string>
+    <string name="bottom_nav_favorites">♡\nFavoritos</string>
+    <string name="bottom_nav_cart">🛒\nCarrinho</string>
+    <string name="bottom_nav_account">♙\nConta</string>
+    <string name="bottom_nav_maintenance">|||\nManutenção</string>
+
+    <!-- Login -->
+    <string name="login">ENTRAR</string>
+    <string name="catalog">APENAS VER O CATÁLOGO</string>
+    <string name="login_email_hint">E-mail</string>
+    <string name="login_password_hint">Senha</string>
+    <string name="login_or">OU</string>
+    <string name="login_google">CONTINUAR COM O GOOGLE</string>
+    <string name="login_no_account">Não tem uma conta? CADASTRE-SE</string>
+    <string name="login_fill_all">Preencha todos os campos</string>
+    <string name="login_welcome">Bem-vindo ao GyselMood!</string>
+    <string name="login_wrong_credentials">E-mail ou senha incorretos</string>
+    <string name="login_google_no_account">Não foi possível obter a conta do Google</string>
+    <string name="login_google_cancelled">O login com o Google foi cancelado ou falhou</string>
+    <string name="login_google_read_error">Erro ao ler a conta do Google</string>
+    <string name="login_google_error">Erro ao entrar com o Google</string>
+
+    <!-- Registro / Register -->
+    <string name="register_title">CRIAR CONTA</string>
+    <string name="register_name_hint">Nome completo</string>
+    <string name="register_password_hint">Senha (mínimo de 6 caracteres)</string>
+    <string name="register_button">CADASTRAR</string>
+    <string name="register_have_account">Já tem uma conta? ENTRE</string>
+    <string name="register_password_min">A senha deve ter no mínimo 6 caracteres</string>
+    <string name="register_success">Conta criada com sucesso!</string>
+    <string name="register_error">Não foi possível criar a conta</string>
+
+    <!-- Inicio / Home -->
+    <string name="cd_search">Buscar</string>
+    <string name="cd_cart">Carrinho</string>
+    <string name="home_categories">CATEGORIAS</string>
+    <string name="home_category_polos">CAMISETAS</string>
+    <string name="home_category_poleras">MOLETONS</string>
+    <string name="home_category_pijamas">PIJAMAS</string>
+    <string name="home_category_conjuntos">CONJUNTOS</string>
+    <string name="home_featured">PRODUTOS EM DESTAQUE</string>
+    <string name="home_products_placeholder">OS PRODUTOS APARECERÃO AQUI</string>
+
+    <!-- Catálogo / Catalog -->
+    <string name="products_title">PRODUTOS</string>
+    <string name="products_load_error">Erro ao carregar produtos: %1$s</string>
+    <string name="item_product_name">Nome do produto</string>
+    <string name="item_product_category">Categoria</string>
+    <string name="item_product_view_details">Ver detalhes →</string>
+    <string name="cd_product_image">Imagem do produto</string>
+
+    <!-- Detalle de producto / Product detail -->
+    <string name="detail_title">DETALHES DO PRODUTO</string>
+    <string name="cd_detail_main_image">Imagem principal do produto</string>
+    <string name="detail_description">Descrição</string>
+    <string name="detail_additional">Informações adicionais</string>
+    <string name="detail_available_sizes">Tamanhos disponíveis</string>
+    <string name="detail_edit_button">EDITAR PRODUTO</string>
+    <string name="detail_delete_button">EXCLUIR PRODUTO</string>
+    <string name="detail_load_error">Não foi possível carregar o produto</string>
+    <string name="detail_delete_pending">Excluir: %1$s (vamos conectar isso agora)</string>
+    <string name="detail_category_format">Categoria: %1$s</string>
+    <string name="detail_price_format">Preço: S/ %1$.2f</string>
+    <string name="detail_no_description">Sem descrição</string>
+    <string name="detail_no_additional">Sem informações adicionais</string>
+    <string name="detail_no_sizes">Nenhum tamanho cadastrado</string>
+
+    <!-- Favoritos / Favorites -->
+    <string name="favorites_empty_title">Você ainda não tem favoritos</string>
+    <string name="favorites_empty_subtitle">Salve seus produtos favoritos aqui</string>
+
+    <!-- Carrito / Cart -->
+    <string name="cart_empty_title">Seu carrinho está vazio</string>
+    <string name="cart_empty_subtitle">Adicione produtos para vê-los aqui</string>
+
+    <!-- Cuenta / Account -->
+    <string name="account_user_name">Usuário</string>
+    <string name="account_profile">"👤   Meu perfil                        ›"</string>
+    <string name="account_orders">"📦   Meus pedidos                    ›"</string>
+    <string name="account_settings">"⚙   Configurações                  ›"</string>
+    <string name="account_logout">"🚪   Sair"</string>
+
+    <!-- Mantenimiento / Maintenance -->
+    <string name="maint_title">MANUTENÇÃO</string>
+    <string name="maint_subtitle">Painel de administração do catálogo</string>
+    <string name="maint_new_product">Novo\nProduto</string>
+    <string name="maint_manage_products">Gerenciar\nProdutos</string>
+    <string name="maint_new_category">Nova\nCategoria</string>
+    <string name="maint_new_size">Novo\nTamanho</string>
+    <string name="maint_manage_images_card">Gerenciar imagens do catálogo</string>
+    <string name="maint_footer">"GYSELMOOD  •  PAINEL DE ADMINISTRAÇÃO"</string>
+    <string name="maint_manage_images">Gerenciar imagens</string>
+    <string name="maint_coming_soon">%1$s: em breve</string>
+
+    <!-- Gestionar productos / Manage products -->
+    <string name="manage_products_title">GERENCIAR PRODUTOS</string>
+    <string name="manage_products_hint">Selecione uma peça para ver os detalhes</string>
+
+    <!-- Categorías / Categories -->
+    <string name="manage_categories_title">GERENCIAR CATEGORIAS</string>
+    <string name="manage_categories_new">+ NOVA CATEGORIA</string>
+    <string name="categories_empty">Nenhuma categoria cadastrada</string>
+    <string name="categories_load_error">Erro ao carregar categorias: %1$s</string>
+    <string name="category_deleted">Categoria %1$s excluída</string>
+    <string name="delete_error">Erro ao excluir: %1$s</string>
+    <string name="new_category_title">NOVA CATEGORIA</string>
+    <string name="new_category_hint">Nome da categoria</string>
+    <string name="new_category_save">SALVAR CATEGORIA</string>
+    <string name="category_name_required">Digite o nome da categoria</string>
+    <string name="category_created">Categoria criada com sucesso</string>
+    <string name="category_create_error">Erro ao criar categoria: %1$s</string>
+
+    <!-- Tallas / Sizes -->
+    <string name="manage_sizes_title">GERENCIAR TAMANHOS</string>
+    <string name="manage_sizes_new">+ NOVO TAMANHO</string>
+    <string name="sizes_empty">Nenhum tamanho cadastrado</string>
+    <string name="sizes_load_error">Erro ao carregar tamanhos: %1$s</string>
+    <string name="size_deleted">Tamanho %1$s excluído</string>
+    <string name="new_size_title">NOVO TAMANHO</string>
+    <string name="new_size_hint">Nome do tamanho</string>
+    <string name="new_size_save">SALVAR TAMANHO</string>
+    <string name="size_name_required">Digite o nome do tamanho</string>
+    <string name="size_created">Tamanho criado com sucesso</string>
+    <string name="size_create_error">Erro ao criar tamanho: %1$s</string>
+
+    <!-- Formulario de producto (crear / editar) / Product form (create / edit) -->
+    <string name="new_product_title">NOVO PRODUTO</string>
+    <string name="new_product_subtitle">Preencha os dados da peça</string>
+    <string name="edit_product_title">Editar produto</string>
+    <string name="edit_product_subtitle">Edite os dados do produto</string>
+    <string name="form_images_title">Imagens do produto</string>
+    <string name="form_upload_images">+ Enviar Imagens</string>
+    <string name="form_add_images">+ Adicionar imagens</string>
+    <string name="form_select_main_image">Selecione uma imagem principal</string>
+    <string name="form_no_main_image">⭐ Nenhuma imagem principal</string>
+    <string name="form_main_image_selected">⭐ Imagem principal selecionada</string>
+    <string name="form_main_image_position">Imagem principal: %1$d de %2$d</string>
+    <string name="form_basic_info">Informações básicas</string>
+    <string name="form_name_label">Nome do produto *</string>
+    <string name="form_name_example">Ex.: Jaqueta de Couro Oversize</string>
+    <string name="form_description_label">Descrição *</string>
+    <string name="form_description_hint_new">Descreva o tecido, o caimento, o estilo...</string>
+    <string name="form_description_hint_edit">Descreva a peça...</string>
+    <string name="form_additional_hint">Cuidados com a peça, composição etc.</string>
+    <string name="form_unit_price_new">Preço unitário *</string>
+    <string name="form_unit_price_edit">Preço unitário *</string>
+    <string name="form_total_price">Preço total *</string>
+    <string name="form_category_label">Categoria *</string>
+    <string name="form_save_product">SALVAR PRODUTO</string>
+    <string name="form_save_changes">SALVAR ALTERAÇÕES</string>
+    <string name="form_uploading_images">ENVIANDO IMAGENS...</string>
+    <string name="form_saving_product">SALVANDO PRODUTO...</string>
+    <string name="form_saving_changes">SALVANDO ALTERAÇÕES...</string>
+    <string name="form_max_images">O produto pode ter no máximo 3 imagens</string>
+    <string name="form_new_images_selected">%1$d nova(s) imagem(ns) selecionada(s)</string>
+    <string name="form_product_not_found">Produto não encontrado</string>
+    <string name="form_product_no_images">Este produto não tem imagens</string>
+    <string name="form_name_required_edit">Digite o nome do produto</string>
+    <string name="form_name_required_new">Digite o nome</string>
+    <string name="form_description_required">Digite a descrição</string>
+    <string name="form_price_enter_valid">Digite um preço válido</string>
+    <string name="form_price_invalid">Preço inválido</string>
+    <string name="form_categories_not_loaded_edit">As categorias não foram carregadas</string>
+    <string name="form_categories_not_loaded_new">Nenhuma categoria carregada</string>
+    <string name="form_select_category">Selecione uma categoria</string>
+    <string name="form_select_size">Selecione pelo menos um tamanho</string>
+    <string name="form_select_image">Selecione pelo menos uma imagem</string>
+    <string name="form_product_created">Produto criado com sucesso: %1$s</string>
+    <string name="form_save_error">Erro ao salvar: %1$s</string>
+    <string name="form_product_updated">Produto atualizado com sucesso</string>
+    <string name="form_update_error">Erro ao atualizar: %1$s</string>
+
+    <!-- Imágenes del producto (adaptadores) / Product images (adapters) -->
+    <string name="image_label">Imagem</string>
+    <string name="image_main">Principal</string>
+    <string name="cd_image_preview">Pré-visualização do produto</string>
+    <string name="image_main_star">★ Principal</string>
+    <string name="image_main_check">Principal ✓</string>
+    <string name="image_number">Imagem %1$d</string>
+    <string name="image_set_main">Definir como principal</string>
+</resources>

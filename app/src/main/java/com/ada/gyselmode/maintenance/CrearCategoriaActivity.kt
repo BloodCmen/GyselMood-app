@@ -47,7 +47,7 @@ class CrearCategoriaActivity : AppCompatActivity() {
         if (nombre.isEmpty()) {
 
             edtNombre.error =
-                "Ingresa el nombre de la categoría"
+                getString(R.string.category_name_required)
 
             edtNombre.requestFocus()
 
@@ -76,7 +76,7 @@ class CrearCategoriaActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@CrearCategoriaActivity,
-                    "Categoría creada correctamente",
+                    getString(R.string.category_created),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -88,7 +88,7 @@ class CrearCategoriaActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@CrearCategoriaActivity,
-                    "Error al crear categoría: ${e.message}",
+                    getString(R.string.category_create_error, e.message),
                     Toast.LENGTH_LONG
                 ).show()
             }

@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this,
-                    "Completa todos los campos",
+                    getString(R.string.login_fill_all),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -92,7 +92,7 @@ class LoginActivity : AppCompatActivity() {
 
                     Toast.makeText(
                         this,
-                        "¡Bienvenido a GyselMood!",
+                        getString(R.string.login_welcome),
                         Toast.LENGTH_SHORT
                     ).show()
 
@@ -102,7 +102,7 @@ class LoginActivity : AppCompatActivity() {
 
                     Toast.makeText(
                         this,
-                        "Correo o contraseña incorrectos",
+                        getString(R.string.login_wrong_credentials),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -153,7 +153,7 @@ class LoginActivity : AppCompatActivity() {
 
                     Toast.makeText(
                         this@LoginActivity,
-                        "No se pudo obtener la cuenta de Google",
+                        getString(R.string.login_google_no_account),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -162,7 +162,7 @@ class LoginActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@LoginActivity,
-                    "Se canceló o no se pudo iniciar con Google",
+                    getString(R.string.login_google_cancelled),
                     Toast.LENGTH_LONG
                 ).show()
 
@@ -170,7 +170,7 @@ class LoginActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this@LoginActivity,
-                    "Error al leer la cuenta de Google",
+                    getString(R.string.login_google_read_error),
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -192,7 +192,7 @@ class LoginActivity : AppCompatActivity() {
 
                     Toast.makeText(
                         this,
-                        "¡Bienvenido a GyselMood!",
+                        getString(R.string.login_welcome),
                         Toast.LENGTH_SHORT
                     ).show()
 
@@ -203,7 +203,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(
                         this,
                         task.exception?.localizedMessage
-                            ?: "Error al iniciar sesión con Google",
+                            ?: getString(R.string.login_google_error),
                         Toast.LENGTH_LONG
                     ).show()
                 }

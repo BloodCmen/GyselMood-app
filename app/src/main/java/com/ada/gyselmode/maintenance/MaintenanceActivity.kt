@@ -56,7 +56,7 @@ class MaintenanceActivity : AppCompatActivity() {
         btnGestionarImagenes.setOnClickListener {
             // val intent = Intent(this, GestionarImagenesActivity::class.java)
             // startActivity(intent)
-            mostrarMensaje("Gestionar imágenes")
+            mostrarMensaje(getString(R.string.maint_manage_images))
         }
 
 
@@ -65,7 +65,7 @@ class MaintenanceActivity : AppCompatActivity() {
     private fun mostrarMensaje(mensaje: String) {
         Toast.makeText(
             this,
-            "$mensaje: próximamente",
+            getString(R.string.maint_coming_soon, mensaje),
             Toast.LENGTH_SHORT
         ).show()
     }

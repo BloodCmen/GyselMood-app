@@ -37,7 +37,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="GYSELMOOD"
+                    android:text="@string/brand_name"
                     android:textColor="@color/gysel_white"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -48,7 +48,7 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="Buscar"
+                    android:contentDescription="@string/cd_search"
                     android:src="@android:drawable/ic_menu_search"
                     app:tint="@color/gysel_white" />
 
@@ -57,7 +57,7 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="Carrito"
+                    android:contentDescription="@string/cd_cart"
                     android:src="@android:drawable/ic_menu_add"
                     app:tint="@color/gysel_white" />
 
@@ -76,7 +76,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="GYSELMOOD"
+                    android:text="@string/brand_name"
                     android:textColor="@color/gysel_white"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -85,7 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="VISTE TU ESTILO"
+                    android:text="@string/tagline"
                     android:textColor="@color/gysel_white"
                     android:textSize="14sp"
                     android:letterSpacing="0.15" />
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
-                android:text="CATEGORÍAS"
+                android:text="@string/home_categories"
                 android:textColor="@color/gysel_white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -122,7 +122,7 @@
                         android:layout_marginEnd="10dp"
                         android:background="@color/gysel_dark_gray"
                         android:gravity="center"
-                        android:text="POLOS"
+                        android:text="@string/home_category_polos"
                         android:textColor="@color/gysel_white"
                         android:textStyle="bold" />
 
@@ -132,7 +132,7 @@
                         android:layout_marginEnd="10dp"
                         android:background="@color/gysel_dark_gray"
                         android:gravity="center"
-                        android:text="POLERAS"
+                        android:text="@string/home_category_poleras"
                         android:textColor="@color/gysel_white"
                         android:textStyle="bold" />
 
@@ -142,7 +142,7 @@
                         android:layout_marginEnd="10dp"
                         android:background="@color/gysel_dark_gray"
                         android:gravity="center"
-                        android:text="PIJAMAS"
+                        android:text="@string/home_category_pijamas"
                         android:textColor="@color/gysel_white"
                         android:textStyle="bold" />
 
@@ -151,7 +151,7 @@
                         android:layout_height="80dp"
                         android:background="@color/gysel_dark_gray"
                         android:gravity="center"
-                        android:text="CONJUNTOS"
+                        android:text="@string/home_category_conjuntos"
                         android:textColor="@color/gysel_white"
                         android:textStyle="bold" />
 
@@ -165,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
-                android:text="PRODUCTOS DESTACADOS"
+                android:text="@string/home_featured"
                 android:textColor="@color/gysel_white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -179,7 +179,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@color/gysel_dark_gray"
                 android:gravity="center"
-                android:text="AQUÍ IRÁN LOS PRODUCTOS"
+                android:text="@string/home_products_placeholder"
                 android:textColor="@color/gysel_light_gray" />
 
         </LinearLayout>

@@ -22,14 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="105dp"
             android:scaleType="centerCrop"
-            android:contentDescription="Vista previa del producto"/>
+            android:contentDescription="@string/cd_image_preview"/>
 
         <TextView
             android:id="@+id/txtPrincipal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Imagen"
+            android:text="@string/image_label"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             android:layout_marginTop="4dp"/>
@@ -38,7 +38,7 @@
             android:id="@+id/btnMarcarPrincipal"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="Principal"
+            android:text="@string/image_main"
             android:textSize="9sp"
             android:textColor="#FFFFFF"
             android:backgroundTint="#E01C1C"/>
@@ -47,7 +47,7 @@
             android:id="@+id/btnEliminarImagen"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="Eliminar"
+            android:text="@string/common_delete"
             android:textSize="9sp"
             android:textColor="#FFFFFF"
             android:backgroundTint="#555555"/>

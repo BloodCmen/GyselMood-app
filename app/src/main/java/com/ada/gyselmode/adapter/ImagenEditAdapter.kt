@@ -78,18 +78,18 @@ class ImagenEditAdapter(
         if (imagen.esPrincipal) {
 
             holder.texto.text =
-                "★ Principal"
+                holder.itemView.context.getString(R.string.image_main_star)
 
             holder.botonPrincipal.text =
-                "Principal ✓"
+                holder.itemView.context.getString(R.string.image_main_check)
 
         } else {
 
             holder.texto.text =
-                "Imagen ${position + 1}"
+                holder.itemView.context.getString(R.string.image_number, position + 1)
 
             holder.botonPrincipal.text =
-                "Marcar principal"
+                holder.itemView.context.getString(R.string.image_set_main)
         }
 
         holder.botonPrincipal.setOnClickListener {

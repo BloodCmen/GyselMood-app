@@ -10,7 +10,7 @@
         android:id="@+id/txtTituloPantalla"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="DETALLE DEL PRODUCTO"
+        android:text="@string/detail_title"
         android:textColor="#FFFFFF"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -40,7 +40,7 @@
                 android:layout_height="260dp"
                 android:scaleType="centerCrop"
                 android:background="#1A1A1A"
-                android:contentDescription="Imagen principal del producto"/>
+                android:contentDescription="@string/cd_detail_main_image"/>
 
             <TextView
                 android:id="@+id/txtNombreDetalle"
@@ -71,7 +71,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descripción"
+                android:text="@string/detail_description"
                 android:textColor="#E01C1C"
                 android:textStyle="bold"
                 android:textSize="18sp"
@@ -88,7 +88,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Información adicional"
+                android:text="@string/detail_additional"
                 android:textColor="#E01C1C"
                 android:textStyle="bold"
                 android:textSize="18sp"
@@ -105,7 +105,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tallas disponibles"
+                android:text="@string/detail_available_sizes"
                 android:textColor="#E01C1C"
                 android:textStyle="bold"
                 android:textSize="18sp"
@@ -123,7 +123,7 @@
                 android:id="@+id/btnEditarProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EDITAR PRODUCTO"
+                android:text="@string/detail_edit_button"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#E01C1C"
                 android:layout_marginTop="28dp"/>
@@ -132,7 +132,7 @@
                 android:id="@+id/btnEliminarProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ELIMINAR PRODUCTO"
+                android:text="@string/detail_delete_button"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#444444"
                 android:layout_marginTop="12dp"

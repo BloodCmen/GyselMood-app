@@ -181,9 +181,9 @@ class CrearProductoActivity : AppCompatActivity() {
 
         txtImagenPrincipal.text =
             if (imagenesSeleccionadas.isEmpty()) {
-                "Selecciona una imagen principal"
+                getString(R.string.form_select_main_image)
             } else {
-                "Imagen principal: ${posicionImagenPrincipal + 1} de ${imagenesSeleccionadas.size}"
+                getString(R.string.form_main_image_position, posicionImagenPrincipal + 1, imagenesSeleccionadas.size)
             }
     }
 
@@ -223,7 +223,7 @@ class CrearProductoActivity : AppCompatActivity() {
 
                 if (listaCategorias.isEmpty()) {
 
-                    mostrarMensaje("No hay categorías registradas")
+                    mostrarMensaje(getString(R.string.categories_empty))
                     return@launch
                 }
 
@@ -245,7 +245,7 @@ class CrearProductoActivity : AppCompatActivity() {
             } catch (e: Exception) {
 
                 mostrarMensaje(
-                    "Error al cargar categorías: ${e.message}"
+                    getString(R.string.categories_load_error, e.message)
                 )
             }
         }
@@ -269,7 +269,7 @@ class CrearProductoActivity : AppCompatActivity() {
             } catch (e: Exception) {
 
                 mostrarMensaje(
-                    "Error al cargar tallas: ${e.message}"
+                    getString(R.string.sizes_load_error, e.message)
                 )
             }
         }
@@ -333,42 +333,42 @@ class CrearProductoActivity : AppCompatActivity() {
             edtPrecioTotal.text.toString().trim().toDoubleOrNull()
 
         if (titulo.isEmpty()) {
-            edtTitulo.error = "Ingresa el nombre"
+            edtTitulo.error = getString(R.string.form_name_required_new)
             return
         }
 
         if (descripcion.isEmpty()) {
-            edtDescripcion.error = "Ingresa la descripción"
+            edtDescripcion.error = getString(R.string.form_description_required)
             return
         }
 
         if (precioUnidad == null || precioUnidad < 0) {
-            edtPrecioUnidad.error = "Precio inválido"
+            edtPrecioUnidad.error = getString(R.string.form_price_invalid)
             return
         }
 
         if (precioTotal == null || precioTotal < 0) {
-            edtPrecioTotal.error = "Precio inválido"
+            edtPrecioTotal.error = getString(R.string.form_price_invalid)
             return
         }
 
         if (listaCategorias.isEmpty()) {
-            mostrarMensaje("No hay categorías cargadas")
+            mostrarMensaje(getString(R.string.form_categories_not_loaded_new))
             return
         }
 
         if (spinnerCategoria.selectedItemPosition !in listaCategorias.indices) {
-            mostrarMensaje("Selecciona una categoría")
+            mostrarMensaje(getString(R.string.form_select_category))
             return
         }
 
         if (tallasSeleccionadas.isEmpty()) {
-            mostrarMensaje("Selecciona al menos una talla")
+            mostrarMensaje(getString(R.string.form_select_size))
             return
         }
 
         if (imagenesSeleccionadas.isEmpty()) {
-            mostrarMensaje("Selecciona al menos una imagen")
+            mostrarMensaje(getString(R.string.form_select_image))
             return
         }
 
@@ -387,7 +387,7 @@ class CrearProductoActivity : AppCompatActivity() {
             imagenesSeleccionadas.toList()
 
         btnGuardarProducto.isEnabled = false
-        btnGuardarProducto.text = "SUBIENDO IMÁGENES..."
+        btnGuardarProducto.text = getString(R.string.form_uploading_images)
 
         lifecycleScope.launch {
 
@@ -413,7 +413,7 @@ class CrearProductoActivity : AppCompatActivity() {
                     )
                 }
 
-                btnGuardarProducto.text = "GUARDANDO PRODUCTO..."
+                btnGuardarProducto.text = getString(R.string.form_saving_product)
 
                 // Construir el JSON que espera Spring Boot
 
@@ -436,7 +436,7 @@ class CrearProductoActivity : AppCompatActivity() {
                     )
 
                 mostrarMensaje(
-                    "Producto creado correctamente: ${productoCreado.titulo}"
+                    getString(R.string.form_product_created, productoCreado.titulo)
                 )
 
                 limpiarFormulario()
@@ -446,13 +446,13 @@ class CrearProductoActivity : AppCompatActivity() {
                 e.printStackTrace()
 
                 mostrarMensaje(
-                    "Error al guardar: ${e.message}"
+                    getString(R.string.form_save_error, e.message)
                 )
 
             } finally {
 
                 btnGuardarProducto.isEnabled = true
-                btnGuardarProducto.text = "GUARDAR PRODUCTO"
+                btnGuardarProducto.text = getString(R.string.form_save_product)
             }
         }
     }

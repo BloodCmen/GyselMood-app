@@ -29,7 +29,7 @@ class DetalleProductoActivity : AppCompatActivity() {
         if (recibido == null) {
             Toast.makeText(
                 this,
-                "No se pudo cargar el producto",
+                getString(R.string.detail_load_error),
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -59,7 +59,7 @@ class DetalleProductoActivity : AppCompatActivity() {
         btnEliminar.setOnClickListener {
             Toast.makeText(
                 this,
-                "Eliminar: ${producto.titulo} (lo conectamos ahora)",
+                getString(R.string.detail_delete_pending, producto.titulo),
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -71,22 +71,22 @@ class DetalleProductoActivity : AppCompatActivity() {
             producto.titulo
 
         findViewById<TextView>(R.id.txtCategoriaDetalle).text =
-            "Categoría: ${producto.categoria}"
+            getString(R.string.detail_category_format, producto.categoria)
 
         findViewById<TextView>(R.id.txtPrecioDetalle).text =
-            "Precio: S/ %.2f".format(producto.precioTotal)
+            getString(R.string.detail_price_format, producto.precioTotal)
 
         findViewById<TextView>(R.id.txtDescripcionDetalle).text =
-            producto.descripcion.ifBlank { "Sin descripción" }
+            producto.descripcion.ifBlank { getString(R.string.detail_no_description) }
 
         findViewById<TextView>(R.id.txtAdicionalDetalle).text =
-            producto.adicional.ifBlank { "Sin información adicional" }
+            producto.adicional.ifBlank { getString(R.string.detail_no_additional) }
 
         val tallasTexto = producto.tallas
             .joinToString(", ") { it.nombre }
 
         findViewById<TextView>(R.id.txtTallasDetalle).text =
-            tallasTexto.ifBlank { "Sin tallas registradas" }
+            tallasTexto.ifBlank { getString(R.string.detail_no_sizes) }
 
         val imagenPrincipal = producto.imagenes.firstOrNull {
             it.esPrincipal
