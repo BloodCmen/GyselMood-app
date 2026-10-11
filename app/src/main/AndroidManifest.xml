@@ -45,6 +45,9 @@
         <activity android:name=".maintenance.CrearCategoriaActivity" android:exported="false" />
         <activity android:name=".DetalleProductoUsuarioActivity" android:exported="false" />
         <activity android:name=".CheckoutActivity" android:exported="false" />
+        <activity android:name=".ui.pago.PagoSimuladoActivity"  android:exported="false" />
+        <activity android:name=".ui.pago.CompraExitosaActivity" android:exported="false" />
+        <activity android:name=".ui.pedidos.adapter.MisPedidosActivity" android:exported="false" />
     </application>
 
 </manifest>

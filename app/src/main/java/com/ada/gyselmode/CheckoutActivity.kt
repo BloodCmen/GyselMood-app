@@ -20,6 +20,8 @@ import com.ada.gyselmode.ui.pedidos.viewmodel.PedidoViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 import java.util.Locale
+import android.content.Intent
+import com.ada.gyselmode.ui.pago.PagoSimuladoActivity
 
 class CheckoutActivity : AppCompatActivity() {
 
@@ -79,9 +81,24 @@ class CheckoutActivity : AppCompatActivity() {
 
                 launch {
                     viewModel.resultado.collect { pedido ->
+
                         if (pedido != null) {
+
+
+                            val pedidoId = pedido.id
+
+                            // Limpiar el carrito
                             CarritoRepository.vaciar()
+
                             viewModel.limpiarResultado()
+
+                            val intent = Intent(
+                                this@CheckoutActivity,
+                                PagoSimuladoActivity::class.java
+                            )
+
+                            intent.putExtra("PEDIDO_ID", pedidoId.toLong())
+                            startActivity(intent)
                             finish()
                         }
                     }

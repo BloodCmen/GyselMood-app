@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A">
+
+    <TextView
+        android:id="@+id/txtMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GYSELMOOD"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtIconoExito"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:text="✓"
+        android:textColor="#4CAF50"
+        android:textSize="65sp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintTop_toBottomOf="@id/txtMarca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTituloExito"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="¡Compra exitosa!"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/txtIconoExito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDescripcionExito"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tu pago de prueba fue aprobado y registrado correctamente."
+        android:textColor="#BDBDBD"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloExito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNumeroPedido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pedido #"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/txtDescripcionExito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEstadoConfirmado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="PAGO APROBADO"
+        android:textColor="#4CAF50"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/txtNumeroPedido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnVolverCatalogo"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="VOLVER AL CATÁLOGO"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#E01C1C"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/txtNotaDemo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtNotaDemo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pago de prueba · No se realizó un cobro real"
+        android:textColor="#888888"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

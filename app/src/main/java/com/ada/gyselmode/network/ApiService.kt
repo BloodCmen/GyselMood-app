@@ -7,10 +7,12 @@ import com.ada.gyselmode.model.ProductoUpdateRequest
 import com.ada.gyselmode.model.CategoriaCreateRequest
 import com.ada.gyselmode.model.Talla
 import com.ada.gyselmode.model.TallaCreateRequest
+import com.ada.gyselmode.model.pago.CrearPagoRequest
 import com.ada.gyselmode.model.pedido.ActualizarEstadoPedidoRequest
 import com.ada.gyselmode.model.pedido.CrearPedidoRequest
 import com.ada.gyselmode.model.pedido.HistorialEstadoResponseDto
 import com.ada.gyselmode.model.pedido.PedidoResponseDto
+
 
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -19,6 +21,9 @@ import retrofit2.http.PATCH
 import retrofit2.http.DELETE
 import retrofit2.http.PUT
 import retrofit2.http.Path
+
+import retrofit2.Response
+import okhttp3.ResponseBody
 
 interface ApiService {
 
@@ -122,5 +127,19 @@ interface ApiService {
         @Path("id") id: Long,
         @Body request: ActualizarEstadoPedidoRequest
     )
+
+
+    @POST("api/pagos/pedido/{pedidoId}")
+    suspend fun registrarPago(
+        @Path("pedidoId") pedidoId: Long,
+        @Body request: CrearPagoRequest
+    ): Response<ResponseBody>
+
+    @GET("api/pagos/pedido/{pedidoId}")
+    suspend fun obtenerPago(
+        @Path("pedidoId") pedidoId: Long
+    ): Response<ResponseBody>
+
+
 
 }
