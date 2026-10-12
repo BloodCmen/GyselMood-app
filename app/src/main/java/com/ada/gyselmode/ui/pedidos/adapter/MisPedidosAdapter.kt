@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ada.gyselmode.databinding.ItemMisPedidosBinding
-import com.ada.gyselmode.model.pedido.PedidoListaDto
+import com.ada.gyselmode.model.pedido.PedidoResponseDto
 import java.util.Locale
 
 class MisPedidosAdapter(
-    private val pedidos: List<PedidoListaDto>,
-    private val onDetalle: (PedidoListaDto) -> Unit
+    private val pedidos: List<PedidoResponseDto>,
+    private val onDetalle: (PedidoResponseDto) -> Unit
 ) : RecyclerView.Adapter<MisPedidosAdapter.PedidoViewHolder>() {
 
     inner class PedidoViewHolder(
@@ -61,7 +61,8 @@ class MisPedidosAdapter(
 
         // Fecha
         binding.txtItemFecha.text =
-            pedido.fechaCreacion.replace("T", " ").take(16)
+            pedido.fechaCreacion?.replace("T", " ")?.take(16)
+                ?: "Sin fecha"
 
         // Productos y tallas
         binding.txtItemProductos.text =

@@ -10,6 +10,7 @@ import com.ada.gyselmode.helper.NavigationHelper
 import com.ada.gyselmode.maintenance.GestionarCategoriasActivity
 import com.ada.gyselmode.maintenance.GestionarProductosActivity
 import com.ada.gyselmode.maintenance.GestionarTallasActivity
+import com.ada.gyselmode.ui.pedidos.GestionPedidosActivity
 
 
 class MaintenanceActivity : AppCompatActivity() {
@@ -28,6 +29,8 @@ class MaintenanceActivity : AppCompatActivity() {
         val btnNuevaCategoria = findViewById<CardView>(R.id.btnNuevaCategoria)
         val btnNuevaTalla = findViewById<CardView>(R.id.btnNuevaTalla)
         val btnGestionarImagenes = findViewById<CardView>(R.id.btnGestionarImagenes)
+        val btnGestionarPedidos = findViewById<CardView>(R.id.btnGestionarPedidos)
+
 
         // --- ACCIONES CON INTENTS ---
 
@@ -56,6 +59,12 @@ class MaintenanceActivity : AppCompatActivity() {
         btnGestionarImagenes.setOnClickListener {
             // val intent = Intent(this, GestionarImagenesActivity::class.java)
             // startActivity(intent)
+            mostrarMensaje(getString(R.string.maint_manage_images))
+        }
+
+        btnGestionarPedidos.setOnClickListener {
+            val intent = Intent(this, GestionPedidosActivity::class.java)
+            startActivity(intent)
             mostrarMensaje(getString(R.string.maint_manage_images))
         }
 

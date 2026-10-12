@@ -141,5 +141,15 @@ interface ApiService {
     ): Response<ResponseBody>
 
 
+    // ADMIN - LISTAR TODOS LOS PEDIDOS
+    @GET("api/pedidos/admin/listar")
+    suspend fun listarTodosPedidos(): List<PedidoResponseDto>
+
+    @PUT("api/pedidos/{id}/estado")
+    suspend fun actualizarEstadoPedidoAdmin(
+        @Path("id") id: Long,
+        @Body request: ActualizarEstadoPedidoRequest
+    ): Response<Unit>
+
 
 }

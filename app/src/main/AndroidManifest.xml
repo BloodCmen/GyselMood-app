@@ -47,7 +47,8 @@
         <activity android:name=".CheckoutActivity" android:exported="false" />
         <activity android:name=".ui.pago.PagoSimuladoActivity"  android:exported="false" />
         <activity android:name=".ui.pago.CompraExitosaActivity" android:exported="false" />
-        <activity android:name=".ui.pedidos.adapter.MisPedidosActivity" android:exported="false" />
+        <activity android:name=".ui.pedidos.MisPedidosActivity" android:exported="false" />
+        <activity android:name=".ui.pedidos.GestionPedidosActivity" android:exported="false" />
     </application>
 
 </manifest>

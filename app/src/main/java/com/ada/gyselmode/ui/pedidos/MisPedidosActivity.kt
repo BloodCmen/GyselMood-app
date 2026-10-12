@@ -1,19 +1,20 @@
+
 package com.ada.gyselmode.ui.pedidos
 
-
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ada.gyselmode.databinding.ActivityMisPedidosBinding
-
+import com.ada.gyselmode.model.pedido.PedidoResponseDto
 import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.ui.pago.PagoSimuladoActivity
 import com.ada.gyselmode.ui.pedidos.adapter.MisPedidosAdapter
 import com.google.firebase.auth.FirebaseAuth
-
 import kotlinx.coroutines.launch
 import java.util.Locale
 
@@ -27,7 +28,7 @@ class MisPedidosActivity : AppCompatActivity() {
         binding = ActivityMisPedidosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configurar lista de pedidos
+        // Configurar RecyclerView
         binding.recyclerMisPedidos.layoutManager =
             LinearLayoutManager(this)
     }
@@ -67,16 +68,12 @@ class MisPedidosActivity : AppCompatActivity() {
                         mostrarDetalle(pedido)
                     }
 
-                // Mensaje si no tiene pedidos
+                // Mensaje si no hay pedidos
                 binding.txtPedidosVacios.text =
                     "Todavía no tienes pedidos"
 
                 binding.txtPedidosVacios.visibility =
-                    if (pedidos.isEmpty()) {
-                        View.VISIBLE
-                    } else {
-                        View.GONE
-                    }
+                    if (pedidos.isEmpty()) View.VISIBLE else View.GONE
 
             } catch (e: Exception) {
 
@@ -99,17 +96,25 @@ class MisPedidosActivity : AppCompatActivity() {
         }
     }
 
-    private fun mostrarDetalle(pedido: PedidoListaDto) {
+    private fun mostrarDetalle(pedido: PedidoResponseDto) {
 
+        // Productos del pedido
         val productos = pedido.productos.joinToString("\n\n") {
             "${it.producto}\n" +
                     "Talla: ${it.talla} | Cantidad: ${it.cantidad}\n" +
                     "Subtotal: ${dinero(it.subtotal)}"
         }
 
+        // Fecha (puede ser null)
+        val fecha = pedido.fechaCreacion
+            ?.replace("T", " ")
+            ?.take(16)
+            ?: "Sin fecha"
+
+        // Detalles completos
         val mensaje = """
             Estado: ${pedido.estado}
-            Fecha: ${pedido.fechaCreacion.replace("T", " ").take(16)}
+            Fecha: $fecha
 
             PRODUCTOS
             $productos
@@ -122,14 +127,28 @@ class MisPedidosActivity : AppCompatActivity() {
             ${pedido.direccionEntrega}
 
             Referencia:
-            ${pedido.referencia.orEmpty()}
+            ${pedido.referencia}
         """.trimIndent()
 
-        AlertDialog.Builder(this)
+        val dialogo = AlertDialog.Builder(this)
             .setTitle("Pedido #${pedido.id}")
             .setMessage(mensaje)
-            .setPositiveButton("Cerrar", null)
-            .show()
+            .setNegativeButton("Cerrar", null)
+
+        if (pedido.estado.equals("PENDIENTE", ignoreCase = true)) {
+            dialogo.setPositiveButton("Completar pago") { _, _ ->
+
+                val intentPago = Intent(
+                    this,
+                    PagoSimuladoActivity::class.java
+                )
+
+                intentPago.putExtra("PEDIDO_ID", pedido.id)
+                startActivity(intentPago)
+            }
+        }
+
+        dialogo.show()
     }
 
     private fun dinero(valor: Double): String {
