@@ -7,6 +7,8 @@ object RetrofitClient {
 
     private const val BASE_URL = "https://api-rest-gyselmood-app-production.up.railway.app/"
 
+
+
     val apiService: ApiService by lazy {
 
         Retrofit.Builder()

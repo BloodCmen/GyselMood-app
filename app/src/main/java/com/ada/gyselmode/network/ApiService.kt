@@ -8,6 +8,7 @@ import com.ada.gyselmode.model.CategoriaCreateRequest
 import com.ada.gyselmode.model.Talla
 import com.ada.gyselmode.model.TallaCreateRequest
 import com.ada.gyselmode.model.pago.CrearPagoRequest
+import com.ada.gyselmode.model.pago.PreferenciaMercadoPagoResponse
 import com.ada.gyselmode.model.pedido.ActualizarEstadoPedidoRequest
 import com.ada.gyselmode.model.pedido.CrearPedidoRequest
 import com.ada.gyselmode.model.pedido.HistorialEstadoResponseDto
@@ -38,6 +39,7 @@ interface ApiService {
     // TALLAS
     @GET("api/tallas/listarTallas")
     suspend fun listarTallas(): List<Talla>
+
     // CREAR TALLA
     @POST("api/tallas/guardarTalla")
     suspend fun crearTalla(
@@ -92,7 +94,6 @@ interface ApiService {
     suspend fun crearPedido(
         @Body pedido: CrearPedidoRequest
     ): PedidoResponseDto
-
 
 
     // Listar pedidos de un usuario
@@ -150,6 +151,15 @@ interface ApiService {
         @Path("id") id: Long,
         @Body request: ActualizarEstadoPedidoRequest
     ): Response<Unit>
+
+
+
+
+    // MERCADO PAGO - GENERAR PREFERENCIA
+    @POST("api/mercadopago/preferencia/{pedidoId}")
+    suspend fun crearPreferenciaMercadoPago(
+        @Path("pedidoId") pedidoId: Long
+    ): PreferenciaMercadoPagoResponse
 
 
 }
