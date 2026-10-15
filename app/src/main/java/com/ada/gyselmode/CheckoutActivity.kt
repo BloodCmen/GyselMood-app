@@ -23,7 +23,12 @@ import java.util.Locale
 import android.content.Intent
 import com.ada.gyselmode.ui.pago.PagoSimuladoActivity
 
-class CheckoutActivity : AppCompatActivity() {
+import androidx.activity.result.contract.ActivityResultContracts
+import com.ada.gyselmode.security.BaseSecureActivity
+import com.ada.gyselmode.ui.ubicacion.SeleccionarUbicacionActivity
+
+
+class CheckoutActivity : BaseSecureActivity() {
 
     private lateinit var viewModel: PedidoViewModel
     private lateinit var edtDireccion: EditText
@@ -32,6 +37,37 @@ class CheckoutActivity : AppCompatActivity() {
     private lateinit var progress: ProgressBar
 
     private val costoEnvio = 0.0
+
+
+    private var latitudEntrega: Double? = null
+    private var longitudEntrega: Double? = null
+
+    private val seleccionarMapa = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { resultado ->
+
+        if (resultado.resultCode == RESULT_OK) {
+
+            val datos = resultado.data ?: return@registerForActivityResult
+
+            if (!datos.hasExtra("LATITUD_ENTREGA") ||
+                !datos.hasExtra("LONGITUD_ENTREGA")) {
+                return@registerForActivityResult
+            }
+
+            latitudEntrega = datos.getDoubleExtra(
+                "LATITUD_ENTREGA", 0.0
+            )
+
+            longitudEntrega = datos.getDoubleExtra(
+                "LONGITUD_ENTREGA", 0.0
+            )
+
+            findViewById<TextView>(R.id.txtUbicacionMapa).text =
+                "Ubicación seleccionada correctamente ✓"
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +79,19 @@ class CheckoutActivity : AppCompatActivity() {
         edtReferencia = findViewById(R.id.edtReferenciaEntrega)
         btnConfirmar = findViewById(R.id.btnConfirmarPedido)
         progress = findViewById(R.id.progressCheckout)
+
+
+        findViewById<Button>(R.id.btnSeleccionarMapa)
+            .setOnClickListener {
+
+                seleccionarMapa.launch(
+                    Intent(
+                        this,
+                        SeleccionarUbicacionActivity::class.java
+                    )
+                )
+            }
+
 
         val items = CarritoRepository.items.value
         val subtotal = items.sumOf { it.subtotal }
@@ -110,6 +159,28 @@ class CheckoutActivity : AppCompatActivity() {
     private fun confirmarPedido() {
         val uid = FirebaseAuth.getInstance().currentUser?.uid
 
+        if (latitudEntrega == null || longitudEntrega == null) {
+            Toast.makeText(
+                this,
+                "Selecciona tu ubicación de entrega en el mapa",
+                Toast.LENGTH_LONG
+            ).show()
+            return
+        }
+
+
+        val latitud = latitudEntrega
+        val longitud = longitudEntrega
+
+        if (latitud == null || longitud == null) {
+            Toast.makeText(
+                this,
+                "Selecciona la ubicación de entrega en el mapa",
+                Toast.LENGTH_LONG
+            ).show()
+            return
+        }
+
         if (uid.isNullOrBlank()) {
             Toast.makeText(
                 this,
@@ -117,6 +188,8 @@ class CheckoutActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
             return
+
+
         }
 
         val direccion = edtDireccion.text.toString().trim()
@@ -147,13 +220,17 @@ class CheckoutActivity : AppCompatActivity() {
             )
         }
 
+
         val request = CrearPedidoRequest(
             firebaseUid = uid,
             direccionEntrega = direccion,
             referencia = referencia,
+            latitudEntrega = latitud,
+            longitudEntrega = longitud,
             costoEnvio = costoEnvio,
             productos = productos
         )
+
 
         viewModel.crearPedido(request)
     }

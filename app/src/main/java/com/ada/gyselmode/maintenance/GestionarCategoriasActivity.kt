@@ -13,10 +13,11 @@ import androidx.lifecycle.lifecycleScope
 import com.ada.gyselmode.R
 import com.ada.gyselmode.helper.NavigationHelper
 import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.security.BaseSecureActivity
 
 import kotlinx.coroutines.launch
 
-class GestionarCategoriasActivity : AppCompatActivity() {
+class GestionarCategoriasActivity : BaseSecureActivity()  {
 
     private lateinit var contenedorCategorias: LinearLayout
     private lateinit var btnNuevaCategoria: Button

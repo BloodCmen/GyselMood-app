@@ -13,10 +13,11 @@ import androidx.lifecycle.lifecycleScope
 import com.ada.gyselmode.R
 import com.ada.gyselmode.helper.NavigationHelper
 import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.security.BaseSecureActivity
 
 import kotlinx.coroutines.launch
 
-class GestionarTallasActivity : AppCompatActivity() {
+class GestionarTallasActivity : BaseSecureActivity()  {
 
     private lateinit var contenedorTallas: LinearLayout
     private lateinit var btnNuevaTalla: Button

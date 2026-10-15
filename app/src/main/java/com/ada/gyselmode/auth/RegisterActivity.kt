@@ -11,7 +11,7 @@ import com.ada.gyselmode.MainActivity
 import com.ada.gyselmode.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.userProfileChangeRequest
-
+import com.ada.gyselmode.utils.ConexionUtils
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
@@ -27,6 +27,9 @@ class RegisterActivity : AppCompatActivity() {
 
         // Registrar usuario
         binding.btnRegister.setOnClickListener {
+            if (!ConexionUtils.verificarConexion(this)) {
+                return@setOnClickListener
+            }
 
             val nombre = binding.etName.text.toString().trim()
             val correo = binding.etEmail.text.toString().trim()

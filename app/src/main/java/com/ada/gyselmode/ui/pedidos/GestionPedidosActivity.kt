@@ -11,11 +11,12 @@ import com.ada.gyselmode.databinding.ActivityGestionPedidosBinding
 import com.ada.gyselmode.model.pedido.ActualizarEstadoPedidoRequest
 import com.ada.gyselmode.model.pedido.PedidoResponseDto
 import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.security.BaseSecureActivity
 import com.ada.gyselmode.ui.pedidos.adapter.MisPedidosAdapter
 import kotlinx.coroutines.launch
 import java.util.Locale
 
-class GestionPedidosActivity : AppCompatActivity() {
+class GestionPedidosActivity : BaseSecureActivity() {
 
     private lateinit var binding: ActivityGestionPedidosBinding
     private var procesando = false

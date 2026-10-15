@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212">
+
+    <!-- BARRA SUPERIOR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:background="#1E1E1E">
+
+        <TextView
+            android:id="@+id/btnVolver"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:contentDescription="Volver" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubicación de entrega"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <!-- CONTENEDOR DEL MAPA -->
+
+    <!-- MAPA INTERACTIVO -->
+    <FrameLayout
+        android:id="@+id/contenedorMapa"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <org.maplibre.android.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <Button
+            android:id="@+id/btnMiUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:text="◎ Mi ubicación"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#B91C1C" />
+
+
+    </FrameLayout>
+
+
+    <!-- PANEL INFERIOR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#1E1E1E">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecciona dónde recibir tu pedido"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Toca el mapa para indicar el punto exacto de entrega."
+            android:textColor="#AAAAAA"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txtUbicacionSeleccionada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            android:background="#303030"
+            android:text="Ubicación aún no seleccionada"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnConfirmarUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:text="Confirmar ubicación"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:backgroundTint="#B91C1C" />
+
+    </LinearLayout>
+
+</LinearLayout>

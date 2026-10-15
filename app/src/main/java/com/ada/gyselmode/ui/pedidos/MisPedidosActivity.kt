@@ -12,13 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ada.gyselmode.databinding.ActivityMisPedidosBinding
 import com.ada.gyselmode.model.pedido.PedidoResponseDto
 import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.security.BaseSecureActivity
 import com.ada.gyselmode.ui.pago.PagoSimuladoActivity
 import com.ada.gyselmode.ui.pedidos.adapter.MisPedidosAdapter
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 import java.util.Locale
 
-class MisPedidosActivity : AppCompatActivity() {
+class MisPedidosActivity : BaseSecureActivity() {
 
     private lateinit var binding: ActivityMisPedidosBinding
 

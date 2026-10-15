@@ -12,9 +12,10 @@ import com.ada.gyselmode.R
 import com.ada.gyselmode.adapter.ProductoAdminAdapter
 import com.ada.gyselmode.helper.NavigationHelper
 import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.security.BaseSecureActivity
 import kotlinx.coroutines.launch
 
-class GestionarProductosActivity : AppCompatActivity() {
+class GestionarProductosActivity : BaseSecureActivity()  {
 
     private lateinit var recyclerProductos: RecyclerView
 

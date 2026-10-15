@@ -33,8 +33,9 @@ import com.ada.gyselmode.network.RetrofitClient
 import kotlinx.coroutines.launch
 
 import com.ada.gyselmode.network.CloudinaryService
+import com.ada.gyselmode.security.BaseSecureActivity
 
-class CrearProductoActivity : AppCompatActivity() {
+class CrearProductoActivity : BaseSecureActivity()  {
 
 
 

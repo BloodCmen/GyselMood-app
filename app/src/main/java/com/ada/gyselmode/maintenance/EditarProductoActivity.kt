@@ -29,10 +29,11 @@ import com.ada.gyselmode.model.ProductoUpdateRequest
 import com.ada.gyselmode.model.Talla
 import com.ada.gyselmode.network.CloudinaryService
 import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.security.BaseSecureActivity
 
 import kotlinx.coroutines.launch
 
-class EditarProductoActivity : AppCompatActivity() {
+class EditarProductoActivity : BaseSecureActivity()  {
 
     private lateinit var producto: Producto
 

@@ -10,13 +10,19 @@ import com.ada.gyselmode.helper.NavigationHelper
 import com.ada.gyselmode.maintenance.GestionarCategoriasActivity
 import com.ada.gyselmode.maintenance.GestionarProductosActivity
 import com.ada.gyselmode.maintenance.GestionarTallasActivity
+import com.ada.gyselmode.security.AdminGuard
+import com.ada.gyselmode.security.BaseSecureActivity
 import com.ada.gyselmode.ui.pedidos.GestionPedidosActivity
+import com.ada.gyselmode.ui.ubicacion.SeleccionarUbicacionActivity
 
 
-class MaintenanceActivity : AppCompatActivity() {
+class MaintenanceActivity : BaseSecureActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AdminGuard.verificarAdmin(this) {
+            // Inicialización del contenido administrativo
+        }
 
         setContentView(R.layout.activity_maintenance)
 
@@ -57,8 +63,8 @@ class MaintenanceActivity : AppCompatActivity() {
         }
 
         btnGestionarImagenes.setOnClickListener {
-            // val intent = Intent(this, GestionarImagenesActivity::class.java)
-            // startActivity(intent)
+             val intent = Intent(this, SeleccionarUbicacionActivity::class.java)
+             startActivity(intent)
             mostrarMensaje(getString(R.string.maint_manage_images))
         }
 

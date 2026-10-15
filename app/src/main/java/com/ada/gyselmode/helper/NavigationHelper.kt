@@ -11,7 +11,13 @@ import com.ada.gyselmode.ProductosActivity
 import com.ada.gyselmode.R
 import com.ada.gyselmode.account.AccountActivity
 import com.ada.gyselmode.maintenance.EditarProductoActivity
+import android.view.View
 
+
+import com.ada.gyselmode.security.AdminGuard
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Source
 object NavigationHelper {
 
     fun setupBottomNavigation(activity: Activity) {
@@ -21,6 +27,34 @@ object NavigationHelper {
         val navCarrito = activity.findViewById<TextView?>(R.id.navCarrito)
         val navCuenta = activity.findViewById<TextView?>(R.id.navCuenta)
         val navMantenimiento = activity.findViewById<TextView?>(R.id.navMantenimiento)
+        // Ocultar hasta comprobar que es ADMIN
+        navMantenimiento?.visibility = View.GONE
+
+
+        val usuario = FirebaseAuth.getInstance().currentUser
+
+        if (usuario != null && navMantenimiento != null) {
+
+            FirebaseFirestore.getInstance()
+                .collection("usuarios")
+                .document(usuario.uid)
+                .get(Source.SERVER)
+                .addOnSuccessListener { documento ->
+
+                    if (!activity.isFinishing && !activity.isDestroyed) {
+
+                        val esAdmin = documento.getString("rol") == "ADMIN"
+
+                        navMantenimiento.visibility =
+                            if (esAdmin) View.VISIBLE else View.GONE
+                    }
+                }
+                .addOnFailureListener {
+                    // Si no podemos comprobar el rol, ocultamos el acceso.
+                    navMantenimiento.visibility = View.GONE
+                }
+        }
+
 
         // Si la barra no está en la pantalla o faltan los IDs, salimos sin romper la app
         if (navInicio == null && navProductos == null && navCarrito == null && navCuenta == null && navMantenimiento == null) {
@@ -80,9 +114,21 @@ object NavigationHelper {
             }
         }
 
+
+
         navMantenimiento?.setOnClickListener {
+
             if (activity !is MaintenanceActivity) {
-                activity.startActivity(Intent(activity, MaintenanceActivity::class.java))
+
+                AdminGuard.verificarAdmin(activity) {
+
+                    activity.startActivity(
+                        Intent(
+                            activity,
+                            MaintenanceActivity::class.java
+                        )
+                    )
+                }
             }
         }
     }

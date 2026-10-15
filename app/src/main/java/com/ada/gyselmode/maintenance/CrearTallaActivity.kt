@@ -12,10 +12,11 @@ import com.ada.gyselmode.R
 import com.ada.gyselmode.helper.NavigationHelper
 import com.ada.gyselmode.model.TallaCreateRequest
 import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.security.BaseSecureActivity
 
 import kotlinx.coroutines.launch
 
-class CrearTallaActivity : AppCompatActivity() {
+class CrearTallaActivity : BaseSecureActivity()  {
 
     private lateinit var edtNombre: EditText
     private lateinit var btnGuardar: Button

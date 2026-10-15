@@ -4,96 +4,145 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gysel_black"
-    android:padding="20dp">
+    android:background="@color/gysel_black">
 
-    <TextView
-        android:id="@+id/txtCheckoutTitulo"
+    <!-- SCROLL PARA PANTALLAS PEQUEÑAS -->
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="CONFIRMAR PEDIDO"
-        android:textColor="@color/gysel_white"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/txtCheckoutResumen"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/gysel_white"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@id/txtCheckoutTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-    <EditText
-        android:id="@+id/edtDireccionEntrega"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:hint="Dirección de entrega"
-        android:inputType="textPostalAddress"
-        android:minHeight="55dp"
-        android:padding="12dp"
-        android:backgroundTint="@color/gysel_red"
-        android:textColor="@color/gysel_white"
-        android:textColorHint="@color/gysel_light_gray"
-        app:layout_constraintTop_toBottomOf="@id/txtCheckoutResumen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <!-- TITULO -->
+            <TextView
+                android:id="@+id/txtCheckoutTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONFIRMAR PEDIDO"
+                android:textColor="@color/gysel_white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/edtReferenciaEntrega"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="Referencia (opcional)"
-        android:inputType="textCapSentences"
-        android:minHeight="55dp"
-        android:padding="12dp"
-        android:backgroundTint="@color/gysel_red"
-        android:textColor="@color/gysel_white"
-        android:textColorHint="@color/gysel_light_gray"
-        app:layout_constraintTop_toBottomOf="@id/edtDireccionEntrega"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <!-- RESUMEN DE PRODUCTOS -->
+            <TextView
+                android:id="@+id/txtCheckoutResumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/gysel_white"
+                android:textSize="17sp" />
 
-    <TextView
-        android:id="@+id/txtCheckoutTotal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="end"
-        android:textColor="@color/gysel_red"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/edtReferenciaEntrega"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <!-- DIRECCIÓN -->
+            <EditText
+                android:id="@+id/edtDireccionEntrega"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Dirección de entrega (obligatoria)"
+                android:inputType="textPostalAddress"
+                android:minHeight="55dp"
+                android:padding="12dp"
+                android:backgroundTint="@color/gysel_red"
+                android:textColor="@color/gysel_white"
+                android:textColorHint="@color/gysel_light_gray" />
 
-    <Button
-        android:id="@+id/btnConfirmarPedido"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/gysel_red"
-        android:text="CONFIRMAR PEDIDO"
-        android:textColor="@color/gysel_white"
-        app:layout_constraintTop_toBottomOf="@id/txtCheckoutTotal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <!-- REFERENCIA -->
+            <EditText
+                android:id="@+id/edtReferenciaEntrega"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Referencia (opcional)"
+                android:inputType="textCapSentences"
+                android:minHeight="55dp"
+                android:padding="12dp"
+                android:backgroundTint="@color/gysel_red"
+                android:textColor="@color/gysel_white"
+                android:textColorHint="@color/gysel_light_gray" />
 
-    <ProgressBar
-        android:id="@+id/progressCheckout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/btnConfirmarPedido"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <!-- SECCIÓN MAPA -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="UBICACIÓN DE ENTREGA"
+                android:textColor="@color/gysel_white"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Selecciona el punto exacto donde recibirás tu pedido."
+                android:textColor="@color/gysel_light_gray"
+                android:textSize="13sp" />
+
+            <!-- BOTÓN MAPA -->
+            <Button
+                android:id="@+id/btnSeleccionarMapa"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="14dp"
+                android:text="Seleccionar ubicación en el mapa"
+                android:textAllCaps="false"
+                android:textColor="@color/gysel_white"
+                android:backgroundTint="@color/gysel_red" />
+
+            <!-- RESULTADO MAPA -->
+            <TextView
+                android:id="@+id/txtUbicacionMapa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="12dp"
+                android:background="#252525"
+                android:text="Ubicación de entrega no seleccionada"
+                android:textColor="@color/gysel_light_gray"
+                android:textSize="14sp" />
+
+            <!-- TOTAL -->
+            <TextView
+                android:id="@+id/txtCheckoutTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="end"
+                android:textColor="@color/gysel_red"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- CONFIRMAR PEDIDO -->
+            <Button
+                android:id="@+id/btnConfirmarPedido"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/gysel_red"
+                android:text="CONFIRMAR PEDIDO"
+                android:textColor="@color/gysel_white" />
+
+            <!-- CARGA -->
+            <ProgressBar
+                android:id="@+id/progressCheckout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

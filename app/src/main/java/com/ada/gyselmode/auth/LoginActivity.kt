@@ -19,7 +19,7 @@ import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
 import kotlinx.coroutines.launch
-
+import com.ada.gyselmode.utils.ConexionUtils
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -35,7 +35,13 @@ class LoginActivity : AppCompatActivity() {
         // Verificar si existe una sesión activa
         if (auth.currentUser != null) {
 
-            irAlHome()
+            if (com.ada.gyselmode.utils.ConexionUtils.hayInternet(this)) {
+                irAlHome()
+            } else {
+                startActivity(Intent(this, com.ada.gyselmode.NoInternetActivity::class.java))
+                finish()
+            }
+
             return
         }
 
@@ -47,6 +53,10 @@ class LoginActivity : AppCompatActivity() {
 
         // LOGIN CON CORREO
         binding.btnLogin.setOnClickListener {
+
+            if (!ConexionUtils.verificarConexion(this)) {
+                return@setOnClickListener
+            }
 
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
@@ -75,6 +85,11 @@ class LoginActivity : AppCompatActivity() {
 
         // LOGIN CON GOOGLE
         binding.btnGoogle.setOnClickListener {
+
+            if (!ConexionUtils.verificarConexion(this)) {
+                return@setOnClickListener
+            }
+
             iniciarSesionGoogle()
         }
     }

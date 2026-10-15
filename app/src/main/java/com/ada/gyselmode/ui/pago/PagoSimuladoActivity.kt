@@ -24,10 +24,11 @@ import kotlin.coroutines.resume
 import android.util.Log
 import com.ada.gyselmode.network.ConciliacionResponse
 import com.ada.gyselmode.network.MercadoPagoConciliacionClient
+import com.ada.gyselmode.security.BaseSecureActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-class PagoSimuladoActivity : AppCompatActivity() {
+class PagoSimuladoActivity : BaseSecureActivity() {
 
     private lateinit var binding: ActivityPagoSimuladoBinding
 
