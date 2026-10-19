@@ -1,66 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
+<com.google.android.material.bottomnavigation.BottomNavigationView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:id="@+id/bottomNavigation"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    android:background="@color/gysel_dark_gray"
-    android:gravity="center"
-    android:orientation="horizontal">
+    android:background="@drawable/bg_bottom_navigation"
+    android:elevation="8dp"
 
-    <!-- INICIO -->
-    <TextView
-        android:id="@+id/navInicio"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/bottom_nav_home"
-        android:textColor="@color/gysel_red"
-        android:textSize="13sp" />
+    app:menu="@menu/menu_bottom_navigation"
+    app:labelVisibilityMode="labeled"
 
-    <!-- FAVORITOS -->
-    <TextView
-        android:id="@+id/navProductos"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="Productos"
-        android:textColor="@color/gysel_white"
-        android:textSize="13sp" />
+    app:itemIconSize="22dp"
+    app:itemIconTint="@color/bottom_nav_item_colors"
+    app:itemTextColor="@color/bottom_nav_item_colors"
 
-    <!-- CARRITO -->
-    <TextView
-        android:id="@+id/navCarrito"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/bottom_nav_cart"
-        android:textColor="@color/gysel_white"
-        android:textSize="13sp" />
-
-    <!-- CUENTA -->
-    <TextView
-        android:id="@+id/navCuenta"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/bottom_nav_account"
-        android:textColor="@color/gysel_white"
-        android:textSize="13sp" />
-    <!-- CUENTA -->
-    <TextView
-        android:id="@+id/navMantenimiento"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/bottom_nav_maintenance"
-        android:textColor="@color/gysel_white"
-        android:textSize="13sp" />
-
-</LinearLayout>
+    app:itemHorizontalTranslationEnabled="false"
+    app:itemPaddingTop="3dp"
+    app:itemPaddingBottom="3dp"
+    app:itemRippleColor="#334E3035"/>

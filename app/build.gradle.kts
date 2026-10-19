@@ -88,4 +88,8 @@ dependencies {
 
     implementation("com.google.firebase:firebase-firestore")
 
+
+//DISEÑO - ACTIVIDAD
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+
 }

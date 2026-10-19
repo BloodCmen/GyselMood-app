@@ -12,7 +12,9 @@ import com.ada.gyselmode.model.Producto
 
 class ProductAdapter(
     private val productos: List<Producto>,
-    private val onProductoClick: (Producto) -> Unit = {}
+    private val onProductoClick: (Producto) -> Unit = {},
+    private val esHome: Boolean = false,
+    private val esCatalogo: Boolean = false
 ) : RecyclerView.Adapter<ProductAdapter.ProductoViewHolder>() {
 
     class ProductoViewHolder(itemView: View) :
@@ -31,15 +33,26 @@ class ProductAdapter(
             itemView.findViewById(R.id.txtPrecio)
     }
 
+
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ProductoViewHolder {
+
+        val layout = when {
+            esHome -> R.layout.item_home_product
+            esCatalogo -> R.layout.item_catalog_product
+            else -> R.layout.item_product
+        }
+
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_product, parent, false)
+            .inflate(layout, parent, false)
 
         return ProductoViewHolder(view)
     }
+
+
 
     override fun onBindViewHolder(
         holder: ProductoViewHolder,

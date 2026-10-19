@@ -4,26 +4,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0D0D0D">
+    android:background="@color/gysel_black">
 
-    <TextView
-        android:id="@+id/txtTituloPantalla"
+    <!-- ENCABEZADO -->
+    <LinearLayout
+        android:id="@+id/headerDetalleAdmin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_title"
-        android:textColor="#FFFFFF"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:padding="20dp"
+        android:layout_height="76dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GYSELMOOD / ADMINISTRACIÓN"
+            android:textColor="@color/gysel_light_gray"
+            android:textSize="10sp"
+            android:letterSpacing="0.1"/>
+
+        <TextView
+            android:id="@+id/txtTituloPantalla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Detalle del producto"
+            android:textColor="@color/gysel_white"
+            android:textSize="23sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/txtTituloPantalla"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/headerDetalleAdmin"
         app:layout_constraintBottom_toTopOf="@id/navBottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -32,121 +54,230 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="34dp">
 
-            <ImageView
-                android:id="@+id/imgProductoDetalle"
+            <!-- IMAGEN PRINCIPAL -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
-                android:scaleType="centerCrop"
-                android:background="#1A1A1A"
-                android:contentDescription="@string/cd_detail_main_image"/>
+                android:layout_height="300dp"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="#242428"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
 
-            <TextView
-                android:id="@+id/txtNombreDetalle"
+                <ImageView
+                    android:id="@+id/imgProductoDetalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="#242428"
+                    android:contentDescription="@string/cd_detail_main_image"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- INFORMACIÓN PRINCIPAL -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="26sp"
+                android:layout_marginTop="22dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtCategoriaDetalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Categoría"
+                    android:textColor="@color/gysel_red"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.07"/>
+
+                <TextView
+                    android:id="@+id/txtNombreDetalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Nombre del producto"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="27sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_detail_price"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PRECIO DEL PRODUCTO"
+                        android:textColor="@color/gysel_light_gray"
+                        android:textSize="11sp"
+                        android:letterSpacing="0.07"/>
+
+                    <TextView
+                        android:id="@+id/txtPrecioDetalle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="S/ 0.00"
+                        android:textColor="#FF7777"
+                        android:textSize="29sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- DESCRIPCIÓN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_home_card"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DESCRIPCIÓN"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.09"/>
+
+                <TextView
+                    android:id="@+id/txtDescripcionDetalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Descripción del producto"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="15sp"
+                    android:lineSpacingExtra="5dp"/>
+
+            </LinearLayout>
+
+            <!-- INFORMACIÓN ADICIONAL -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_home_card"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="INFORMACIÓN ADICIONAL"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.09"/>
+
+                <TextView
+                    android:id="@+id/txtAdicionalDetalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Información del producto"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="15sp"
+                    android:lineSpacingExtra="4dp"/>
+
+            </LinearLayout>
+
+            <!-- TALLAS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_home_card"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TALLAS DISPONIBLES"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.09"/>
+
+                <TextView
+                    android:id="@+id/txtTallasDetalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="S, M, L"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="4dp"/>
+
+            </LinearLayout>
+
+            <!-- ACCIONES -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="GESTIONAR PRODUCTO"
+                android:textColor="@color/gysel_light_gray"
+                android:textSize="11sp"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp"/>
-
-            <TextView
-                android:id="@+id/txtCategoriaDetalle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#AAAAAA"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"/>
-
-            <TextView
-                android:id="@+id/txtPrecioDetalle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#E01C1C"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_description"
-                android:textColor="#E01C1C"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"/>
-
-            <TextView
-                android:id="@+id/txtDescripcionDetalle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="6dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_additional"
-                android:textColor="#E01C1C"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"/>
-
-            <TextView
-                android:id="@+id/txtAdicionalDetalle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="6dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_available_sizes"
-                android:textColor="#E01C1C"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"/>
-
-            <TextView
-                android:id="@+id/txtTallasDetalle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_marginTop="6dp"/>
+                android:letterSpacing="0.09"/>
 
             <Button
                 android:id="@+id/btnEditarProducto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_edit_button"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#E01C1C"
-                android:layout_marginTop="28dp"/>
+                android:layout_height="58dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="@color/gysel_red"
+                android:text="EDITAR PRODUCTO"
+                android:textColor="@color/gysel_white"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
 
             <Button
                 android:id="@+id/btnEliminarProducto"
                 android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#333338"
+                android:text="ELIMINAR PRODUCTO"
+                android:textColor="#FF8888"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/detail_delete_button"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#444444"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="GYSELMOOD · PANEL ADMINISTRATIVO"
+                android:textColor="#777777"
+                android:textSize="10sp"/>
 
         </LinearLayout>
 
     </ScrollView>
 
+    <!-- NAVEGACIÓN -->
     <include
         android:id="@+id/navBottom"
         layout="@layout/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,140 +1,317 @@
+
 package com.ada.gyselmode.helper
 
 import android.app.Activity
 import android.content.Intent
 import android.widget.TextView
 import com.ada.gyselmode.CartActivity
-import com.ada.gyselmode.FavoritesActivity
 import com.ada.gyselmode.MainActivity
 import com.ada.gyselmode.MaintenanceActivity
 import com.ada.gyselmode.ProductosActivity
 import com.ada.gyselmode.R
 import com.ada.gyselmode.account.AccountActivity
 import com.ada.gyselmode.maintenance.EditarProductoActivity
-import android.view.View
-
-
 import com.ada.gyselmode.security.AdminGuard
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Source
+
 object NavigationHelper {
+
+    // Caché temporal del rol ADMIN.
+    // Existe únicamente mientras viva el proceso de la app.
+    private var uidConsultado: String? = null
+    private var esAdminCache: Boolean? = null
+
+    // Evita iniciar varias consultas a Firestore
+    // cuando se abren Activities rápidamente.
+    private var consultaPendiente:
+            com.google.android.gms.tasks.Task<
+                    com.google.firebase.firestore.DocumentSnapshot
+                    >? = null
+
 
     fun setupBottomNavigation(activity: Activity) {
 
-        val navInicio = activity.findViewById<TextView?>(R.id.navInicio)
-        val navProductos = activity.findViewById<TextView?>(R.id.navProductos)
-        val navCarrito = activity.findViewById<TextView?>(R.id.navCarrito)
-        val navCuenta = activity.findViewById<TextView?>(R.id.navCuenta)
-        val navMantenimiento = activity.findViewById<TextView?>(R.id.navMantenimiento)
-        // Ocultar hasta comprobar que es ADMIN
-        navMantenimiento?.visibility = View.GONE
+        val navigation =
+            activity.findViewById<BottomNavigationView?>(
+                R.id.includeBottomNavigation
+            ) ?: activity.findViewById<BottomNavigationView?>(
+                R.id.bottomNavigation
+            ) ?: return
 
+        val itemAdmin = navigation.menu.findItem(
+            R.id.navMantenimiento
+        )
 
-        val usuario = FirebaseAuth.getInstance().currentUser
+        
 
-        if (usuario != null && navMantenimiento != null) {
+        val seccionActual = obtenerSeccionActual(activity)
 
-            FirebaseFirestore.getInstance()
-                .collection("usuarios")
-                .document(usuario.uid)
-                .get(Source.SERVER)
-                .addOnSuccessListener { documento ->
-
-                    if (!activity.isFinishing && !activity.isDestroyed) {
-
-                        val esAdmin = documento.getString("rol") == "ADMIN"
-
-                        navMantenimiento.visibility =
-                            if (esAdmin) View.VISIBLE else View.GONE
-                    }
-                }
-                .addOnFailureListener {
-                    // Si no podemos comprobar el rol, ocultamos el acceso.
-                    navMantenimiento.visibility = View.GONE
-                }
+        // Seleccionamos inmediatamente la sección correcta.
+        // Para ADMIN esperaremos la validación de Firestore.
+        if (seccionActual != R.id.navMantenimiento) {
+            navigation.selectedItemId = seccionActual
         }
 
+        navigation.setOnItemSelectedListener { item ->
 
-        // Si la barra no está en la pantalla o faltan los IDs, salimos sin romper la app
-        if (navInicio == null && navProductos == null && navCarrito == null && navCuenta == null && navMantenimiento == null) {
-            return
-        }
-
-        // Todos en blanco primero (usando el operador safe-call '?.')
-        navInicio?.setTextColor(activity.getColor(R.color.gysel_white))
-        navProductos?.setTextColor(activity.getColor(R.color.gysel_white))
-        navCarrito?.setTextColor(activity.getColor(R.color.gysel_white))
-        navCuenta?.setTextColor(activity.getColor(R.color.gysel_white))
-        navMantenimiento?.setTextColor(activity.getColor(R.color.gysel_white))
-
-        // Activar la sección actual
-        when (activity) {
-            is MainActivity -> {
-                navInicio?.setTextColor(activity.getColor(R.color.gysel_red))
+            // Si ya estamos en esa sección, no hacer nada.
+            if (item.itemId == seccionActual) {
+                return@setOnItemSelectedListener true
             }
-            is ProductosActivity -> {
-                navProductos?.setTextColor(activity.getColor(R.color.gysel_red))
-            }
-            is CartActivity -> {
-                navCarrito?.setTextColor(activity.getColor(R.color.gysel_red))
-            }
-            is AccountActivity -> {
-                navCuenta?.setTextColor(activity.getColor(R.color.gysel_red))
-            }
-            // Si estás en Mantenimiento O en EditarProducto, se resalta 'Mantenimiento'
-            is MaintenanceActivity, is EditarProductoActivity -> {
-                navMantenimiento?.setTextColor(activity.getColor(R.color.gysel_red))
-            }
-        }
 
-        // LISTENERS CON NAVEGACIÓN SEGURA
+            when (item.itemId) {
 
-        navInicio?.setOnClickListener {
-            if (activity !is MainActivity) {
-                activity.startActivity(Intent(activity, MainActivity::class.java))
-            }
-        }
-
-        navProductos?.setOnClickListener {
-            if (activity !is ProductosActivity) {
-                activity.startActivity(Intent(activity, ProductosActivity::class.java))
-            }
-        }
-
-        navCarrito?.setOnClickListener {
-            if (activity !is CartActivity) {
-                activity.startActivity(Intent(activity, CartActivity::class.java))
-            }
-        }
-
-        navCuenta?.setOnClickListener {
-            if (activity !is AccountActivity) {
-                activity.startActivity(Intent(activity, AccountActivity::class.java))
-            }
-        }
-
-
-
-        navMantenimiento?.setOnClickListener {
-
-            if (activity !is MaintenanceActivity) {
-
-                AdminGuard.verificarAdmin(activity) {
-
-                    activity.startActivity(
-                        Intent(
-                            activity,
-                            MaintenanceActivity::class.java
-                        )
+                R.id.navInicio -> {
+                    abrirSeccion(
+                        activity,
+                        MainActivity::class.java
                     )
+                    false
                 }
+
+                R.id.navProductos -> {
+                    abrirSeccion(
+                        activity,
+                        ProductosActivity::class.java
+                    )
+                    false
+                }
+
+                R.id.navCarrito -> {
+                    abrirSeccion(
+                        activity,
+                        CartActivity::class.java
+                    )
+                    false
+                }
+
+                R.id.navCuenta -> {
+                    abrirSeccion(
+                        activity,
+                        AccountActivity::class.java
+                    )
+                    false
+                }
+
+                R.id.navMantenimiento -> {
+
+                    AdminGuard.verificarAdmin(activity) {
+
+                        if (!activity.isFinishing &&
+                            !activity.isDestroyed
+                        ) {
+                            abrirSeccion(
+                                activity,
+                                MaintenanceActivity::class.java
+                            )
+                        }
+                    }
+
+                    false
+                }
+
+                else -> false
             }
+        }
+
+        navigation.setOnItemReselectedListener {
+            // No recargar la pantalla actual.
+        }
+
+        validarAdministrador(
+            activity,
+            navigation,
+            seccionActual
+        )
+    }
+
+    private fun obtenerSeccionActual(
+        activity: Activity
+    ): Int {
+
+        return when (activity) {
+
+            is MainActivity ->
+                R.id.navInicio
+
+            is ProductosActivity ->
+                R.id.navProductos
+
+            is CartActivity ->
+                R.id.navCarrito
+
+            is AccountActivity ->
+                R.id.navCuenta
+
+            is MaintenanceActivity,
+            is EditarProductoActivity ->
+                R.id.navMantenimiento
+
+            else ->
+                R.id.navInicio
         }
     }
 
+
+    private fun validarAdministrador(
+        activity: Activity,
+        navigation: BottomNavigationView,
+        seccionActual: Int
+    ) {
+
+        val itemAdmin = navigation.menu.findItem(
+            R.id.navMantenimiento
+        ) ?: return
+
+        val usuario = FirebaseAuth.getInstance()
+            .currentUser
+
+        // Sin usuario autenticado: ocultar ADMIN.
+        if (usuario == null) {
+
+            uidConsultado = null
+            esAdminCache = null
+            consultaPendiente = null
+
+            itemAdmin.isVisible = false
+            return
+        }
+
+        val uidActual = usuario.uid
+
+        // Si cambió la cuenta, invalidar el caché anterior.
+        if (uidConsultado != uidActual) {
+
+            uidConsultado = uidActual
+            esAdminCache = null
+            consultaPendiente = null
+        }
+
+        // CASO 1: Ya verificamos el rol en esta sesión.
+        // Aplicarlo inmediatamente SIN consultar Firestore.
+        val rolGuardado = esAdminCache
+
+        if (rolGuardado != null) {
+
+            itemAdmin.isVisible = rolGuardado
+
+            if (rolGuardado &&
+                seccionActual == R.id.navMantenimiento
+            ) {
+                navigation.selectedItemId =
+                    R.id.navMantenimiento
+            }
+
+            return
+        }
+
+        // CASO 2: Aún no tenemos el rol.
+        // Ocultar la navbar durante la primera verificación,
+        // evitando que se vea pasar de 4 a 5 opciones.
+        navigation.visibility = android.view.View.INVISIBLE
+
+        // Si otra Activity ya inició la consulta,
+        // reutilizar esa misma tarea.
+        val tarea = consultaPendiente
+            ?: FirebaseFirestore.getInstance()
+                .collection("usuarios")
+                .document(uidActual)
+                .get(Source.SERVER)
+                .also {
+                    consultaPendiente = it
+                }
+
+        tarea.addOnCompleteListener { resultado ->
+
+            // Ignorar respuestas de una cuenta anterior.
+            if (uidConsultado != uidActual) {
+                return@addOnCompleteListener
+            }
+
+            // Guardar el resultado solo una vez.
+            if (esAdminCache == null) {
+
+                val esAdmin = resultado.isSuccessful &&
+                        resultado.result
+                            ?.getString("rol")
+                            ?.equals(
+                                "ADMIN",
+                                ignoreCase = true
+                            ) == true
+
+                esAdminCache = esAdmin
+                consultaPendiente = null
+            }
+
+            // No modificar una pantalla que ya se cerró.
+            if (activity.isFinishing ||
+                activity.isDestroyed
+            ) {
+                return@addOnCompleteListener
+            }
+
+            val admin = esAdminCache == true
+
+            itemAdmin.isVisible = admin
+
+            if (admin &&
+                seccionActual == R.id.navMantenimiento
+            ) {
+                navigation.selectedItemId =
+                    R.id.navMantenimiento
+            }
+
+            // Mostrar la navbar ya con su distribución final.
+            navigation.alpha = 0f
+            navigation.visibility = android.view.View.VISIBLE
+
+            navigation.animate()
+                .alpha(1f)
+                .setDuration(180)
+                .start()
+        }
+    }
+
+
+    private fun abrirSeccion(
+        activity: Activity,
+        destino: Class<out Activity>
+    ) {
+
+        if (activity.javaClass == destino) {
+            return
+        }
+
+        val intent = Intent(
+            activity,
+            destino
+        )
+
+        activity.startActivity(intent)
+
+        // Animación muy corta para evitar el
+        // efecto brusco de cambiar de Activity.
+        @Suppress("DEPRECATION")
+        activity.overridePendingTransition(
+            R.anim.nav_slide_in,
+            R.anim.nav_slide_out
+        )
+
+        // Cerramos la pestaña anterior para
+        // evitar múltiples copias de Activities.
+        activity.finish()
+    }
+
     fun setupBackButton(activity: Activity) {
-        val btnVolver = activity.findViewById<TextView?>(R.id.btnVolver)
+
+        val btnVolver =
+            activity.findViewById<TextView?>(
+                R.id.btnVolver
+            )
+
         btnVolver?.setOnClickListener {
             activity.finish()
         }

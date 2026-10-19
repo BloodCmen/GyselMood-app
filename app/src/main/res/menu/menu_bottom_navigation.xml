@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navInicio"
+        android:icon="@drawable/ic_nav_home"
+        android:title="Inicio"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/navProductos"
+        android:icon="@drawable/ic_nav_products"
+        android:title="Productos"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/navCarrito"
+        android:icon="@drawable/ic_nav_cart"
+        android:title="Carrito"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/navCuenta"
+        android:icon="@drawable/ic_nav_account"
+        android:title="Cuenta"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/navMantenimiento"
+        android:icon="@drawable/ic_nav_admin"
+        android:title="Admin"
+        android:enabled="true"
+        android:visible="false"/>
+
+</menu>

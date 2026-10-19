@@ -4,37 +4,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0D0D0D">
+    android:background="@color/gysel_black">
 
-    <!-- CABECERA -->
     <LinearLayout
         android:id="@+id/headerContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="20dp"
+        android:paddingTop="19dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="17dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GYSELMOOD / ADMINISTRACIÓN"
+            android:textColor="@color/gysel_light_gray"
+            android:textSize="10sp"
+            android:letterSpacing="0.09" />
 
         <TextView
             android:id="@+id/txtTituloEditar"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             android:text="@string/edit_product_title"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
+            android:textColor="@color/gysel_white"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtSubtituloEditar"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="5dp"
             android:text="@string/edit_product_subtitle"
-            android:textColor="#8E8E93"
+            android:textColor="@color/gysel_light_gray"
             android:textSize="13sp" />
     </LinearLayout>
 
@@ -44,282 +53,347 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:fillViewport="true"
-        android:paddingBottom="20dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/headerContainer">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="20dp">
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="28dp">
 
-            <!-- SECCIÓN 1: IMÁGENES -->
-            <TextView
-                android:id="@+id/txtTituloImagenes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/form_images_title"
-                android:textColor="#E01C1C"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerImagenesEditar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-            <Button
-                android:id="@+id/btnAgregarImagenes"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#1C1C1E"
-                android:text="@string/form_add_images"
-                android:textColor="#E01C1C"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:cornerRadius="12dp" />
-
-            <TextView
-                android:id="@+id/txtImagenPrincipalEditar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:gravity="center"
-                android:text="@string/form_no_main_image"
-                android:textColor="#F5C542"
-                android:textSize="12sp" />
-
-            <!-- DIVIDER -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginVertical="20dp"
-                android:background="#2C2C2E" />
-
-            <!-- SECCIÓN 2: INFORMACIÓN BÁSICA -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/form_basic_info"
-                android:textColor="#E01C1C"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <!-- Título del producto -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:text="@string/form_name_label"
-                android:textColor="#E5E5EA"
-                android:textSize="13sp" />
-
-            <EditText
-                android:id="@+id/edtTituloEditar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="6dp"
-                android:background="@drawable/bg_input_field"
-                android:hint="@string/form_name_example"
-                android:inputType="text"
-                android:paddingHorizontal="16dp"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#48484A"
-                android:textSize="14sp" />
-
-            <!-- Descripción -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:text="@string/form_description_label"
-                android:textColor="#E5E5EA"
-                android:textSize="13sp" />
-
-            <EditText
-                android:id="@+id/edtDescripcionEditar"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="6dp"
-                android:background="@drawable/bg_input_field"
-                android:gravity="top"
-                android:hint="@string/form_description_hint_edit"
-                android:inputType="textMultiLine"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#48484A"
-                android:textSize="14sp" />
-
-            <!-- Información Adicional -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:text="@string/detail_additional"
-                android:textColor="#E5E5EA"
-                android:textSize="13sp" />
-
-            <EditText
-                android:id="@+id/edtAdicionalEditar"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="6dp"
-                android:background="@drawable/bg_input_field"
-                android:gravity="top"
-                android:hint="@string/form_additional_hint"
-                android:inputType="textMultiLine"
-                android:padding="14dp"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#48484A"
-                android:textSize="14sp" />
-
-            <!-- SECCIÓN 3: PRECIOS EN PARALELO -->
+            <!-- TARJETA 1: FOTOGRAFÍAS -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:baselineAligned="false"
-                android:orientation="horizontal">
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_home_card"
+                android:orientation="vertical"
+                android:padding="17dp">
+
+                <TextView
+                    android:id="@+id/txtTituloImagenes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/form_images_title"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Hasta 3 fotografías. Elige cuál será la principal."
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="12sp" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerImagenesEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="220dp"
+                    android:layout_marginTop="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="12dp"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <TextView
+                    android:id="@+id/txtImagenPrincipalEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/form_no_main_image"
+                    android:textColor="#FFD18B"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtNuevasImagenesEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnAgregarImagenes"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="#333339"
+                    android:text="@string/form_add_images"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="14dp" />
+            </LinearLayout>
+
+            <!-- TARJETA 2: INFORMACIÓN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_home_card"
+                android:orientation="vertical"
+                android:padding="17dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/form_basic_info"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:text="@string/form_name_label"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edtTituloEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/bg_home_input"
+                    android:hint="@string/form_name_example"
+                    android:inputType="textCapSentences"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="@color/gysel_white"
+                    android:textColorHint="@color/gysel_light_gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:text="@string/form_description_label"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edtDescripcionEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/bg_home_input"
+                    android:gravity="top|start"
+                    android:hint="@string/form_description_hint_edit"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:padding="15dp"
+                    android:textColor="@color/gysel_white"
+                    android:textColorHint="@color/gysel_light_gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:text="@string/detail_additional"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edtAdicionalEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/bg_home_input"
+                    android:gravity="top|start"
+                    android:hint="@string/form_additional_hint"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:padding="15dp"
+                    android:textColor="@color/gysel_white"
+                    android:textColorHint="@color/gysel_light_gray"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- TARJETA 3: PRECIOS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_home_card"
+                android:orientation="vertical"
+                android:padding="17dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Precios de la prenda"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="6dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_marginTop="15dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/form_unit_price_edit"
-                        android:textColor="#E5E5EA"
-                        android:textSize="13sp" />
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/edtPrecioUnidadEditar"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="6dp"
-                        android:background="@drawable/bg_input_field"
-                        android:hint="0.00"
-                        android:inputType="numberDecimal"
-                        android:paddingHorizontal="16dp"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#48484A"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/form_unit_price_edit"
+                            android:textColor="@color/gysel_light_gray"
+                            android:textSize="12sp" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        <EditText
+                            android:id="@+id/edtPrecioUnidadEditar"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/bg_home_input"
+                            android:hint="0.00"
+                            android:inputType="numberDecimal"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/gysel_white"
+                            android:textColorHint="@color/gysel_light_gray"
+                            android:textSize="15sp" />
+                    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/form_total_price"
-                        android:textColor="#E5E5EA"
-                        android:textSize="13sp" />
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/edtPrecioTotalEditar"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="6dp"
-                        android:background="@drawable/bg_input_field"
-                        android:hint="0.00"
-                        android:inputType="numberDecimal"
-                        android:paddingHorizontal="16dp"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#48484A"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/form_total_price"
+                            android:textColor="@color/gysel_light_gray"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/edtPrecioTotalEditar"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/bg_home_input"
+                            android:hint="0.00"
+                            android:inputType="numberDecimal"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/gysel_white"
+                            android:textColorHint="@color/gysel_light_gray"
+                            android:textSize="15sp" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- DIVIDER -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginVertical="20dp"
-                android:background="#2C2C2E" />
-
-            <!-- SECCIÓN 4: CATEGORÍA Y TALLAS -->
-            <TextView
-                android:id="@+id/txtCategoriaEditar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/form_category_label"
-                android:textColor="#E5E5EA"
-                android:textSize="13sp" />
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="6dp"
-                android:background="@drawable/bg_input_field">
-
-                <Spinner
-                    android:id="@+id/spinnerCategoriaEditar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="#FFFFFF"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp" />
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/txtTallasEditar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/detail_available_sizes"
-                android:textColor="#E5E5EA"
-                android:textSize="13sp" />
-
+            <!-- TARJETA 4: CATEGORÍA Y TALLAS -->
             <LinearLayout
-                android:id="@+id/contenedorTallasEditar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical" />
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_home_card"
+                android:orientation="vertical"
+                android:padding="17dp">
 
-            <!-- BOTÓN GUARDAR CAMBIOS -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Categoría y tallas"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtCategoriaEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/form_category_label"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="12sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/bg_home_input">
+
+                    <Spinner
+                        android:id="@+id/spinnerCategoriaEditar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/txtTallasEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:text="@string/detail_available_sizes"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:id="@+id/contenedorTallasEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Revisa la información antes de guardar los cambios."
+                android:textColor="@color/gysel_light_gray"
+                android:textSize="12sp" />
+
             <Button
                 android:id="@+id/btnGuardarCambios"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginBottom="12dp"
-                android:backgroundTint="#E01C1C"
+                android:layout_height="60dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="@color/gysel_red"
                 android:text="@string/form_save_changes"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/gysel_white"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                app:cornerRadius="14dp" />
-
+                app:cornerRadius="16dp" />
         </LinearLayout>
-
     </ScrollView>
 
-    <!-- NAVEGACIÓN INFERIOR -->
     <include
         android:id="@+id/bottom_navigation"
         layout="@layout/bottom_navigation"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.ada.gyselmode.maintenance
 
 import android.net.Uri
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -51,6 +53,7 @@ class EditarProductoActivity : BaseSecureActivity()  {
     private lateinit var btnGuardarCambios: Button // CORREGIDO: Se agregó el tipo de dato : Button
 
     private lateinit var txtImagenPrincipal: TextView
+    private lateinit var txtNuevasImagenes: TextView
 
     private var categorias: List<Categoria> = emptyList()
     private var tallas: List<Talla> = emptyList()
@@ -97,6 +100,8 @@ class EditarProductoActivity : BaseSecureActivity()  {
             nuevasImagenes.addAll(
                 nuevasSeleccionadas
             )
+
+            actualizarImagenesPendientes()
 
             Toast.makeText(
                 this,
@@ -171,6 +176,9 @@ class EditarProductoActivity : BaseSecureActivity()  {
         txtImagenPrincipal =
             findViewById(R.id.txtImagenPrincipalEditar)
 
+        txtNuevasImagenes =
+            findViewById(R.id.txtNuevasImagenesEditar)
+
         recyclerImagenes.layoutManager =
             LinearLayoutManager(
                 this,
@@ -239,6 +247,15 @@ class EditarProductoActivity : BaseSecureActivity()  {
         )
 
         configurarImagenes()
+        actualizarImagenesPendientes()
+    }
+
+    private fun actualizarImagenesPendientes() {
+        val cantidad = nuevasImagenes.size
+        txtNuevasImagenes.visibility =
+            if (cantidad == 0) android.view.View.GONE else android.view.View.VISIBLE
+        txtNuevasImagenes.text =
+            "$cantidad imagen(es) nueva(s) pendiente(s) de subir al guardar"
     }
 
     private fun configurarImagenes() {
@@ -373,12 +390,12 @@ class EditarProductoActivity : BaseSecureActivity()  {
                 val adapter =
                     ArrayAdapter(
                         this@EditarProductoActivity,
-                        android.R.layout.simple_spinner_item,
+                        R.layout.item_spinner_edit,
                         nombres
                     )
 
                 adapter.setDropDownViewResource(
-                    android.R.layout.simple_spinner_dropdown_item
+                    R.layout.item_spinner_dropdown_edit
                 )
 
                 spinnerCategoria.adapter =
@@ -443,9 +460,25 @@ class EditarProductoActivity : BaseSecureActivity()  {
             checkBox.textSize =
                 16f
 
-            checkBox.setTextColor(
-                android.graphics.Color.WHITE
+            checkBox.setTextColor(Color.WHITE)
+            checkBox.buttonTintList = android.content.res.ColorStateList.valueOf(
+                Color.parseColor("#D33A49")
             )
+            checkBox.setPadding(14, 10, 14, 10)
+            checkBox.background = GradientDrawable().apply {
+                cornerRadius = resources.displayMetrics.density * 12
+                setColor(Color.parseColor("#29292E"))
+                setStroke(
+                    (resources.displayMetrics.density).toInt().coerceAtLeast(1),
+                    Color.parseColor("#414149")
+                )
+            }
+            checkBox.layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                bottomMargin = (8 * resources.displayMetrics.density).toInt()
+            }
 
             val seleccionada =
                 producto.tallas.any {

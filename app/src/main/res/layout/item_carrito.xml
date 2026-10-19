@@ -4,97 +4,191 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
-    app:cardBackgroundColor="#1C1C1E"
-    app:cardCornerRadius="12dp">
+    android:layout_marginBottom="14dp"
+    android:layout_marginStart="3dp"
+    android:layout_marginEnd="3dp"
+    app:cardBackgroundColor="#242428"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="14dp">
+        android:padding="13dp">
 
-        <TextView
-            android:id="@+id/txtProductoCarrito"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nombre del producto"
-            android:textColor="@color/gysel_white"
-            android:textSize="17sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtTallaCarrito"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Talla: M"
-            android:textColor="@color/gysel_light_gray"
-            android:layout_marginTop="5dp" />
-
-        <TextView
-            android:id="@+id/txtPrecioCarrito"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="S/ 25.00"
-            android:textColor="@color/gysel_red"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp" />
-
+        <!-- INFORMACIÓN PRINCIPAL -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="10dp">
+            android:gravity="top">
 
-            <Button
-                android:id="@+id/btnRestarCantidad"
-                android:layout_width="45dp"
-                android:layout_height="42dp"
-                android:text="-"
-                android:textColor="@color/gysel_white"
-                android:backgroundTint="#444444" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="112dp"
+                android:layout_height="145dp"
+                app:cardBackgroundColor="#34343A"
+                app:cardCornerRadius="13dp"
+                app:cardElevation="0dp">
 
-            <TextView
-                android:id="@+id/txtCantidadCarrito"
-                android:layout_width="45dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/gysel_white"
-                android:textSize="16sp" />
+                <ImageView
+                    android:id="@+id/imgProductoCarrito"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Imagen del producto"
+                    android:src="@drawable/ic_launcher_background"/>
 
-            <Button
-                android:id="@+id/btnSumarCantidad"
-                android:layout_width="45dp"
-                android:layout_height="42dp"
-                android:text="+"
-                android:textColor="@color/gysel_white"
-                android:backgroundTint="@color/gysel_red" />
+            </androidx.cardview.widget.CardView>
 
-            <View
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="13dp"
+                android:orientation="vertical">
+
+                <!-- NOMBRE -->
+                <TextView
+                    android:id="@+id/txtProductoCarrito"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del producto"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
+
+                <!-- TALLA -->
+                <TextView
+                    android:id="@+id/txtTallaCarrito"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/bg_cart_size"
+                    android:text="Talla: M"
+                    android:textColor="#DADAE0"
+                    android:textSize="12sp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"/>
+
+                <!-- PRECIO UNITARIO -->
+                <TextView
+                    android:id="@+id/txtPrecioCarrito"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="S/ 45.00"
+                    android:textColor="#FF8585"
+                    android:textSize="19sp"
+                    android:textStyle="bold"/>
+
+                <!-- CANTIDAD Y ELIMINAR -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnRestarCantidad"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:text="−"
+                        android:textColor="@color/gysel_white"
+                        android:textSize="20sp"
+                        android:backgroundTint="#3C3C43"/>
+
+                    <TextView
+                        android:id="@+id/txtCantidadCarrito"
+                        android:layout_width="34dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/gysel_white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/btnSumarCantidad"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="0dp"
+                        android:text="+"
+                        android:textColor="@color/gysel_white"
+                        android:textSize="19sp"
+                        android:backgroundTint="@color/gysel_red"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- SEPARADOR -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="13dp"
+            android:background="#424248"/>
+
+        <!-- SUBTOTAL Y ELIMINAR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SUBTOTAL"
+                    android:textColor="@color/gysel_light_gray"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.07"/>
+
+                <TextView
+                    android:id="@+id/txtSubtotalItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="S/ 45.00"
+                    android:textColor="@color/gysel_white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btnEliminarCarrito"
                 android:layout_width="wrap_content"
-                android:layout_height="42dp"
+                android:layout_height="46dp"
+                android:minWidth="0dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="Eliminar"
-                android:textColor="@color/gysel_white"
-                android:backgroundTint="#555555" />
+                android:textAllCaps="false"
+                android:textColor="#FF8585"
+                android:textSize="13sp"
+                android:backgroundTint="#393035"/>
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/txtSubtotalItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Subtotal: S/ 25.00"
-            android:textColor="@color/gysel_white"
-            android:gravity="end"
-            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 

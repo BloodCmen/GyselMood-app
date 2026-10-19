@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.ada.gyselmode.R
 import com.ada.gyselmode.model.carrito.ItemCarrito
 import java.util.Locale
@@ -19,43 +21,120 @@ class CarritoAdapter(
 
     private var items: List<ItemCarrito> = emptyList()
 
-    fun actualizarLista(nuevaLista: List<ItemCarrito>) {
-        items = nuevaLista.toList()
-        notifyDataSetChanged()
+    class CarritoViewHolder(view: View) :
+        RecyclerView.ViewHolder(view) {
+
+        val imagen: ImageView =
+            view.findViewById(R.id.imgProductoCarrito)
+
+        val titulo: TextView =
+            view.findViewById(R.id.txtProductoCarrito)
+
+        val talla: TextView =
+            view.findViewById(R.id.txtTallaCarrito)
+
+        val precio: TextView =
+            view.findViewById(R.id.txtPrecioCarrito)
+
+        val cantidad: TextView =
+            view.findViewById(R.id.txtCantidadCarrito)
+
+        val subtotal: TextView =
+            view.findViewById(R.id.txtSubtotalItem)
+
+        val btnSumar: Button =
+            view.findViewById(R.id.btnSumarCantidad)
+
+        val btnRestar: Button =
+            view.findViewById(R.id.btnRestarCantidad)
+
+        val btnEliminar: Button =
+            view.findViewById(R.id.btnEliminarCarrito)
     }
 
-    inner class CarritoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val producto: TextView = view.findViewById(R.id.txtProductoCarrito)
-        val talla: TextView = view.findViewById(R.id.txtTallaCarrito)
-        val precio: TextView = view.findViewById(R.id.txtPrecioCarrito)
-        val cantidad: TextView = view.findViewById(R.id.txtCantidadCarrito)
-        val subtotal: TextView = view.findViewById(R.id.txtSubtotalItem)
-        val sumar: Button = view.findViewById(R.id.btnSumarCantidad)
-        val restar: Button = view.findViewById(R.id.btnRestarCantidad)
-        val eliminar: Button = view.findViewById(R.id.btnEliminarCarrito)
-    }
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): CarritoViewHolder {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarritoViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_carrito, parent, false)
+            .inflate(
+                R.layout.item_carrito,
+                parent,
+                false
+            )
+
         return CarritoViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CarritoViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: CarritoViewHolder,
+        position: Int
+    ) {
         val item = items[position]
-        holder.producto.text = item.titulo
-        holder.talla.text = "Talla: ${item.talla}"
-        holder.precio.text = "Precio: ${dinero(item.precioUnitario)}"
-        holder.cantidad.text = item.cantidad.toString()
-        holder.subtotal.text = "Subtotal: ${dinero(item.subtotal)}"
 
-        holder.sumar.setOnClickListener { onSumar(item) }
-        holder.restar.setOnClickListener { onRestar(item) }
-        holder.eliminar.setOnClickListener { onEliminar(item) }
+        holder.titulo.text = item.titulo
+        holder.talla.text = "Talla: ${item.talla}"
+
+        holder.precio.text = dinero(item.precioUnitario)
+        holder.cantidad.text = item.cantidad.toString()
+        holder.subtotal.text = dinero(item.subtotal)
+
+        // NUEVO: deshabilitar el botón − cuando queda 1 unidad
+        holder.btnRestar.isEnabled = item.cantidad > 1
+        holder.btnRestar.alpha =
+            if (item.cantidad > 1) 1f else 0.4f
+
+        holder.imagen.load(item.imagenUrl) {
+            crossfade(true)
+            placeholder(R.drawable.ic_launcher_background)
+            error(R.drawable.ic_launcher_background)
+        }
+
+        holder.btnSumar.setOnClickListener {
+            onSumar(item)
+        }
+
+        holder.btnRestar.setOnClickListener {
+            onRestar(item)
+        }
+
+        holder.btnEliminar.setOnClickListener {
+            androidx.appcompat.app.AlertDialog.Builder(
+                holder.itemView.context
+            )
+                .setTitle("¿Eliminar producto?")
+                .setMessage(
+                    "¿Deseas quitar \"${item.titulo}\" de tu carrito?"
+                )
+                .setNegativeButton("Cancelar", null)
+                .setPositiveButton("Eliminar") { _, _ ->
+                    onEliminar(item)
+                }
+                .show()
+                .getButton(
+                    androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE
+                )
+                .setTextColor(
+                    androidx.core.content.ContextCompat.getColor(
+                        holder.itemView.context,
+                        R.color.gysel_red
+                    )
+                )
+        }
     }
 
     override fun getItemCount(): Int = items.size
 
+    fun actualizarLista(nuevosItems: List<ItemCarrito>) {
+        items = nuevosItems.toList()
+        notifyDataSetChanged()
+    }
+
     private fun dinero(valor: Double): String =
-        "S/ ${String.format(Locale.US, "%.2f", valor)}"
+        String.format(
+            Locale.US,
+            "S/ %.2f",
+            valor
+        )
 }

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,13 +6,66 @@
     android:layout_height="match_parent"
     android:background="@color/gysel_black">
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ENCABEZADO FIJO -->
+    <LinearLayout
+        android:id="@+id/headerHome"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TU ESTILO, TU ESENCIA"
+                android:textColor="@color/gysel_light_gray"
+                android:textSize="10sp"
+                android:letterSpacing="0.1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="GYSELMOOD"
+                android:textColor="@color/gysel_white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnCart"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_home_card"
+            android:contentDescription="Abrir carrito"
+            android:padding="12dp"
+            android:src="@drawable/ic_home_bag"
+            app:tint="@color/gysel_white"/>
+
+    </LinearLayout>
+
+    <!-- CONTENIDO DESPLAZABLE -->
     <ScrollView
         android:id="@+id/scrollHome"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toTopOf="parent"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/headerHome"
         app:layout_constraintBottom_toTopOf="@id/includeBottomNavigation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -22,171 +74,250 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="20dp">
+            android:paddingBottom="36dp">
 
-            <!-- BARRA SUPERIOR -->
+            <!-- BUSCADOR -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/bg_home_input"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="Buscar"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="@color/gysel_light_gray"/>
+
+                <EditText
+                    android:id="@+id/edtBuscarHome"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Buscar prendas..."
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/gysel_white"
+                    android:textColorHint="@color/gysel_light_gray"
+                    android:textSize="14sp"/>
+
+                <ImageButton
+                    android:id="@+id/btnLimpiarBusqueda"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Limpiar búsqueda"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:visibility="gone"
+                    app:tint="@color/gysel_light_gray"/>
+
+            </LinearLayout>
+
+            <!-- TITULO DEL CARRUSEL -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="20dp"
+                android:text="DESCUBRE LO NUEVO"
+                android:textColor="@color/gysel_red"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:text="Encuentra tu próximo estilo"
+                android:textColor="@color/gysel_white"
+                android:textSize="23sp"
+                android:textStyle="bold"/>
+
+            <!-- CARRUSEL DE PRODUCTOS -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerDestacados"
+                android:layout_width="match_parent"
+                android:layout_height="245dp"
+                android:layout_marginTop="17dp"
+                android:clipToPadding="false"
+                android:clipChildren="false"/>
+
+            <!-- INDICADOR DEL CARRUSEL -->
+            <TextView
+                android:id="@+id/txtIndicadorCarrusel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="● ○ ○"
+                android:textColor="@color/gysel_red"
+                android:textSize="13sp"/>
+
+            <!-- CABECERA DE CATEGORÍAS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/brand_name"
+                    android:text="Categorías"
                     android:textColor="@color/gysel_white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.06" />
+                    android:textSize="21sp"
+                    android:textStyle="bold"/>
 
-                <ImageButton
-                    android:id="@+id/btnSearch"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="@string/cd_search"
-                    android:src="@android:drawable/ic_menu_search"
-                    app:tint="@color/gysel_white" />
-
-                <ImageButton
-                    android:id="@+id/btnCart"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="@string/cd_cart"
-                    android:src="@android:drawable/ic_menu_add"
-                    app:tint="@color/gysel_white" />
+                <TextView
+                    android:id="@+id/btnVerCategorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:paddingStart="12dp"
+                    android:text="Ver todas  ›"
+                    android:textColor="@color/gysel_red"
+                    android:textSize="13sp"/>
 
             </LinearLayout>
 
-            <!-- BANNER -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/gysel_red"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/brand_name"
-                    android:textColor="@color/gysel_white"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/tagline"
-                    android:textColor="@color/gysel_white"
-                    android:textSize="14sp"
-                    android:letterSpacing="0.15" />
-
-            </LinearLayout>
-
-            <!-- CATEGORÍAS -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/home_categories"
-                android:textColor="@color/gysel_white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
+            <!-- CATEGORÍAS DINÁMICAS -->
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="9dp"
                 android:scrollbars="none">
 
                 <LinearLayout
+                    android:id="@+id/layoutCategoriasHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingStart="20dp"
-                    android:paddingEnd="20dp">
-
-                    <TextView
-                        android:layout_width="110dp"
-                        android:layout_height="80dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@color/gysel_dark_gray"
-                        android:gravity="center"
-                        android:text="@string/home_category_polos"
-                        android:textColor="@color/gysel_white"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="110dp"
-                        android:layout_height="80dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@color/gysel_dark_gray"
-                        android:gravity="center"
-                        android:text="@string/home_category_poleras"
-                        android:textColor="@color/gysel_white"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="110dp"
-                        android:layout_height="80dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@color/gysel_dark_gray"
-                        android:gravity="center"
-                        android:text="@string/home_category_pijamas"
-                        android:textColor="@color/gysel_white"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="110dp"
-                        android:layout_height="80dp"
-                        android:background="@color/gysel_dark_gray"
-                        android:gravity="center"
-                        android:text="@string/home_category_conjuntos"
-                        android:textColor="@color/gysel_white"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
+                    android:paddingEnd="20dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"/>
 
             </HorizontalScrollView>
 
-            <!-- PRODUCTOS DESTACADOS -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- CABECERA DE PRODUCTOS -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/home_featured"
-                android:textColor="@color/gysel_white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <!-- ESPACIO TEMPORAL PARA PRODUCTOS -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionados para ti"
+                        android:textColor="@color/gysel_white"
+                        android:textSize="21sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/txtContadorHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Explora nuestros productos"
+                        android:textColor="@color/gysel_light_gray"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnVerTodos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:text="Ver todo  ›"
+                    android:textColor="@color/gysel_red"
+                    android:textSize="13sp"/>
+
+            </LinearLayout>
+
+            <!-- CARGA -->
+            <ProgressBar
+                android:id="@+id/progressHome"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="28dp"
+                android:indeterminateTint="@color/gysel_red"
+                android:visibility="gone"/>
+
+            <!-- SIN RESULTADOS / ERROR -->
+            <TextView
+                android:id="@+id/txtEstadoHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/bg_home_card"
+                android:gravity="center"
+                android:minHeight="110dp"
+                android:padding="20dp"
+                android:text="No se encontraron productos"
+                android:textColor="@color/gysel_light_gray"
+                android:textSize="14sp"
+                android:visibility="gone"/>
+
+            <!-- PRODUCTOS REALES -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerProductosHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingBottom="8dp"/>
+
+            <!-- PIE -->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/gysel_dark_gray"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:gravity="center"
-                android:text="@string/home_products_placeholder"
-                android:textColor="@color/gysel_light_gray" />
+                android:text="GYSELMOOD · Tu estilo, tu esencia"
+                android:textColor="#777777"
+                android:textSize="11sp"/>
 
         </LinearLayout>
 
     </ScrollView>
 
-    <!-- NAVBAR INFERIOR REUTILIZABLE -->
+    <!-- NAVEGACIÓN INFERIOR -->
     <include
         android:id="@+id/includeBottomNavigation"
         layout="@layout/bottom_navigation"
@@ -194,6 +325,6 @@
         android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,7 +67,7 @@ class PagoSimuladoActivity : BaseSecureActivity() {
 
         binding.txtPedidoPago.text = "Pedido #$pedidoId"
         binding.txtEstadoPago.text =
-            "Consultando el estado de tu pedido..."
+            "Verificando el estado de tu pedido..."
 
         actualizarBoton()
 
@@ -100,16 +100,40 @@ class PagoSimuladoActivity : BaseSecureActivity() {
         super.onSaveInstanceState(outState)
     }
 
+
     private fun actualizarBoton() {
+
         binding.btnConfirmarPago.text = when {
-            pagoAprobado -> "Pago confirmado"
-            checkoutAbierto -> "Verificar pago"
-            else -> "Pagar con Mercado Pago"
+            pagoAprobado -> "PAGO CONFIRMADO ✓"
+            checkoutAbierto -> "VERIFICAR MI PAGO  →"
+            else -> "PAGAR CON MERCADO PAGO  →"
         }
 
         binding.btnConfirmarPago.isEnabled =
             !procesando && !pagoAprobado
+        actualizarInstrucciones()
     }
+
+
+    private fun actualizarInstrucciones() {
+
+        binding.txtDescripcionPago.text = when {
+
+            pagoAprobado ->
+                "Tu pago fue confirmado por nuestro sistema."
+
+            checkoutAbierto ->
+                "Si completaste el pago en Mercado Pago, " +
+                        "pulsa Verificar mi pago. Consultaremos el " +
+                        "estado del pedido en nuestro servidor."
+
+            else ->
+                "Abriremos Mercado Pago en tu navegador. " +
+                        "Completa allí la transacción y luego regresa " +
+                        "a GyselMood para verificar el resultado."
+        }
+    }
+
 
     private fun cambiarCarga(cargando: Boolean) {
         procesando = cargando
@@ -418,7 +442,10 @@ class PagoSimuladoActivity : BaseSecureActivity() {
                             )
 
                             alTerminar(
-                                datos?.estado == "PAGADO"
+                                datos?.estado?.equals(
+                                    "PAGADO",
+                                    ignoreCase = true
+                                ) == true
                             )
                         }
 
