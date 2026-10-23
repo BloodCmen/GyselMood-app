@@ -5,9 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private const val BASE_URL = "https://api-rest-gyselmood-app-production.up.railway.app/"
-
-
+  //  private const val BASE_URL = "https://api-rest-gyselmood-app-production.up.railway.app/"
+  private const val BASE_URL = "https://api-rest-gym.onrender.com/"
+//https://api-rest-gym.onrender.com
 
     val apiService: ApiService by lazy {
 

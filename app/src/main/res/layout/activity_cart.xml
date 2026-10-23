@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GYSELMOOD / TU COMPRA"
+            android:text="@string/ui_gyselmood_tu_compra"
             android:textColor="@color/gysel_light_gray"
             android:textSize="10sp"
             android:letterSpacing="0.1"/>
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Mi carrito"
+            android:text="@string/ui_mi_carrito"
             android:textColor="@color/gysel_white"
             android:textSize="27sp"
             android:textStyle="bold"/>
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:text="Preparando tu carrito..."
+            android:text="@string/ui_preparando_tu_carrito"
             android:textColor="@color/gysel_light_gray"
             android:textSize="13sp"/>
 
@@ -87,9 +87,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🛍️"
+                android:text="@string/ui_literal_015"
                 android:textSize="57sp"
-                android:contentDescription="Bolsa de compras"/>
+                android:contentDescription="@string/ui_bolsa_de_compras"/>
 
             <TextView
                 android:id="@+id/txtMensaje"
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:gravity="center"
-                android:text="Tu carrito está vacío"
+                android:text="@string/ui_tu_carrito_esta_vacio"
                 android:textColor="@color/gysel_white"
                 android:textSize="21sp"
                 android:textStyle="bold"/>
@@ -109,7 +109,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:lineSpacingExtra="4dp"
-                android:text="Descubre nuestra colección y encuentra tu próxima prenda favorita."
+                android:text="@string/ui_descubre_nuestra_coleccion_y_encuentra_tu_proxim"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="14sp"/>
 
@@ -119,7 +119,7 @@
                 android:layout_height="54dp"
                 android:layout_marginTop="24dp"
                 android:backgroundTint="@color/gysel_red"
-                android:text="EXPLORAR PRODUCTOS"
+                android:text="@string/ui_explorar_productos"
                 android:textColor="@color/gysel_white"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
@@ -164,7 +164,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RESUMEN DE COMPRA"
+            android:text="@string/ui_resumen_de_compra"
             android:textColor="@color/gysel_white"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -181,7 +181,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Productos"
+                android:text="@string/ui_productos"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="13sp"/>
 
@@ -189,7 +189,7 @@
                 android:id="@+id/txtCantidadResumenCarrito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 unidades"
+                android:text="@string/ui_0_unidades"
                 android:textColor="@color/gysel_white"
                 android:textSize="13sp"/>
 
@@ -206,14 +206,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Envío"
+                android:text="@string/ui_envio"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="13sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Se calcula al continuar"
+                android:text="@string/ui_se_calcula_al_continuar"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="12sp"/>
 
@@ -236,7 +236,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Subtotal"
+                android:text="@string/ui_subtotal"
                 android:textColor="@color/gysel_white"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
@@ -245,7 +245,7 @@
                 android:id="@+id/txtSubtotalCarrito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="S/ 0.00"
+                android:text="@string/ui_s_0_00"
                 android:textColor="#FF7777"
                 android:textSize="24sp"
                 android:textStyle="bold"/>
@@ -258,7 +258,7 @@
             android:layout_height="58dp"
             android:layout_marginTop="18dp"
             android:backgroundTint="@color/gysel_red"
-            android:text="CONTINUAR PEDIDO  →"
+            android:text="@string/ui_continuar_pedido"
             android:textColor="@color/gysel_white"
             android:textSize="14sp"
             android:textStyle="bold"/>
@@ -268,7 +268,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:gravity="center"
-            android:text="El total final se confirma en el checkout"
+            android:text="@string/ui_el_total_final_se_confirma_en_el_checkout"
             android:textColor="@color/gysel_light_gray"
             android:textSize="11sp"/>
 

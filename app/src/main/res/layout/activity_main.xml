@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TU ESTILO, TU ESENCIA"
+                android:text="@string/ui_tu_estilo_tu_esencia"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="10sp"
                 android:letterSpacing="0.1"/>
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="GYSELMOOD"
+                android:text="@string/ui_gyselmood"
                 android:textColor="@color/gysel_white"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -50,7 +50,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/bg_home_card"
-            android:contentDescription="Abrir carrito"
+            android:contentDescription="@string/ui_abrir_carrito"
             android:padding="12dp"
             android:src="@drawable/ic_home_bag"
             app:tint="@color/gysel_white"/>
@@ -58,7 +58,7 @@
     </LinearLayout>
 
     <!-- CONTENIDO DESPLAZABLE -->
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollHome"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -92,7 +92,7 @@
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
-                    android:contentDescription="Buscar"
+                    android:contentDescription="@string/ui_buscar_128"
                     android:src="@android:drawable/ic_menu_search"
                     app:tint="@color/gysel_light_gray"/>
 
@@ -103,7 +103,7 @@
                     android:layout_weight="1"
                     android:layout_marginStart="12dp"
                     android:background="@android:color/transparent"
-                    android:hint="Buscar prendas..."
+                    android:hint="@string/ui_buscar_prendas"
                     android:inputType="text"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -116,7 +116,7 @@
                     android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="Limpiar búsqueda"
+                    android:contentDescription="@string/ui_limpiar_busqueda"
                     android:src="@android:drawable/ic_menu_close_clear_cancel"
                     android:visibility="gone"
                     app:tint="@color/gysel_light_gray"/>
@@ -130,7 +130,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="20dp"
-                android:text="DESCUBRE LO NUEVO"
+                android:text="@string/ui_descubre_lo_nuevo"
                 android:textColor="@color/gysel_red"
                 android:textSize="11sp"
                 android:textStyle="bold"
@@ -142,7 +142,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="20dp"
-                android:text="Encuentra tu próximo estilo"
+                android:text="@string/ui_encuentra_tu_proximo_estilo"
                 android:textColor="@color/gysel_white"
                 android:textSize="23sp"
                 android:textStyle="bold"/>
@@ -163,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="● ○ ○"
+                android:text="@string/ui_literal_133"
                 android:textColor="@color/gysel_red"
                 android:textSize="13sp"/>
 
@@ -181,7 +181,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Categorías"
+                    android:text="@string/ui_categorias"
                     android:textColor="@color/gysel_white"
                     android:textSize="21sp"
                     android:textStyle="bold"/>
@@ -192,7 +192,7 @@
                     android:layout_height="48dp"
                     android:gravity="center"
                     android:paddingStart="12dp"
-                    android:text="Ver todas  ›"
+                    android:text="@string/ui_ver_todas"
                     android:textColor="@color/gysel_red"
                     android:textSize="13sp"/>
 
@@ -236,7 +236,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Seleccionados para ti"
+                        android:text="@string/ui_seleccionados_para_ti"
                         android:textColor="@color/gysel_white"
                         android:textSize="21sp"
                         android:textStyle="bold"/>
@@ -246,7 +246,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Explora nuestros productos"
+                        android:text="@string/ui_explora_nuestros_productos"
                         android:textColor="@color/gysel_light_gray"
                         android:textSize="12sp"/>
 
@@ -258,7 +258,7 @@
                     android:layout_height="48dp"
                     android:gravity="center"
                     android:paddingStart="10dp"
-                    android:text="Ver todo  ›"
+                    android:text="@string/ui_ver_todo"
                     android:textColor="@color/gysel_red"
                     android:textSize="13sp"/>
 
@@ -286,12 +286,13 @@
                 android:gravity="center"
                 android:minHeight="110dp"
                 android:padding="20dp"
-                android:text="No se encontraron productos"
+                android:text="@string/ui_no_se_encontraron_productos"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="14sp"
                 android:visibility="gone"/>
 
             <!-- PRODUCTOS REALES -->
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerProductosHome"
                 android:layout_width="match_parent"
@@ -301,6 +302,8 @@
                 android:layout_marginEnd="14dp"
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:focusable="false"
                 android:paddingBottom="8dp"/>
 
             <!-- PIE -->
@@ -309,13 +312,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:gravity="center"
-                android:text="GYSELMOOD · Tu estilo, tu esencia"
+                android:text="@string/ui_gyselmood_tu_estilo_tu_esencia"
                 android:textColor="#777777"
                 android:textSize="11sp"/>
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <!-- NAVEGACIÓN INFERIOR -->
     <include

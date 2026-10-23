@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ada.gyselmode.auth.LoginActivity
+import com.ada.gyselmode.ui.user.MainActivity
 import com.ada.gyselmode.utils.ConexionUtils
 import com.google.firebase.auth.FirebaseAuth
 

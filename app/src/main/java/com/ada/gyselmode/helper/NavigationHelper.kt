@@ -4,13 +4,14 @@ package com.ada.gyselmode.helper
 import android.app.Activity
 import android.content.Intent
 import android.widget.TextView
-import com.ada.gyselmode.CartActivity
-import com.ada.gyselmode.MainActivity
-import com.ada.gyselmode.MaintenanceActivity
-import com.ada.gyselmode.ProductosActivity
+import com.ada.gyselmode.ui.user.pedidos.CartActivity
+import com.ada.gyselmode.ui.user.MainActivity
+
+import com.ada.gyselmode.ui.user.ProductosActivity
 import com.ada.gyselmode.R
 import com.ada.gyselmode.account.AccountActivity
-import com.ada.gyselmode.maintenance.EditarProductoActivity
+import com.ada.gyselmode.ui.admin.maintenance.EditarProductoActivity
+import com.ada.gyselmode.ui.admin.maintenance.MaintenanceActivity
 import com.ada.gyselmode.security.AdminGuard
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -45,7 +46,7 @@ object NavigationHelper {
             R.id.navMantenimiento
         )
 
-        
+
 
         val seccionActual = obtenerSeccionActual(activity)
 

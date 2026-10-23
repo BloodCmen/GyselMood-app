@@ -1,4 +1,6 @@
 package com.ada.gyselmode.model.entrega
 
-class Repartidor {
-}
+data class Repartidor(
+    val uid: String,
+    val nombre: String
+)

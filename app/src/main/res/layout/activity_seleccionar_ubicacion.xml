@@ -20,15 +20,15 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:gravity="center"
-            android:text="‹"
+            android:text="@string/ui_literal_101"
             android:textColor="#FFFFFF"
             android:textSize="36sp"
-            android:contentDescription="Volver" />
+            android:contentDescription="@string/ui_volver" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ubicación de entrega"
+            android:text="@string/ui_ubicacion_de_entrega"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="20sp" />
@@ -56,7 +56,7 @@
             android:layout_height="48dp"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:text="◎ Mi ubicación"
+            android:text="@string/ui_mi_ubicacion"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:backgroundTint="#B91C1C" />
@@ -76,7 +76,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selecciona dónde recibir tu pedido"
+            android:text="@string/ui_selecciona_donde_recibir_tu_pedido"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="17sp" />
@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Toca el mapa para indicar el punto exacto de entrega."
+            android:text="@string/ui_toca_el_mapa_para_indicar_el_punto_exacto_de_ent"
             android:textColor="#AAAAAA"
             android:textSize="13sp" />
 
@@ -96,7 +96,7 @@
             android:layout_marginTop="16dp"
             android:padding="12dp"
             android:background="#303030"
-            android:text="Ubicación aún no seleccionada"
+            android:text="@string/ui_ubicacion_aun_no_seleccionada"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
 
@@ -105,7 +105,7 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_marginTop="16dp"
-            android:text="Confirmar ubicación"
+            android:text="@string/ui_confirmar_ubicacion"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:backgroundTint="#B91C1C" />

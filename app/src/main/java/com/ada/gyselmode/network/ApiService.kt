@@ -7,12 +7,18 @@ import com.ada.gyselmode.model.ProductoUpdateRequest
 import com.ada.gyselmode.model.CategoriaCreateRequest
 import com.ada.gyselmode.model.Talla
 import com.ada.gyselmode.model.TallaCreateRequest
+import com.ada.gyselmode.model.entrega.AsignacionEntregaResponse
+import com.ada.gyselmode.model.entrega.AsignarEntregaRequest
+import com.ada.gyselmode.model.entrega.SeguimientoEntregaResponse
+import com.ada.gyselmode.model.entrega.UbicacionEntregaRequest
 import com.ada.gyselmode.model.pago.CrearPagoRequest
 import com.ada.gyselmode.model.pago.PreferenciaMercadoPagoResponse
 import com.ada.gyselmode.model.pedido.ActualizarEstadoPedidoRequest
 import com.ada.gyselmode.model.pedido.CrearPedidoRequest
 import com.ada.gyselmode.model.pedido.HistorialEstadoResponseDto
 import com.ada.gyselmode.model.pedido.PedidoResponseDto
+import com.ada.gyselmode.model.usuario.AvatarUploadResponse
+import okhttp3.MultipartBody
 
 
 import retrofit2.http.Body
@@ -25,6 +31,9 @@ import retrofit2.http.Path
 
 import retrofit2.Response
 import okhttp3.ResponseBody
+import retrofit2.http.Header
+import retrofit2.http.Multipart
+import retrofit2.http.Part
 
 interface ApiService {
 
@@ -160,6 +169,66 @@ interface ApiService {
     suspend fun crearPreferenciaMercadoPago(
         @Path("pedidoId") pedidoId: Long
     ): PreferenciaMercadoPagoResponse
+
+
+
+    @Multipart
+    @POST("perfil/avatar")
+    suspend fun subirAvatar(
+        @Header("Authorization") token: String,
+        @Part archivo: MultipartBody.Part
+    ): AvatarUploadResponse
+
+    //REPARTO
+
+    @POST("api/entregas/pedido/{pedidoId}/asignar")
+    suspend fun asignarRepartidor(
+        @Header("Authorization") token: String,
+        @Path("pedidoId") pedidoId: Long,
+        @Body request: AsignarEntregaRequest
+    ): AsignacionEntregaResponse
+
+    @GET("api/entregas/pedido/{pedidoId}")
+    suspend fun obtenerAsignacionEntrega(
+        @Header("Authorization") token: String,
+        @Path("pedidoId") pedidoId: Long
+    ): AsignacionEntregaResponse
+
+    @GET("api/entregas/mis")
+    suspend fun listarMisEntregas(
+        @Header("Authorization") token: String
+    ): List<AsignacionEntregaResponse>
+
+
+    //ENTREGA ENDPOINT
+
+
+
+
+    @PUT("api/entregas/pedido/{pedidoId}/iniciar")
+    suspend fun iniciarEntrega(
+        @Header("Authorization") token: String,
+        @Path("pedidoId") pedidoId: Long
+    ): retrofit2.Response<Unit>
+
+    @PUT("api/entregas/pedido/{pedidoId}/finalizar")
+    suspend fun finalizarEntrega(
+        @Header("Authorization") token: String,
+        @Path("pedidoId") pedidoId: Long
+    ): retrofit2.Response<Unit>
+
+    @PUT("api/entregas/pedido/{pedidoId}/ubicacion")
+    suspend fun actualizarUbicacionEntrega(
+        @Header("Authorization") token: String,
+        @Path("pedidoId") pedidoId: Long,
+        @Body request: UbicacionEntregaRequest
+    ): retrofit2.Response<Unit>
+
+    @GET("api/entregas/pedido/{pedidoId}/seguimiento")
+    suspend fun obtenerSeguimientoEntrega(
+        @Header("Authorization") token: String,
+        @Path("pedidoId") pedidoId: Long
+    ): SeguimientoEntregaResponse
 
 
 }

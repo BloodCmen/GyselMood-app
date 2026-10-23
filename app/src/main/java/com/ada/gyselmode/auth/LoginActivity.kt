@@ -1,136 +1,89 @@
-
 package com.ada.gyselmode.auth
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.credentials.CredentialManager
+import androidx.credentials.CustomCredential
+import androidx.credentials.GetCredentialRequest
+import androidx.credentials.exceptions.GetCredentialException
 import androidx.lifecycle.lifecycleScope
-import com.ada.gyselmode.MainActivity
+import com.ada.gyselmode.ui.user.MainActivity
+import com.ada.gyselmode.NoInternetActivity
 import com.ada.gyselmode.R
 import com.ada.gyselmode.databinding.ActivityLoginBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthProvider
-import androidx.credentials.CredentialManager
-import androidx.credentials.GetCredentialRequest
-import androidx.credentials.CustomCredential
-import androidx.credentials.exceptions.GetCredentialException
+import com.ada.gyselmode.utils.ConexionUtils
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.launch
-import com.ada.gyselmode.utils.ConexionUtils
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var auth: FirebaseAuth
+    private val auth by lazy { FirebaseAuth.getInstance() }
     private lateinit var credentialManager: CredentialManager
+    private var autenticando = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Inicializar Firebase
-        auth = FirebaseAuth.getInstance()
-
-        // Verificar si existe una sesión activa
         if (auth.currentUser != null) {
-
-            if (com.ada.gyselmode.utils.ConexionUtils.hayInternet(this)) {
+            if (ConexionUtils.hayInternet(this)) {
                 irAlHome()
             } else {
-                startActivity(Intent(this, com.ada.gyselmode.NoInternetActivity::class.java))
+                startActivity(Intent(this, NoInternetActivity::class.java))
                 finish()
             }
-
             return
         }
 
-        // Mostrar pantalla de login
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         credentialManager = CredentialManager.create(this)
 
-        // LOGIN CON CORREO
         binding.btnLogin.setOnClickListener {
-
-            if (!ConexionUtils.verificarConexion(this)) {
-                return@setOnClickListener
-            }
-
+            if (autenticando || !ConexionUtils.verificarConexion(this)) return@setOnClickListener
             val email = binding.etEmail.text.toString().trim()
-            val password = binding.etPassword.text.toString().trim()
+            val password = binding.etPassword.text.toString()
 
-            if (email.isEmpty() || password.isEmpty()) {
-
-                Toast.makeText(
-                    this,
-                    getString(R.string.login_fill_all),
-                    Toast.LENGTH_SHORT
-                ).show()
-
+            if (email.isBlank() || password.isBlank()) {
+                avisar(getString(R.string.login_fill_all))
                 return@setOnClickListener
             }
-
             iniciarSesion(email, password)
         }
 
-        // REGISTRO
         binding.tvRegister.setOnClickListener {
-
-            startActivity(
-                Intent(this, RegisterActivity::class.java)
-            )
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
 
-        // LOGIN CON GOOGLE
         binding.btnGoogle.setOnClickListener {
-
-            if (!ConexionUtils.verificarConexion(this)) {
-                return@setOnClickListener
-            }
-
+            if (autenticando || !ConexionUtils.verificarConexion(this)) return@setOnClickListener
             iniciarSesionGoogle()
         }
     }
 
-    // LOGIN CON CORREO Y CONTRASEÑA
-    private fun iniciarSesion(
-        email: String,
-        password: String
-    ) {
-
+    private fun iniciarSesion(email: String, password: String) {
+        cambiarCarga(true)
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
-
+                cambiarCarga(false)
                 if (task.isSuccessful) {
-
-                    Toast.makeText(
-                        this,
-                        getString(R.string.login_welcome),
-                        Toast.LENGTH_SHORT
-                    ).show()
-
+                    avisar(getString(R.string.login_welcome))
                     irAlHome()
-
                 } else {
-
-                    Toast.makeText(
-                        this,
-                        getString(R.string.login_wrong_credentials),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    avisar(getString(R.string.login_wrong_credentials))
                 }
             }
     }
 
-    // LOGIN CON GOOGLE
     private fun iniciarSesionGoogle() {
-
         val googleIdOption = GetGoogleIdOption.Builder()
-            .setServerClientId(
-                getString(R.string.default_web_client_id)
-            )
+            .setServerClientId(getString(R.string.default_web_client_id))
             .setFilterByAuthorizedAccounts(false)
             .build()
 
@@ -138,102 +91,64 @@ class LoginActivity : AppCompatActivity() {
             .addCredentialOption(googleIdOption)
             .build()
 
+        cambiarCarga(true)
         lifecycleScope.launch {
-
             try {
-
                 val result = credentialManager.getCredential(
                     context = this@LoginActivity,
                     request = request
                 )
-
                 val credential = result.credential
-
-                if (
-                    credential is CustomCredential &&
-                    credential.type ==
-                    GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL
+                if (credential is CustomCredential &&
+                    credential.type == GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL
                 ) {
-
-                    val googleCredential =
-                        GoogleIdTokenCredential.createFrom(
-                            credential.data
-                        )
-
-                    autenticarFirebaseGoogle(
-                        googleCredential.idToken
-                    )
-
+                    val googleCredential = GoogleIdTokenCredential.createFrom(credential.data)
+                    autenticarFirebaseGoogle(googleCredential.idToken)
                 } else {
-
-                    Toast.makeText(
-                        this@LoginActivity,
-                        getString(R.string.login_google_no_account),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    cambiarCarga(false)
+                    avisar(getString(R.string.login_google_no_account))
                 }
-
             } catch (e: GetCredentialException) {
-
-                Toast.makeText(
-                    this@LoginActivity,
-                    getString(R.string.login_google_cancelled),
-                    Toast.LENGTH_LONG
-                ).show()
-
+                cambiarCarga(false)
+                avisar(getString(R.string.login_google_cancelled))
             } catch (e: GoogleIdTokenParsingException) {
-
-                Toast.makeText(
-                    this@LoginActivity,
-                    getString(R.string.login_google_read_error),
-                    Toast.LENGTH_SHORT
-                ).show()
+                cambiarCarga(false)
+                avisar(getString(R.string.login_google_read_error))
+            } catch (e: Exception) {
+                cambiarCarga(false)
+                avisar(e.localizedMessage ?: getString(R.string.login_google_error))
             }
         }
     }
 
-    // AUTENTICAR GOOGLE CON FIREBASE
     private fun autenticarFirebaseGoogle(idToken: String) {
-
-        val credential = GoogleAuthProvider.getCredential(
-            idToken,
-            null
-        )
-
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
-
+                cambiarCarga(false)
                 if (task.isSuccessful) {
-
-                    Toast.makeText(
-                        this,
-                        getString(R.string.login_welcome),
-                        Toast.LENGTH_SHORT
-                    ).show()
-
+                    avisar(getString(R.string.login_welcome))
                     irAlHome()
-
                 } else {
-
-                    Toast.makeText(
-                        this,
-                        task.exception?.localizedMessage
-                            ?: getString(R.string.login_google_error),
-                        Toast.LENGTH_LONG
-                    ).show()
+                    avisar(task.exception?.localizedMessage ?: getString(R.string.login_google_error))
                 }
             }
     }
 
-    // IR AL HOME
+    private fun cambiarCarga(cargando: Boolean) {
+        autenticando = cargando
+        if (::binding.isInitialized) {
+            binding.btnLogin.isEnabled = !cargando
+            binding.btnGoogle.isEnabled = !cargando
+        }
+    }
+
+    private fun avisar(mensaje: String) {
+        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+    }
+
     private fun irAlHome() {
-
-        val intent = Intent(
-            this,
-            MainActivity::class.java
-        )
-
-        startActivity(intent)
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 }

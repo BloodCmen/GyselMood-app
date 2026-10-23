@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:background="#303036"
-            android:contentDescription="Imagen del producto"
+            android:contentDescription="@string/ui_imagen_del_producto"
             android:scaleType="centerCrop"/>
 
         <LinearLayout
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Categoría"
+                android:text="@string/ui_categoria"
                 android:textColor="#A8A8AF"
                 android:textSize="11sp"/>
 
@@ -49,7 +49,7 @@
                 android:layout_marginTop="5dp"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Nombre del producto"
+                android:text="@string/ui_nombre_del_producto"
                 android:textColor="@color/gysel_white"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
-                android:text="S/ 45.00"
+                android:text="@string/ui_s_45_00"
                 android:textColor="#FF7777"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
                 android:gravity="end"
-                android:text="VER DETALLE  ↗"
+                android:text="@string/ui_ver_detalle"
                 android:textColor="#CACAD0"
                 android:textSize="10sp"
                 android:textStyle="bold"/>

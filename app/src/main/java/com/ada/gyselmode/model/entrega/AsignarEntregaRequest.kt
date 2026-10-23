@@ -1,4 +1,6 @@
+
 package com.ada.gyselmode.model.entrega
 
-class AsignarEntregaRequest {
-}
+data class AsignarEntregaRequest(
+    val repartidorUid: String
+)

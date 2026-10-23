@@ -26,14 +26,14 @@
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:src="@drawable/ic_no_internet"
-            android:contentDescription="Sin internet" />
+            android:contentDescription="@string/ui_sin_internet" />
 
         <TextView
             android:id="@+id/txtTituloNoInternet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="¡Ups!"
+            android:text="@string/ui_ups"
             android:textColor="@color/gysel_white"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="No logramos conectarnos a la red.\nPuedes reintentar o entrar a los productos guardados."
+            android:text="@string/ui_no_logramos_conectarnos_a_la_red_npuedes_reinten"
             android:textColor="@color/gysel_light_gray"
             android:textSize="16sp" />
 
@@ -54,7 +54,7 @@
             android:layout_height="52dp"
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/gysel_red"
-            android:text="Reintentar"
+            android:text="@string/ui_reintentar"
             android:textAllCaps="false"
             android:textColor="@color/gysel_white" />
 
@@ -64,7 +64,7 @@
             android:layout_height="52dp"
             android:layout_marginTop="12dp"
             android:backgroundTint="@android:color/transparent"
-            android:text="Ver productos guardados"
+            android:text="@string/ui_ver_productos_guardados"
             android:textAllCaps="false"
             android:textColor="@color/gysel_white"
             android:background="@drawable/btn_borde_blanco" />

@@ -1,4 +1,6 @@
 package com.ada.gyselmode.model.usuario
 
-class AvatarUploadResponse {
-}
+data class AvatarUploadResponse(
+    val url: String,
+    val mensaje: String? = null
+)

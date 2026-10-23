@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GYSELMOOD / ADMINISTRACIÓN"
+            android:text="@string/ui_gyselmood_administracion"
             android:textColor="@color/gysel_light_gray"
             android:textSize="10sp"
             android:letterSpacing="0.09" />
@@ -89,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Hasta 3 fotografías. Elige cuál será la principal."
+                    android:text="@string/ui_hasta_3_fotografias_elige_cual_sera_la_principal"
                     android:textColor="@color/gysel_light_gray"
                     android:textSize="12sp" />
 
@@ -236,7 +236,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Precios de la prenda"
+                    android:text="@string/ui_precios_de_la_prenda"
                     android:textColor="@color/gysel_white"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -268,7 +268,7 @@
                             android:layout_height="52dp"
                             android:layout_marginTop="7dp"
                             android:background="@drawable/bg_home_input"
-                            android:hint="0.00"
+                            android:hint="@string/ui_0_00"
                             android:inputType="numberDecimal"
                             android:paddingStart="14dp"
                             android:paddingEnd="12dp"
@@ -297,7 +297,7 @@
                             android:layout_height="52dp"
                             android:layout_marginTop="7dp"
                             android:background="@drawable/bg_home_input"
-                            android:hint="0.00"
+                            android:hint="@string/ui_0_00"
                             android:inputType="numberDecimal"
                             android:paddingStart="14dp"
                             android:paddingEnd="12dp"
@@ -320,7 +320,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Categoría y tallas"
+                    android:text="@string/ui_categoria_y_tallas"
                     android:textColor="@color/gysel_white"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -370,7 +370,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:text="Revisa la información antes de guardar los cambios."
+                android:text="@string/ui_revisa_la_informacion_antes_de_guardar_los_cambi"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="12sp" />
 
@@ -385,6 +385,20 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:cornerRadius="16dp" />
+
+
+            <Button
+                android:id="@+id/btnCompartirProducto"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#356CB1"
+                android:text="@string/ui_compartir_producto"
+                android:textColor="@color/gysel_white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
+
         </LinearLayout>
     </ScrollView>
 

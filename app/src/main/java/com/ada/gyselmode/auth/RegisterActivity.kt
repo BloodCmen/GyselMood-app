@@ -1,113 +1,147 @@
-
 package com.ada.gyselmode.auth
-
-import com.ada.gyselmode.R
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.ada.gyselmode.MainActivity
+import com.ada.gyselmode.ui.user.MainActivity
+import com.ada.gyselmode.R
 import com.ada.gyselmode.databinding.ActivityRegisterBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.userProfileChangeRequest
 import com.ada.gyselmode.utils.ConexionUtils
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.userProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
+
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
-    private lateinit var auth: FirebaseAuth
+    private val auth by lazy { FirebaseAuth.getInstance() }
+    private val firestore by lazy { FirebaseFirestore.getInstance() }
+    private var registrando = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance()
-
-        // Registrar usuario
         binding.btnRegister.setOnClickListener {
-            if (!ConexionUtils.verificarConexion(this)) {
-                return@setOnClickListener
-            }
+            if (registrando || !ConexionUtils.verificarConexion(this)) return@setOnClickListener
 
             val nombre = binding.etName.text.toString().trim()
             val correo = binding.etEmail.text.toString().trim()
-            val password = binding.etPassword.text.toString().trim()
+            val password = binding.etPassword.text.toString()
 
-            if (nombre.isEmpty() || correo.isEmpty() || password.isEmpty()) {
-                Toast.makeText(
-                    this,
-                    getString(R.string.login_fill_all),
-                    Toast.LENGTH_SHORT
-                ).show()
+            if (nombre.isBlank() || correo.isBlank() || password.isBlank()) {
+                avisar(getString(R.string.login_fill_all))
                 return@setOnClickListener
             }
-
             if (password.length < 6) {
-                Toast.makeText(
-                    this,
-                    getString(R.string.register_password_min),
-                    Toast.LENGTH_SHORT
-                ).show()
+                avisar(getString(R.string.register_password_min))
                 return@setOnClickListener
             }
 
             registrarUsuario(nombre, correo, password)
         }
 
-        // Volver al login
-        binding.tvBackLogin.setOnClickListener {
-            finish()
-        }
+        binding.tvBackLogin.setOnClickListener { finish() }
     }
 
-    private fun registrarUsuario(
-        nombre: String,
-        correo: String,
-        password: String
-    ) {
+    private fun registrarUsuario(nombre: String, correo: String, password: String) {
+        cambiarCarga(true)
 
         auth.createUserWithEmailAndPassword(correo, password)
-            .addOnCompleteListener(this) { task ->
-
-                if (task.isSuccessful) {
-
-                    val usuario = auth.currentUser
-
-                    // Guardar nombre en el perfil de Firebase
-                    val perfil = userProfileChangeRequest {
-                        displayName = nombre
-                    }
-
-                    usuario?.updateProfile(perfil)
-                        ?.addOnCompleteListener {
-
-                            Toast.makeText(
-                                this,
-                                getString(R.string.register_success),
-                                Toast.LENGTH_SHORT
-                            ).show()
-
-                            // Ir al Home
-                            val intent = Intent(
-                                this,
-                                MainActivity::class.java
-                            )
-
-                            startActivity(intent)
-                            finish()
-                        }
-
-                } else {
-
-                    Toast.makeText(
-                        this,
-                        task.exception?.localizedMessage
-                            ?: getString(R.string.register_error),
-                        Toast.LENGTH_LONG
-                    ).show()
+            .addOnCompleteListener(this) { creacion ->
+                if (!creacion.isSuccessful) {
+                    cambiarCarga(false)
+                    avisar(creacion.exception?.localizedMessage ?: getString(R.string.register_error))
+                    return@addOnCompleteListener
                 }
+
+                val usuario = creacion.result?.user ?: auth.currentUser
+                if (usuario == null) {
+                    cambiarCarga(false)
+                    avisar("No se pudo recuperar la cuenta creada")
+                    return@addOnCompleteListener
+                }
+
+                val perfil = userProfileChangeRequest { displayName = nombre }
+                usuario.updateProfile(perfil)
+                    .addOnCompleteListener(this) { perfilResultado ->
+                        if (!perfilResultado.isSuccessful) {
+                            android.util.Log.w(
+                                "GYSELMOOD_REGISTRO",
+                                "No se pudo actualizar displayName",
+                                perfilResultado.exception
+                            )
+                        }
+                        guardarNombreFirestore(usuario, nombre)
+                    }
             }
+    }
+
+    private fun guardarNombreFirestore(usuario: FirebaseUser, nombre: String) {
+        val uid = usuario.uid
+
+        // El ID del documento ya ES el UID. Guardamos también uid como campo
+        // para hacerlo visible fácilmente desde la consola.
+        // No escribimos 'rol' ni sobrescribimos otros datos existentes.
+        val datos = mapOf(
+            "uid" to uid,
+            "nombre" to nombre
+        )
+
+        firestore.collection("usuarios")
+            .document(uid)
+            .set(datos, SetOptions.merge())
+            .addOnSuccessListener {
+                cambiarCarga(false)
+                avisar(getString(R.string.register_success))
+                irAlHome()
+            }
+            .addOnFailureListener { error ->
+
+
+                android.util.Log.e(
+                    "GYSELMOOD_FIRESTORE",
+                    "ERROR GUARDANDO NOMBRE: ${error.message}",
+                    error
+                )
+
+                Toast.makeText(
+                    this,
+                    "Firestore: ${error.localizedMessage}",
+                    Toast.LENGTH_LONG
+                ).show()
+
+                // La cuenta Auth YA está creada. No repetimos createUser.
+                // MainActivity puede reintentar la sincronización del nombre.
+                android.util.Log.e(
+                    "GYSELMOOD_REGISTRO",
+                    "Cuenta $uid creada, pero falló la escritura en Firestore",
+                    error
+                )
+                cambiarCarga(false)
+                avisar(
+                    "Cuenta creada, pero no se guardó el nombre en Firestore. " +
+                            "Revisa los permisos o la conexión."
+                )
+                irAlHome()
+            }
+    }
+
+    private fun cambiarCarga(cargando: Boolean) {
+        registrando = cargando
+        binding.btnRegister.isEnabled = !cargando
+    }
+
+    private fun avisar(mensaje: String) {
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
+    }
+
+    private fun irAlHome() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }

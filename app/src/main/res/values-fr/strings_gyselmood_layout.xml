@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_u" formatted="false">U</string>
+    <string name="ui_foto_de_perfil" formatted="false">Photo de profil</string>
+    <string name="ui_cambiar_foto_de_perfil" formatted="false">Changer la photo de profil</string>
+    <string name="ui_cargando_usuario" formatted="false">Chargement du compte...</string>
+    <string name="ui_correo_ejemplo_com" formatted="false">email@exemple.com</string>
+    <string name="ui_mi_actividad" formatted="false">MON ACTIVITÉ</string>
+    <string name="ui_mi_perfil" formatted="false">◉   Mon profil                         ›</string>
+    <string name="ui_mis_pedidos" formatted="false">▣   Mes commandes                       ›</string>
+    <string name="ui_configuracion" formatted="false">⚙   Paramètres                     ›</string>
+    <string name="ui_mis_entregas" formatted="false">🚚   Mes livraisons                       ›</string>
+    <string name="ui_cerrar_sesion" formatted="false">↪  SE DÉCONNECTER</string>
+    <string name="ui_gyselmood_tu_estilo_tu_esencia" formatted="false">GYSELMOOD · Votre style, votre essence</string>
+    <string name="ui_gyselmood_tu_compra" formatted="false">GYSELMOOD / VOTRE ACHAT</string>
+    <string name="ui_mi_carrito" formatted="false">Mon panier</string>
+    <string name="ui_preparando_tu_carrito" formatted="false">Préparation de votre panier...</string>
+    <string name="ui_literal_015" formatted="false">🛍️</string>
+    <string name="ui_bolsa_de_compras" formatted="false">Sac de courses</string>
+    <string name="ui_tu_carrito_esta_vacio" formatted="false">Votre panier est vide</string>
+    <string name="ui_descubre_nuestra_coleccion_y_encuentra_tu_proxim" formatted="false">Découvrez notre collection et trouvez votre prochain vêtement préféré.</string>
+    <string name="ui_explorar_productos" formatted="false">DÉCOUVRIR LES PRODUITS</string>
+    <string name="ui_resumen_de_compra" formatted="false">RÉCAPITULATIF DE L\'ACHAT</string>
+    <string name="ui_productos" formatted="false">Produits</string>
+    <string name="ui_0_unidades" formatted="false">0 articles</string>
+    <string name="ui_envio" formatted="false">Livraison</string>
+    <string name="ui_se_calcula_al_continuar" formatted="false">Calculé à l\'étape suivante</string>
+    <string name="ui_subtotal" formatted="false">Sous-total</string>
+    <string name="ui_s_0_00" formatted="false">S/ 0.00</string>
+    <string name="ui_continuar_pedido" formatted="false">CONTINUER LA COMMANDE  →</string>
+    <string name="ui_el_total_final_se_confirma_en_el_checkout" formatted="false">Le total final est confirmé lors du paiement</string>
+    <string name="ui_gyselmood_finalizar_compra" formatted="false">GYSELMOOD / FINALISER L\'ACHAT</string>
+    <string name="ui_confirmar_pedido" formatted="false">Confirmer la commande</string>
+    <string name="ui_revisa_los_datos_antes_de_continuar_al_pago" formatted="false">Vérifiez les informations avant de passer au paiement.</string>
+    <string name="ui_01_datos_de_entrega" formatted="false">01  ·  INFORMATIONS DE LIVRAISON</string>
+    <string name="ui_donde_recibiras_tu_pedido" formatted="false">Où souhaitez-vous recevoir votre commande ?</string>
+    <string name="ui_direccion_de_entrega" formatted="false">Adresse de livraison *</string>
+    <string name="ui_calle_avenida_numero" formatted="false">Rue, avenue, numéro...</string>
+    <string name="ui_referencia_opcional" formatted="false">Repère (facultatif)</string>
+    <string name="ui_ej_casa_de_porton_negro_segundo_piso" formatted="false">Ex. : maison au portail noir, deuxième étage...</string>
+    <string name="ui_02_ubicacion_exacta" formatted="false">02  ·  LOCALISATION EXACTE</string>
+    <string name="ui_marca_el_punto_de_entrega" formatted="false">Marquez le point de livraison</string>
+    <string name="ui_selecciona_la_ubicacion_exacta_en_el_mapa_para_f" formatted="false">Choisissez l\'emplacement exact sur la carte pour faciliter la livraison.</string>
+    <string name="ui_mapa" formatted="false">Carte</string>
+    <string name="ui_aun_no_seleccionaste_una_ubicacion" formatted="false">Aucun emplacement sélectionné</string>
+    <string name="ui_seleccionar_en_el_mapa" formatted="false">CHOISIR SUR LA CARTE  →</string>
+    <string name="ui_03_resumen_de_compra" formatted="false">03  ·  RÉCAPITULATIF DE L\'ACHAT</string>
+    <string name="ui_cargando_productos" formatted="false">Chargement des produits...</string>
+    <string name="ui_subtotal_de_prendas" formatted="false">Sous-total des articles</string>
+    <string name="ui_costo_de_envio" formatted="false">Frais de livraison</string>
+    <string name="ui_total_estimado" formatted="false">TOTAL ESTIMÉ</string>
+    <string name="ui_primero_confirmaremos_tu_pedido_despues_continua" formatted="false">Nous confirmerons d\'abord votre commande. Vous passerez ensuite au paiement.</string>
+    <string name="ui_confirmar_pedido_50" formatted="false">CONFIRMER LA COMMANDE  →</string>
+    <string name="ui_revisa_los_datos_antes_de_confirmar" formatted="false">Vérifiez les informations avant de confirmer</string>
+    <string name="ui_gyselmood" formatted="false">GYSELMOOD</string>
+    <string name="ui_confirmacion_de_compra" formatted="false">CONFIRMATION D\'ACHAT</string>
+    <string name="ui_literal_054" formatted="false">✓</string>
+    <string name="ui_pago_confirmado" formatted="false">Paiement confirmé !</string>
+    <string name="ui_tu_pago_fue_confirmado_correctamente_puedes_cons" formatted="false">Votre paiement a bien été confirmé. Vous pouvez consulter votre commande dans GyselMood.</string>
+    <string name="ui_tu_numero_de_pedido" formatted="false">VOTRE NUMÉRO DE COMMANDE</string>
+    <string name="ui_pedido" formatted="false">Commande n°</string>
+    <string name="ui_estado_del_pago" formatted="false">STATUT DU PAIEMENT</string>
+    <string name="ui_pago_aprobado" formatted="false">✓ PAIEMENT APPROUVÉ</string>
+    <string name="ui_guarda_tu_numero_de_pedido_para_realizar_consult" formatted="false">Conservez votre numéro de commande pour toute question sur votre achat.</string>
+    <string name="ui_volver_a_gyselmood" formatted="false">RETOUR À GYSELMOOD  →</string>
+    <string name="ui_gyselmood_administracion" formatted="false">GYSELMOOD / ADMINISTRATION</string>
+    <string name="ui_detalle_del_producto" formatted="false">Détails du produit</string>
+    <string name="ui_categoria" formatted="false">Catégorie</string>
+    <string name="ui_nombre_del_producto" formatted="false">Nom du produit</string>
+    <string name="ui_precio_del_producto" formatted="false">PRIX DU PRODUIT</string>
+    <string name="ui_descripcion" formatted="false">DESCRIPTION</string>
+    <string name="ui_descripcion_del_producto" formatted="false">Description du produit</string>
+    <string name="ui_informacion_adicional" formatted="false">INFORMATIONS COMPLÉMENTAIRES</string>
+    <string name="ui_informacion_del_producto" formatted="false">Informations sur le produit</string>
+    <string name="ui_tallas_disponibles" formatted="false">TAILLES DISPONIBLES</string>
+    <string name="ui_s_m_l" formatted="false">S, M, L</string>
+    <string name="ui_gestionar_producto" formatted="false">GÉRER LE PRODUIT</string>
+    <string name="ui_editar_producto" formatted="false">MODIFIER LE PRODUIT</string>
+    <string name="ui_compartir_producto" formatted="false">PARTAGER LE PRODUIT</string>
+    <string name="ui_eliminar_producto" formatted="false">SUPPRIMER LE PRODUIT</string>
+    <string name="ui_gyselmood_panel_administrativo" formatted="false">GYSELMOOD · ESPACE ADMINISTRATION</string>
+    <string name="ui_gyselmood_tienda" formatted="false">GYSELMOOD / BOUTIQUE</string>
+    <string name="ui_producto_sin_fotografia" formatted="false">Produit sans photo</string>
+    <string name="ui_1_3" formatted="false">1 / 3</string>
+    <string name="ui_categoria_82" formatted="false">CATÉGORIE</string>
+    <string name="ui_precio_por_unidad" formatted="false">PRIX UNITAIRE</string>
+    <string name="ui_sobre_esta_prenda" formatted="false">À PROPOS DE CE VÊTEMENT</string>
+    <string name="ui_informacion_adicional_85" formatted="false">Informations supplémentaires</string>
+    <string name="ui_selecciona_tu_talla" formatted="false">Choisissez votre taille</string>
+    <string name="ui_cantidad" formatted="false">Quantité</string>
+    <string name="ui_literal_088" formatted="false">−</string>
+    <string name="ui_literal_089" formatted="false">1</string>
+    <string name="ui_literal_090" formatted="false">+</string>
+    <string name="ui_subtotal_estimado" formatted="false">Sous-total estimé</string>
+    <string name="ui_anadir_al_carrito" formatted="false">AJOUTER AU PANIER</string>
+    <string name="ui_personalizar_por_whatsapp" formatted="false">PERSONNALISER VIA WHATSAPP</string>
+    <string name="ui_consulta_modificaciones_de_diseno_color_o_estamp" formatted="false">Demandez des modifications de motif, de couleur ou d\'impression. Le prix final est convenu avec la boutique.</string>
+    <string name="ui_hasta_3_fotografias_elige_cual_sera_la_principal" formatted="false">Jusqu\'à 3 photos. Choisissez la photo principale.</string>
+    <string name="ui_precios_de_la_prenda" formatted="false">Prix du vêtement</string>
+    <string name="ui_0_00" formatted="false">0.00</string>
+    <string name="ui_categoria_y_tallas" formatted="false">Catégorie et tailles</string>
+    <string name="ui_revisa_la_informacion_antes_de_guardar_los_cambi" formatted="false">Vérifiez les informations avant d\'enregistrer les modifications.</string>
+    <string name="ui_literal_100" formatted="false">♡</string>
+    <string name="ui_literal_101" formatted="false">‹</string>
+    <string name="ui_volver" formatted="false">Retour</string>
+    <string name="ui_gestion_de_pedidos" formatted="false">Gérer les catégories</string>
+    <string name="ui_revisa_las_ventas_y_organiza_su_atencion" formatted="false">Nouvelle catégorie</string>
+    <string name="ui_total_de_pedidos" formatted="false">Ajoutez une nouvelle catégorie au catalogue.</string>
+    <string name="ui_literal_106" formatted="false">Nom</string>
+    <string name="ui_pedidos_pagados" formatted="false">+  ENREGISTRER</string>
+    <string name="ui_buscar_pedido_cliente_o_producto" formatted="false">Catégories enregistrées</string>
+    <string name="ui_cargando_pedidos" formatted="false">Chargement des enregistrements...</string>
+    <string name="ui_no_hay_pedidos_registrados" formatted="false">Rechercher...</string>
+    <string name="ui_gestionar_categorias" formatted="false">Chargement...</string>
+    <string name="ui_nueva_categoria" formatted="false">GYSELMOOD / ADMIN</string>
+    <string name="ui_agrega_una_nueva_categoria_al_catalogo" formatted="false">Gérer les produits</string>
+    <string name="ui_nombre" formatted="false">Recherchez, organisez et modifiez votre catalogue.</string>
+    <string name="ui_guardar" formatted="false">Rechercher un produit par nom...</string>
+    <string name="ui_categorias_registradas" formatted="false">Trier  ↕</string>
+    <string name="ui_cargando_registros" formatted="false">Aucun produit ne correspond à votre recherche.</string>
+    <string name="ui_buscar" formatted="false">Gestion des commandes</string>
+    <string name="ui_cargando" formatted="false">Consultez les ventes et organisez leur traitement.</string>
+    <string name="ui_gyselmood_admin" formatted="false">Total des commandes</string>
+    <string name="ui_gestionar_productos" formatted="false">0</string>
+    <string name="ui_busca_organiza_y_edita_tu_catalogo" formatted="false">Commandes payées</string>
+    <string name="ui_buscar_producto_por_nombre" formatted="false">Rechercher une commande, un client ou un produit</string>
+    <string name="ui_ordenar" formatted="false">Chargement des commandes...</string>
+    <string name="ui_no_hay_productos_que_coincidan_con_tu_busqueda" formatted="false">Aucune commande enregistrée</string>
+    <string name="ui_tu_estilo_tu_esencia" formatted="false">VOTRE STYLE, VOTRE ESSENCE</string>
+    <string name="ui_abrir_carrito" formatted="false">Ouvrir le panier</string>
+    <string name="ui_buscar_128" formatted="false">Rechercher</string>
+    <string name="ui_buscar_prendas" formatted="false">Rechercher des vêtements...</string>
+    <string name="ui_limpiar_busqueda" formatted="false">Effacer la recherche</string>
+    <string name="ui_descubre_lo_nuevo" formatted="false">DÉCOUVREZ LES NOUVEAUTÉS</string>
+    <string name="ui_encuentra_tu_proximo_estilo" formatted="false">Trouvez votre prochain style</string>
+    <string name="ui_literal_133" formatted="false">● ○ ○</string>
+    <string name="ui_categorias" formatted="false">Catégories</string>
+    <string name="ui_ver_todas" formatted="false">Tout voir  ›</string>
+    <string name="ui_seleccionados_para_ti" formatted="false">Sélectionnés pour vous</string>
+    <string name="ui_explora_nuestros_productos" formatted="false">Découvrez nos produits</string>
+    <string name="ui_ver_todo" formatted="false">Voir tout  ›</string>
+    <string name="ui_no_se_encontraron_productos" formatted="false">Aucun produit trouvé</string>
+    <string name="ui_centro_de_gestion" formatted="false">Centre de gestion</string>
+    <string name="ui_administra_tu_catalogo_pedidos_y_operaciones_des" formatted="false">Gérez votre catalogue, vos commandes et vos opérations depuis un seul endroit.</string>
+    <string name="ui_publicar_producto" formatted="false">PUBLIER UN PRODUIT</string>
+    <string name="ui_nuevo_producto" formatted="false">Nouveau produit</string>
+    <string name="ui_agrega_una_nueva_prenda_a_tu_catalogo" formatted="false">Ajoutez un nouveau vêtement à votre catalogue.</string>
+    <string name="ui_herramientas_de_gestion" formatted="false">Outils de gestion</string>
+    <string name="ui_buscar_y_editar" formatted="false">Rechercher et modifier</string>
+    <string name="ui_organizar_catalogo" formatted="false">Organiser le catalogue</string>
+    <string name="ui_tallas" formatted="false">Tailles</string>
+    <string name="ui_medidas_y_opciones" formatted="false">Tailles et options</string>
+    <string name="ui_proximamente_entregas" formatted="false">Bientôt : livraisons</string>
+    <string name="ui_imagenes" formatted="false">Images</string>
+    <string name="ui_galeria_de_prendas" formatted="false">Galerie de vêtements</string>
+    <string name="ui_pedidos_y_operaciones" formatted="false">Commandes et opérations</string>
+    <string name="ui_gestionar_pedidos" formatted="false">Gérer les commandes</string>
+    <string name="ui_revisa_pedidos_y_sus_estados" formatted="false">Consultez les commandes et leurs statuts</string>
+    <string name="ui_literal_156" formatted="false">›</string>
+    <string name="ui_mis_entregas_157" formatted="false">Mes livraisons</string>
+    <string name="ui_pedidos_asignados_a_tu_cuenta" formatted="false">Commandes attribuées à votre compte</string>
+    <string name="ui_actualizar_entregas" formatted="false">Actualiser les livraisons</string>
+    <string name="ui_cargando_entregas" formatted="false">Chargement des livraisons...</string>
+    <string name="ui_gyselmood_mis_compras" formatted="false">GYSELMOOD / MES ACHATS</string>
+    <string name="ui_mis_pedidos_162" formatted="false">Mes commandes</string>
+    <string name="ui_consulta_tus_compras_y_revisa_su_estado" formatted="false">Consultez vos achats et suivez leur statut.</string>
+    <string name="ui_buscar_pedido_o_producto" formatted="false">Rechercher une commande ou un produit...</string>
+    <string name="ui_todavia_no_tienes_pedidos" formatted="false">Vous n\'avez pas encore de commande</string>
+    <string name="ui_sin_internet" formatted="false">Pas de connexion Internet</string>
+    <string name="ui_ups" formatted="false">Oups !</string>
+    <string name="ui_no_logramos_conectarnos_a_la_red_npuedes_reinten" formatted="false">Impossible de se connecter au réseau.\nRéessayez ou consultez les produits enregistrés.</string>
+    <string name="ui_reintentar" formatted="false">Réessayer</string>
+    <string name="ui_ver_productos_guardados" formatted="false">Voir les produits enregistrés</string>
+    <string name="ui_gyselmood_pago_seguro" formatted="false">GYSELMOOD / PAIEMENT SÉCURISÉ</string>
+    <string name="ui_finaliza_tu_compra" formatted="false">Finalisez votre achat</string>
+    <string name="ui_tu_pedido_esta_registrado_falta_confirmar_el_pag" formatted="false">Votre commande est enregistrée. Le paiement reste à confirmer.</string>
+    <string name="ui_numero_de_pedido" formatted="false">NUMÉRO DE COMMANDE</string>
+    <string name="ui_metodo_de_pago" formatted="false">MODE DE PAIEMENT</string>
+    <string name="ui_mercado_pago" formatted="false">Mercado Pago</string>
+    <string name="ui_consultando_el_estado_del_pedido" formatted="false">Vérification du statut de la commande...</string>
+    <string name="ui_como_funciona" formatted="false">COMMENT ÇA MARCHE ?</string>
+    <string name="ui_abriremos_mercado_pago_en_tu_navegador_para_comp" formatted="false">Nous ouvrirons Mercado Pago dans votre navigateur pour effectuer la transaction en toute sécurité.</string>
+    <string name="ui_1_continua_a_mercado_pago_n2_completa_el_pago_en" formatted="false">1. Continuez vers Mercado Pago.\n2. Finalisez le paiement sur sa plateforme.\n3. Revenez dans GyselMood et vérifiez le résultat.</string>
+    <string name="ui_si_ya_realizaste_el_pago_verifica_su_estado_ante" formatted="false">Si vous avez déjà payé, vérifiez le statut avant de réessayer.</string>
+    <string name="ui_pagar_con_mercado_pago" formatted="false">PAYER AVEC MERCADO PAGO</string>
+    <string name="ui_la_confirmacion_dependera_del_estado_verificado" formatted="false">La confirmation dépendra du statut du paiement vérifié.</string>
+    <string name="ui_gyselmood_catalogo" formatted="false">GYSELMOOD / CATALOGUE</string>
+    <string name="ui_explora_la_coleccion" formatted="false">Découvrez la collection</string>
+    <string name="ui_borrar_busqueda" formatted="false">Effacer la recherche</string>
+    <string name="ui_categorias_187" formatted="false">CATÉGORIES</string>
+    <string name="ui_talla_todas" formatted="false">Taille : Toutes  ▾</string>
+    <string name="ui_ordenar_relevancia" formatted="false">Trier : Pertinence  ▾</string>
+    <string name="ui_limpiar_filtros" formatted="false">Effacer les filtres</string>
+    <string name="ui_no_encontramos_productos" formatted="false">Aucun produit trouvé</string>
+    <string name="ui_seguimiento_de_pedido" formatted="false">Suivi de commande</string>
+    <string name="ui_consultando_repartidor" formatted="false">Recherche du livreur...</string>
+    <string name="ui_esperando_ubicacion" formatted="false">En attente de localisation...</string>
+    <string name="ui_centrar_en_repartidor" formatted="false">Centrer sur le livreur</string>
+    <string name="ui_ubicacion_de_entrega" formatted="false">Lieu de livraison</string>
+    <string name="ui_mi_ubicacion" formatted="false">◎ Ma position</string>
+    <string name="ui_selecciona_donde_recibir_tu_pedido" formatted="false">Choisissez où recevoir votre commande</string>
+    <string name="ui_toca_el_mapa_para_indicar_el_punto_exacto_de_ent" formatted="false">Touchez la carte pour indiquer le lieu exact de livraison.</string>
+    <string name="ui_ubicacion_aun_no_seleccionada" formatted="false">Aucun emplacement sélectionné</string>
+    <string name="ui_confirmar_ubicacion" formatted="false">Confirmer l\'emplacement</string>
+    <string name="ui_detalle_de_tu_compra" formatted="false">DÉTAILS DE VOTRE ACHAT</string>
+    <string name="ui_pedido_1" formatted="false">Commande n° 1</string>
+    <string name="ui_estado_actual" formatted="false">STATUT ACTUEL</string>
+    <string name="ui_pendiente" formatted="false">EN ATTENTE</string>
+    <string name="ui_revisa_el_estado_de_tu_compra" formatted="false">Consultez le statut de votre achat.</string>
+    <string name="ui_productos_207" formatted="false">PRODUITS</string>
+    <string name="ui_total_s_0_00" formatted="false">TOTAL : S/ 0.00</string>
+    <string name="ui_direccion_de_entrega_209" formatted="false">ADRESSE DE LIVRAISON</string>
+    <string name="ui_referencia" formatted="false">REPÈRE</string>
+    <string name="ui_seguimiento_en_vivo_proximamente" formatted="false">Suivi en direct · Bientôt disponible</string>
+    <string name="ui_completar_pago" formatted="false">Finaliser le paiement</string>
+    <string name="ui_cerrar" formatted="false">Fermer</string>
+    <string name="ui_detalle_de_compra" formatted="false">DÉTAILS DE L\'ACHAT</string>
+    <string name="ui_estado" formatted="false">STATUT</string>
+    <string name="ui_total_del_pedido" formatted="false">TOTAL DE LA COMMANDE</string>
+    <string name="ui_informacion_del_cliente" formatted="false">INFORMATIONS CLIENT</string>
+    <string name="ui_seguimiento_de_entrega_proximamente" formatted="false">Suivi de livraison · Bientôt disponible</string>
+    <string name="ui_informacion_de_entrega" formatted="false">INFORMATIONS DE LIVRAISON</string>
+    <string name="ui_consultando_entrega" formatted="false">Vérification de la livraison...</string>
+    <string name="ui_asignar_repartidor" formatted="false">Attribuer un livreur</string>
+    <string name="ui_imagen_del_producto" formatted="false">Image du produit</string>
+    <string name="ui_talla_m" formatted="false">Taille : M</string>
+    <string name="ui_s_45_00" formatted="false">S/ 45.00</string>
+    <string name="ui_subtotal_225" formatted="false">SOUS-TOTAL</string>
+    <string name="ui_eliminar" formatted="false">Supprimer</string>
+    <string name="ui_ver_detalle" formatted="false">VOIR LES DÉTAILS  ↗</string>
+    <string name="ui_pedido_31" formatted="false">Commande n° 31</string>
+    <string name="ui_estado_asignada" formatted="false">Statut : ATTRIBUÉE</string>
+    <string name="ui_direccion_de_entrega_230" formatted="false">Adresse de livraison</string>
+    <string name="ui_ver_detalles" formatted="false">Voir les détails</string>
+    <string name="ui_como_llegar_con_google_maps" formatted="false">Itinéraire avec Google Maps</string>
+    <string name="ui_compartir_ubicacion_gps" formatted="false">Partager la position GPS</string>
+    <string name="ui_iniciar_entrega" formatted="false">Démarrer la livraison</string>
+    <string name="ui_finalizar_entrega" formatted="false">Terminer la livraison</string>
+    <string name="ui_pagado" formatted="false">PAYÉ</string>
+    <string name="ui_21_10_2026_10_30" formatted="false">21/10/2026 10:30</string>
+    <string name="ui_productos_del_pedido" formatted="false">Produits de la commande</string>
+    <string name="ui_ver_detalles_239" formatted="false">Voir les détails ›</string>
+    <string name="ui_producto_destacado" formatted="false">Produit vedette</string>
+    <string name="ui_destacado" formatted="false">À LA UNE</string>
+    <string name="ui_desde_s_0_00" formatted="false">À partir de S/ 0.00</string>
+    <string name="ui_ver_producto" formatted="false">VOIR LE PRODUIT  →</string>
+    <string name="ui_ver_detalle_del_producto" formatted="false">Voir les détails du produit</string>
+    <string name="ui_fecha_del_pedido" formatted="false">Date de commande</string>
+    <string name="ui_ver_pedido" formatted="false">Voir la commande  ›</string>
+    <string name="ui_editar_producto_247" formatted="false">Modifier le produit</string>
+    <string name="ui_literal_248" formatted="false">↗</string>
+    <string name="ui_literal_249" formatted="false">←</string>
+</resources>

@@ -4,31 +4,31 @@
     <item
         android:id="@+id/navInicio"
         android:icon="@drawable/ic_nav_home"
-        android:title="Inicio"
+        android:title="@string/nav_menu_home"
         android:enabled="true"/>
 
     <item
         android:id="@+id/navProductos"
         android:icon="@drawable/ic_nav_products"
-        android:title="Productos"
+        android:title="@string/nav_menu_products"
         android:enabled="true"/>
 
     <item
         android:id="@+id/navCarrito"
         android:icon="@drawable/ic_nav_cart"
-        android:title="Carrito"
+        android:title="@string/nav_menu_cart"
         android:enabled="true"/>
 
     <item
         android:id="@+id/navCuenta"
         android:icon="@drawable/ic_nav_account"
-        android:title="Cuenta"
+        android:title="@string/nav_menu_account"
         android:enabled="true"/>
 
     <item
         android:id="@+id/navMantenimiento"
         android:icon="@drawable/ic_nav_admin"
-        android:title="Admin"
+        android:title="@string/nav_menu_admin"
         android:enabled="true"
         android:visible="false"/>
 

@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GYSELMOOD / FINALIZAR COMPRA"
+            android:text="@string/ui_gyselmood_finalizar_compra"
             android:textColor="@color/gysel_light_gray"
             android:textSize="10sp"
             android:letterSpacing="0.09"/>
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Confirmar pedido"
+            android:text="@string/ui_confirmar_pedido"
             android:textColor="@color/gysel_white"
             android:textSize="27sp"
             android:textStyle="bold"/>
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Revisa los datos antes de continuar al pago."
+            android:text="@string/ui_revisa_los_datos_antes_de_continuar_al_pago"
             android:textColor="@color/gysel_light_gray"
             android:textSize="13sp"/>
 
@@ -81,7 +81,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="01  ·  DATOS DE ENTREGA"
+                    android:text="@string/ui_01_datos_de_entrega"
                     android:textColor="#FF8585"
                     android:textSize="13sp"
                     android:textStyle="bold"
@@ -91,7 +91,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="¿Dónde recibirás tu pedido?"
+                    android:text="@string/ui_donde_recibiras_tu_pedido"
                     android:textColor="@color/gysel_white"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
-                    android:text="Dirección de entrega *"
+                    android:text="@string/ui_direccion_de_entrega"
                     android:textColor="@color/gysel_white"
                     android:textSize="13sp"/>
 
@@ -110,7 +110,7 @@
                     android:layout_height="56dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_home_input"
-                    android:hint="Calle, avenida, número..."
+                    android:hint="@string/ui_calle_avenida_numero"
                     android:inputType="textPostalAddress"
                     android:maxLines="1"
                     android:paddingStart="16dp"
@@ -123,7 +123,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Referencia (opcional)"
+                    android:text="@string/ui_referencia_opcional"
                     android:textColor="@color/gysel_white"
                     android:textSize="13sp"/>
 
@@ -134,7 +134,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_home_input"
                     android:gravity="top|start"
-                    android:hint="Ej.: casa de portón negro, segundo piso..."
+                    android:hint="@string/ui_ej_casa_de_porton_negro_segundo_piso"
                     android:inputType="textCapSentences|textMultiLine"
                     android:padding="16dp"
                     android:textColor="@color/gysel_white"
@@ -155,7 +155,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="02  ·  UBICACIÓN EXACTA"
+                    android:text="@string/ui_02_ubicacion_exacta"
                     android:textColor="#FF8585"
                     android:textSize="13sp"
                     android:textStyle="bold"
@@ -165,7 +165,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Marca el punto de entrega"
+                    android:text="@string/ui_marca_el_punto_de_entrega"
                     android:textColor="@color/gysel_white"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
@@ -174,7 +174,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Selecciona la ubicación exacta en el mapa para facilitar la entrega."
+                    android:text="@string/ui_selecciona_la_ubicacion_exacta_en_el_mapa_para_f"
                     android:textColor="@color/gysel_light_gray"
                     android:textSize="13sp"
                     android:lineSpacingExtra="3dp"/>
@@ -193,7 +193,7 @@
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:src="@android:drawable/ic_dialog_map"
-                        android:contentDescription="Mapa"
+                        android:contentDescription="@string/ui_mapa"
                         app:tint="#FF8585"/>
 
                     <TextView
@@ -202,7 +202,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Aún no seleccionaste una ubicación"
+                        android:text="@string/ui_aun_no_seleccionaste_una_ubicacion"
                         android:textColor="@color/gysel_light_gray"
                         android:textSize="13sp"
                         android:lineSpacingExtra="3dp"/>
@@ -215,7 +215,7 @@
                     android:layout_height="56dp"
                     android:layout_marginTop="15dp"
                     android:backgroundTint="#393039"
-                    android:text="SELECCIONAR EN EL MAPA  →"
+                    android:text="@string/ui_seleccionar_en_el_mapa"
                     android:textAllCaps="false"
                     android:textColor="@color/gysel_white"
                     android:textSize="14sp"
@@ -235,7 +235,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="03  ·  RESUMEN DE COMPRA"
+                    android:text="@string/ui_03_resumen_de_compra"
                     android:textColor="#FF8585"
                     android:textSize="13sp"
                     android:textStyle="bold"
@@ -246,7 +246,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
-                    android:text="Cargando productos..."
+                    android:text="@string/ui_cargando_productos"
                     android:textColor="@color/gysel_white"
                     android:textSize="14sp"/>
 
@@ -267,7 +267,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Subtotal de prendas"
+                        android:text="@string/ui_subtotal_de_prendas"
                         android:textColor="@color/gysel_light_gray"
                         android:textSize="13sp"/>
 
@@ -275,7 +275,7 @@
                         android:id="@+id/txtSubtotalCheckout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="S/ 0.00"
+                        android:text="@string/ui_s_0_00"
                         android:textColor="@color/gysel_white"
                         android:textSize="14sp"
                         android:textStyle="bold"/>
@@ -293,7 +293,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Costo de envío"
+                        android:text="@string/ui_costo_de_envio"
                         android:textColor="@color/gysel_light_gray"
                         android:textSize="13sp"/>
 
@@ -301,7 +301,7 @@
                         android:id="@+id/txtEnvioCheckout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="S/ 0.00"
+                        android:text="@string/ui_s_0_00"
                         android:textColor="@color/gysel_white"
                         android:textSize="14sp"/>
 
@@ -324,7 +324,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TOTAL ESTIMADO"
+                        android:text="@string/ui_total_estimado"
                         android:textColor="@color/gysel_white"
                         android:textSize="15sp"
                         android:textStyle="bold"/>
@@ -333,7 +333,7 @@
                         android:id="@+id/txtCheckoutTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="S/ 0.00"
+                        android:text="@string/ui_s_0_00"
                         android:textColor="#FF8585"
                         android:textSize="23sp"
                         android:textStyle="bold"/>
@@ -348,7 +348,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:gravity="center"
-                android:text="Primero confirmaremos tu pedido. Después continuarás a la pantalla de pago."
+                android:text="@string/ui_primero_confirmaremos_tu_pedido_despues_continua"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="12sp"
                 android:lineSpacingExtra="3dp"/>
@@ -386,7 +386,7 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:backgroundTint="@color/gysel_red"
-            android:text="CONFIRMAR PEDIDO  →"
+            android:text="@string/ui_confirmar_pedido_50"
             android:textColor="@color/gysel_white"
             android:textSize="15sp"
             android:textStyle="bold"/>
@@ -396,7 +396,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:gravity="center"
-            android:text="Revisa los datos antes de confirmar"
+            android:text="@string/ui_revisa_los_datos_antes_de_confirmar"
             android:textColor="@color/gysel_light_gray"
             android:textSize="11sp"/>
 

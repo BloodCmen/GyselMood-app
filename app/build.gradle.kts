@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.junit.ktx)
     implementation(libs.androidx.ui.test)
     implementation(libs.material)
     testImplementation(libs.junit)
@@ -91,5 +92,11 @@ dependencies {
 
 //DISEÑO - ACTIVIDAD
     implementation("androidx.viewpager2:viewpager2:1.1.0")
+
+
+    //carga de imagenes
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+
 
 }

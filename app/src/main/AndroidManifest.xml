@@ -7,6 +7,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -19,6 +24,13 @@
         android:theme="@style/Theme.GyselMode"
         android:usesCleartextTraffic="true">
 
+
+
+        <service
+            android:name=".ui.user.entregas.EntregaLocationService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -30,30 +42,49 @@
 
         </activity>
 
-        <activity android:name=".MainActivity" android:exported="false" />
+
+        <activity
+            android:name=".ProductoLinkActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="gyselmood"
+                    android:host="producto" />
+            </intent-filter>
+
+        </activity>
+
+
+        <activity android:name=".ui.user.MainActivity" android:exported="false" />
         <activity android:name=".NoInternetActivity" android:exported="false" />
         <activity android:name=".FavoritesActivity" android:exported="false"/>
-        <activity android:name=".CartActivity" android:exported="false"/>
+        <activity android:name=".ui.user.pedidos.CartActivity" android:exported="false"/>
         <activity android:name=".account.AccountActivity" android:exported="false" />
-        <activity android:name=".ProductosActivity" android:exported="false" />
+        <activity android:name=".ui.user.ProductosActivity" android:exported="false" />
         <activity android:name=".auth.RegisterActivity" android:exported="false" />
-        <activity android:name=".MaintenanceActivity" android:exported="false" />
-        <activity android:name=".maintenance.CrearProductoActivity" android:exported="false" />
-        <activity android:name=".maintenance.GestionarProductosActivity" android:exported="false" />
-        <activity android:name=".DetalleProductoActivity" android:exported="false" />
-        <activity android:name=".maintenance.EditarProductoActivity" android:exported="false" />
-        <activity android:name=".maintenance.GestionarTallasActivity" android:exported="false" />
-        <activity android:name=".maintenance.CrearTallaActivity" android:exported="false" />
-        <activity android:name=".maintenance.GestionarCategoriasActivity" android:exported="false" />
-        <activity android:name=".maintenance.CrearCategoriaActivity" android:exported="false" />
-        <activity android:name=".DetalleProductoUsuarioActivity" android:exported="false" />
-        <activity android:name=".CheckoutActivity" android:exported="false" />
-        <activity android:name=".ui.pago.PagoSimuladoActivity"  android:exported="false" />
-        <activity android:name=".ui.pago.CompraExitosaActivity" android:exported="false" />
-        <activity android:name=".ui.pedidos.MisPedidosActivity" android:exported="false" />
-        <activity android:name=".ui.pedidos.GestionPedidosActivity" android:exported="false" />
-        <activity android:name=".ui.ubicacion.SeleccionarUbicacionActivity" android:exported="false" />
+        <activity android:name=".ui.admin.maintenance.MaintenanceActivity" android:exported="false" />
+        <activity android:name=".ui.admin.maintenance.CrearProductoActivity" android:exported="false" />
+        <activity android:name=".ui.admin.maintenance.GestionarProductosActivity" android:exported="false" />
+        <activity android:name=".ui.admin.maintenance.DetalleProductoActivity" android:exported="false" />
+        <activity android:name=".ui.admin.maintenance.EditarProductoActivity" android:exported="false" />
+        <activity android:name=".ui.admin.maintenance.GestionarTallasActivity" android:exported="false" />
+        <activity android:name=".ui.admin.maintenance.GestionarCategoriasActivity" android:exported="false" />
+        <activity android:name=".ui.user.pedidos.DetalleProductoUsuarioActivity" android:exported="false" />
+        <activity android:name=".ui.user.pedidos.CheckoutActivity" android:exported="false" />
+        <activity android:name=".ui.user.pago.PagoSimuladoActivity"  android:exported="false" />
+        <activity android:name=".ui.user.pago.CompraExitosaActivity" android:exported="false" />
+        <activity android:name=".ui.user.pedidos.MisPedidosActivity" android:exported="false" />
+        <activity android:name=".ui.admin.maintenance.GestionPedidosActivity" android:exported="false" />
+        <activity android:name=".ui.user.ubicacion.SeleccionarUbicacionActivity" android:exported="false" />
         <activity android:name=".auth.LoginActivity" android:exported="false" />
+        <activity android:name=".ui.user.entregas.MisEntregasActivity" android:exported="false" />
+        <activity android:name=".ui.user.pedidos.SeguimientoPedidoActivity" android:exported="false" />
+
     </application>
 
 </manifest>

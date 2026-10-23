@@ -1,4 +1,3 @@
-
 package com.ada.gyselmode.account
 
 import android.content.Intent
@@ -13,9 +12,23 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ada.gyselmode.R
 import com.ada.gyselmode.auth.LoginActivity
 import com.ada.gyselmode.helper.NavigationHelper
-import com.ada.gyselmode.ui.pedidos.MisPedidosActivity
+import com.ada.gyselmode.ui.user.pedidos.MisPedidosActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.Source
+import android.view.View
+import android.widget.ImageView
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import kotlinx.coroutines.launch
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import com.ada.gyselmode.network.RetrofitClient
+import com.ada.gyselmode.ui.user.entregas.MisEntregasActivity
 
 class AccountActivity : AppCompatActivity() {
 
@@ -24,10 +37,37 @@ class AccountActivity : AppCompatActivity() {
     private lateinit var txtNombre: TextView
     private lateinit var txtCorreo: TextView
     private lateinit var txtAvatar: TextView
+    private lateinit var btnMisEntregas: View
+
+
+    private lateinit var imgAvatar: ImageView
+    private lateinit var btnCambiarFoto: ImageView
+
+    private var subiendoFoto = false
+
+    private val selectorImagen =
+        registerForActivityResult(
+            ActivityResultContracts.GetContent()
+        ) { uri: Uri? ->
+            if (uri != null) {
+                subirFotoPerfil(uri)
+            }
+        }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account)
+
+
+        imgAvatar = findViewById(R.id.imgAvatar)
+        btnCambiarFoto = findViewById(R.id.btnCambiarFoto)
+
+        btnCambiarFoto.setOnClickListener {
+            if (!subiendoFoto) {
+                selectorImagen.launch("image/*")
+            }
+        }
 
         auth = FirebaseAuth.getInstance()
 
@@ -37,6 +77,11 @@ class AccountActivity : AppCompatActivity() {
         txtNombre = findViewById(R.id.txtNombre)
         txtCorreo = findViewById(R.id.txtCorreo)
         txtAvatar = findViewById(R.id.txtAvatar)
+
+        // Oculto hasta validar rol REPARTIDOR desde Firestore.
+        btnMisEntregas = findViewById(R.id.btnMisEntregas)
+        btnMisEntregas.visibility = View.GONE
+        btnMisEntregas.setOnClickListener { abrirEntregasSiEsRepartidor() }
 
         // MIS PEDIDOS
         findViewById<TextView>(R.id.btnPedidos).setOnClickListener {
@@ -68,7 +113,57 @@ class AccountActivity : AppCompatActivity() {
             irAlLogin()
         } else {
             cargarUsuario()
+            verificarRolParaEntregas()
         }
+    }
+
+    private fun verificarRolParaEntregas() {
+        btnMisEntregas.visibility = View.GONE
+        val uid = auth.currentUser?.uid ?: return
+
+        FirebaseFirestore.getInstance()
+            .collection("usuarios")
+            .document(uid)
+            .get(Source.SERVER)
+            .addOnSuccessListener { documento ->
+                if (isFinishing || isDestroyed || auth.currentUser?.uid != uid) return@addOnSuccessListener
+                btnMisEntregas.visibility = if (documento.getString("rol") == "REPARTIDOR") {
+                    View.VISIBLE
+                } else {
+                    View.GONE
+                }
+            }
+            .addOnFailureListener {
+                if (!isFinishing && !isDestroyed) {
+                    btnMisEntregas.visibility = View.GONE
+                }
+            }
+    }
+
+    private fun abrirEntregasSiEsRepartidor() {
+        val uid = auth.currentUser?.uid ?: return
+        btnMisEntregas.isEnabled = false
+
+        FirebaseFirestore.getInstance()
+            .collection("usuarios")
+            .document(uid)
+            .get(Source.SERVER)
+            .addOnSuccessListener { documento ->
+                if (isFinishing || isDestroyed || auth.currentUser?.uid != uid) return@addOnSuccessListener
+                btnMisEntregas.isEnabled = true
+                if (documento.getString("rol") == "REPARTIDOR") {
+                    startActivity(Intent(this, MisEntregasActivity::class.java))
+                } else {
+                    btnMisEntregas.visibility = View.GONE
+                    Toast.makeText(this, "Acceso solo para repartidores", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener {
+                if (!isFinishing && !isDestroyed) {
+                    btnMisEntregas.isEnabled = true
+                    Toast.makeText(this, "No se pudo validar el rol", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     private fun cargarUsuario() {
@@ -89,6 +184,25 @@ class AccountActivity : AppCompatActivity() {
             ?.uppercaseChar()
             ?.toString()
             ?: "U"
+
+
+        val fotoUrl = usuario.photoUrl?.toString()
+
+        if (!fotoUrl.isNullOrBlank()) {
+            imgAvatar.visibility = View.VISIBLE
+            txtAvatar.visibility = View.INVISIBLE
+
+            Glide.with(this)
+                .load(fotoUrl)
+                .circleCrop()
+                .error(android.R.drawable.ic_menu_myplaces)
+                .into(imgAvatar)
+
+        } else {
+            imgAvatar.visibility = View.GONE
+            txtAvatar.visibility = View.VISIBLE
+        }
+
     }
 
     private fun editarPerfil() {
@@ -139,15 +253,40 @@ class AccountActivity : AppCompatActivity() {
 
                 usuario.updateProfile(cambios)
                     .addOnCompleteListener { tarea ->
+
                         if (tarea.isSuccessful) {
-                            cargarUsuario()
-                            Toast.makeText(
-                                this,
-                                "Nombre actualizado",
-                                Toast.LENGTH_SHORT
-                            ).show()
+
+                            val datos = mapOf(
+                                "nombre" to nuevoNombre
+                            )
+
+                            FirebaseFirestore.getInstance()
+                                .collection("usuarios")
+                                .document(usuario.uid)
+                                .set(datos, SetOptions.merge())
+                                .addOnSuccessListener {
+                                    cargarUsuario()
+                                    Toast.makeText(
+                                        this,
+                                        "Nombre actualizado",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                                .addOnFailureListener {
+                                    cargarUsuario()
+                                    Toast.makeText(
+                                        this,
+                                        "Nombre actualizado en Firebase Auth, " +
+                                                "pero no se sincronizó con Firestore",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+
                             dialogo.dismiss()
+
                         } else {
+
+
                             Toast.makeText(
                                 this,
                                 tarea.exception?.localizedMessage
@@ -260,4 +399,149 @@ class AccountActivity : AppCompatActivity() {
         startActivity(intentLogin)
         finish()
     }
+
+
+
+    private fun subirFotoPerfil(uri: Uri) {
+        val usuario = auth.currentUser ?: return
+        if (subiendoFoto) return
+
+        // Se utiliza Firebase para autenticar la subida.
+        subiendoFoto = true
+        btnCambiarFoto.isEnabled = false
+        btnCambiarFoto.alpha = 0.5f
+
+        usuario.getIdToken(false)
+            .addOnSuccessListener { resultadoToken ->
+
+                val token = resultadoToken.token
+
+                if (token.isNullOrBlank()) {
+                    finalizarSubida()
+                    Toast.makeText(
+                        this,
+                        "No se pudo obtener tu sesión Firebase",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    return@addOnSuccessListener
+                }
+
+                lifecycleScope.launch {
+                    try {
+                        val tipo = contentResolver.getType(uri)
+
+                        if (tipo != "image/jpeg" &&
+                            tipo != "image/png") {
+                            throw IllegalArgumentException(
+                                "Selecciona una imagen JPG o PNG"
+                            )
+                        }
+
+                        val bytes = contentResolver
+                            .openInputStream(uri)
+                            ?.use { input ->
+                                // Límite de lectura: 3 MB + 1 byte.
+                                input.readNBytes(
+                                    3 * 1024 * 1024 + 1
+                                )
+                            }
+                            ?: throw IllegalArgumentException(
+                                "No se pudo leer la imagen"
+                            )
+
+                        if (bytes.isEmpty() ||
+                            bytes.size > 3 * 1024 * 1024) {
+                            throw IllegalArgumentException(
+                                "La imagen debe pesar máximo 3 MB"
+                            )
+                        }
+
+                        val requestBody = bytes.toRequestBody(
+                            tipo.toMediaType()
+                        )
+
+                        val archivo = MultipartBody.Part
+                            .createFormData(
+                                "file",
+                                if (tipo == "image/png") {
+                                    "avatar.png"
+                                } else {
+                                    "avatar.jpg"
+                                },
+                                requestBody
+                            )
+
+                        val respuesta = RetrofitClient.apiService
+                            .subirAvatar(
+                                "Bearer $token",
+                                archivo
+                            )
+
+                        // Comprobar que sigue siendo la misma cuenta.
+                        if (auth.currentUser?.uid != usuario.uid) {
+                            throw IllegalStateException(
+                                "La sesión cambió durante la subida"
+                            )
+                        }
+
+                        val cambios =
+                            UserProfileChangeRequest.Builder()
+                                .setPhotoUri(
+                                    Uri.parse(respuesta.url)
+                                )
+                                .build()
+
+                        usuario.updateProfile(cambios)
+                            .addOnCompleteListener { tarea ->
+                                finalizarSubida()
+
+                                if (tarea.isSuccessful) {
+                                    cargarUsuario()
+
+                                    Toast.makeText(
+                                        this@AccountActivity,
+                                        "Foto actualizada correctamente",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } else {
+                                    Toast.makeText(
+                                        this@AccountActivity,
+                                        "Foto subida, pero Firebase " +
+                                                "no pudo actualizar el perfil",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+                            }
+
+                    } catch (e: Exception) {
+                        finalizarSubida()
+
+                        Toast.makeText(
+                            this@AccountActivity,
+                            e.message ?: "No se pudo subir la foto",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+            }
+            .addOnFailureListener { error ->
+                finalizarSubida()
+
+                Toast.makeText(
+                    this,
+                    error.localizedMessage
+                        ?: "No se pudo validar tu sesión",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+    }
+
+    private fun finalizarSubida() {
+        subiendoFoto = false
+
+        btnCambiarFoto.isEnabled = true
+        btnCambiarFoto.alpha = 1f
+    }
+
 }
+

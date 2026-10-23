@@ -23,7 +23,7 @@
             android:id="@+id/txtMarca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GYSELMOOD"
+            android:text="@string/ui_gyselmood"
             android:textColor="@color/gysel_white"
             android:textSize="23sp"
             android:textStyle="bold"
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="CONFIRMACIÓN DE COMPRA"
+            android:text="@string/ui_confirmacion_de_compra"
             android:textColor="@color/gysel_light_gray"
             android:textSize="10sp"
             android:letterSpacing="0.08"/>
@@ -71,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="✓"
+                    android:text="@string/ui_literal_054"
                     android:textColor="#80DCA1"
                     android:textSize="66sp"
                     android:textStyle="bold"/>
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
                 android:gravity="center"
-                android:text="¡Pago confirmado!"
+                android:text="@string/ui_pago_confirmado"
                 android:textColor="@color/gysel_white"
                 android:textSize="27sp"
                 android:textStyle="bold"/>
@@ -96,7 +96,7 @@
                 android:layout_marginTop="12dp"
                 android:gravity="center"
                 android:lineSpacingExtra="4dp"
-                android:text="Tu pago fue confirmado correctamente. Puedes consultar el estado de tu pedido desde GyselMood."
+                android:text="@string/ui_tu_pago_fue_confirmado_correctamente_puedes_cons"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="14sp"/>
 
@@ -112,7 +112,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TU NÚMERO DE PEDIDO"
+                    android:text="@string/ui_tu_numero_de_pedido"
                     android:textColor="@color/gysel_light_gray"
                     android:textSize="11sp"
                     android:letterSpacing="0.08"/>
@@ -122,7 +122,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="9dp"
-                    android:text="Pedido #"
+                    android:text="@string/ui_pedido"
                     android:textColor="@color/gysel_white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
@@ -137,7 +137,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ESTADO DEL PAGO"
+                    android:text="@string/ui_estado_del_pago"
                     android:textColor="@color/gysel_light_gray"
                     android:textSize="11sp"
                     android:letterSpacing="0.08"/>
@@ -147,7 +147,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="✓ PAGO APROBADO"
+                    android:text="@string/ui_pago_aprobado"
                     android:textColor="#80DCA1"
                     android:textSize="17sp"
                     android:textStyle="bold"/>
@@ -161,7 +161,7 @@
                 android:layout_marginTop="22dp"
                 android:gravity="center"
                 android:lineSpacingExtra="4dp"
-                android:text="Guarda tu número de pedido para realizar consultas sobre tu compra."
+                android:text="@string/ui_guarda_tu_numero_de_pedido_para_realizar_consult"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="12sp"/>
 
@@ -189,7 +189,7 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:backgroundTint="@color/gysel_red"
-            android:text="VOLVER A GYSELMOOD  →"
+            android:text="@string/ui_volver_a_gyselmood"
             android:textColor="@color/gysel_white"
             android:textSize="14sp"
             android:textStyle="bold"/>

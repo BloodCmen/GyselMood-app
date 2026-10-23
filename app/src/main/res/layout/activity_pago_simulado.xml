@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GYSELMOOD / PAGO SEGURO"
+            android:text="@string/ui_gyselmood_pago_seguro"
             android:textColor="@color/gysel_light_gray"
             android:textSize="10sp"
             android:letterSpacing="0.1"/>
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
-            android:text="Finaliza tu compra"
+            android:text="@string/ui_finaliza_tu_compra"
             android:textColor="@color/gysel_white"
             android:textSize="27sp"
             android:textStyle="bold"/>
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
-            android:text="Tu pedido está registrado. Falta confirmar el pago."
+            android:text="@string/ui_tu_pedido_esta_registrado_falta_confirmar_el_pag"
             android:textColor="@color/gysel_light_gray"
             android:textSize="13sp"/>
 
@@ -79,7 +79,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="NÚMERO DE PEDIDO"
+                    android:text="@string/ui_numero_de_pedido"
                     android:textColor="@color/gysel_light_gray"
                     android:textSize="11sp"
                     android:letterSpacing="0.08"/>
@@ -89,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Pedido #"
+                    android:text="@string/ui_pedido"
                     android:textColor="@color/gysel_white"
                     android:textSize="25sp"
                     android:textStyle="bold"/>
@@ -104,7 +104,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="MÉTODO DE PAGO"
+                    android:text="@string/ui_metodo_de_pago"
                     android:textColor="@color/gysel_light_gray"
                     android:textSize="11sp"
                     android:letterSpacing="0.08"/>
@@ -113,7 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
-                    android:text="Mercado Pago"
+                    android:text="@string/ui_mercado_pago"
                     android:textColor="@color/gysel_white"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -132,7 +132,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ESTADO DEL PAGO"
+                    android:text="@string/ui_estado_del_pago"
                     android:textColor="#FFB5B5"
                     android:textSize="11sp"
                     android:textStyle="bold"
@@ -143,7 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Consultando el estado del pedido..."
+                    android:text="@string/ui_consultando_el_estado_del_pedido"
                     android:textColor="@color/gysel_white"
                     android:textSize="17sp"
                     android:textStyle="bold"
@@ -173,7 +173,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="¿CÓMO FUNCIONA?"
+                    android:text="@string/ui_como_funciona"
                     android:textColor="#FF8585"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -184,7 +184,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Abriremos Mercado Pago en tu navegador para completar la transacción de forma segura."
+                    android:text="@string/ui_abriremos_mercado_pago_en_tu_navegador_para_comp"
                     android:textColor="@color/gysel_white"
                     android:textSize="14sp"
                     android:lineSpacingExtra="5dp"/>
@@ -193,7 +193,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="1. Continúa a Mercado Pago.\n2. Completa el pago en su plataforma.\n3. Regresa a GyselMood y verifica el resultado."
+                    android:text="@string/ui_1_continua_a_mercado_pago_n2_completa_el_pago_en"
                     android:textColor="@color/gysel_light_gray"
                     android:textSize="13sp"
                     android:lineSpacingExtra="6dp"/>
@@ -207,7 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="19dp"
                 android:gravity="center"
-                android:text="Si ya realizaste el pago, verifica su estado antes de intentar pagar nuevamente."
+                android:text="@string/ui_si_ya_realizaste_el_pago_verifica_su_estado_ante"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="12sp"
                 android:lineSpacingExtra="4dp"/>
@@ -236,7 +236,7 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:backgroundTint="@color/gysel_red"
-            android:text="PAGAR CON MERCADO PAGO"
+            android:text="@string/ui_pagar_con_mercado_pago"
             android:textColor="@color/gysel_white"
             android:textSize="14sp"
             android:textStyle="bold"/>
@@ -246,7 +246,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:gravity="center"
-            android:text="La confirmación dependerá del estado verificado del pago."
+            android:text="@string/ui_la_confirmacion_dependera_del_estado_verificado"
             android:textColor="@color/gysel_light_gray"
             android:textSize="11sp"/>
 

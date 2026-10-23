@@ -1,4 +1,7 @@
+
 package com.ada.gyselmode.model.entrega
 
-class UbicacionEntregaRequest {
-}
+data class UbicacionEntregaRequest(
+    val latitud: Double,
+    val longitud: Double
+)

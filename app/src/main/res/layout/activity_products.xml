@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GYSELMOOD / CATÁLOGO"
+            android:text="@string/ui_gyselmood_catalogo"
             android:textColor="@color/gysel_light_gray"
             android:letterSpacing="0.09"
             android:textSize="10sp"/>
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Explora la colección"
+            android:text="@string/ui_explora_la_coleccion"
             android:textColor="@color/gysel_white"
             android:textSize="24sp"
             android:textStyle="bold"/>
@@ -59,7 +59,7 @@
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:src="@android:drawable/ic_menu_search"
-            android:contentDescription="Buscar"
+            android:contentDescription="@string/ui_buscar_128"
             app:tint="@color/gysel_light_gray"/>
 
         <EditText
@@ -69,7 +69,7 @@
             android:layout_weight="1"
             android:layout_marginStart="10dp"
             android:background="@android:color/transparent"
-            android:hint="Buscar prendas..."
+            android:hint="@string/ui_buscar_prendas"
             android:inputType="text"
             android:singleLine="true"
             android:textColor="@color/gysel_white"
@@ -82,7 +82,7 @@
             android:layout_height="36dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@android:drawable/ic_menu_close_clear_cancel"
-            android:contentDescription="Borrar búsqueda"
+            android:contentDescription="@string/ui_borrar_busqueda"
             android:visibility="gone"
             app:tint="@color/gysel_light_gray"/>
 
@@ -103,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="20dp"
-            android:text="CATEGORÍAS"
+            android:text="@string/ui_categorias_187"
             android:textColor="@color/gysel_light_gray"
             android:textSize="11sp"
             android:textStyle="bold"
@@ -151,7 +151,7 @@
                 android:paddingEnd="6dp"
                 android:singleLine="true"
                 android:ellipsize="end"
-                android:text="Talla: Todas  ▾"
+                android:text="@string/ui_talla_todas"
                 android:textColor="@color/gysel_white"
                 android:textSize="13sp"/>
 
@@ -169,7 +169,7 @@
                 android:paddingEnd="6dp"
                 android:singleLine="true"
                 android:ellipsize="end"
-                android:text="Ordenar: Relevancia  ▾"
+                android:text="@string/ui_ordenar_relevancia"
                 android:textColor="@color/gysel_white"
                 android:textSize="13sp"/>
 
@@ -190,7 +190,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cargando productos..."
+                android:text="@string/ui_cargando_productos"
                 android:textColor="@color/gysel_light_gray"
                 android:textSize="12sp"/>
 
@@ -200,7 +200,7 @@
                 android:layout_height="48dp"
                 android:gravity="center"
                 android:paddingStart="10dp"
-                android:text="Limpiar filtros"
+                android:text="@string/ui_limpiar_filtros"
                 android:textColor="@color/gysel_red"
                 android:textSize="12sp"
                 android:textStyle="bold"/>
@@ -233,7 +233,7 @@
         android:gravity="center"
         android:minHeight="130dp"
         android:padding="20dp"
-        android:text="No encontramos productos"
+        android:text="@string/ui_no_encontramos_productos"
         android:textColor="@color/gysel_light_gray"
         android:textSize="14sp"
         android:visibility="gone"

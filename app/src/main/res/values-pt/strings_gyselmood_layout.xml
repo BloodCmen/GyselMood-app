@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_u" formatted="false">U</string>
+    <string name="ui_foto_de_perfil" formatted="false">Foto de perfil</string>
+    <string name="ui_cambiar_foto_de_perfil" formatted="false">Alterar foto de perfil</string>
+    <string name="ui_cargando_usuario" formatted="false">Carregando usuário...</string>
+    <string name="ui_correo_ejemplo_com" formatted="false">email@exemplo.com</string>
+    <string name="ui_mi_actividad" formatted="false">MINHA ATIVIDADE</string>
+    <string name="ui_mi_perfil" formatted="false">◉   Meu perfil                         ›</string>
+    <string name="ui_mis_pedidos" formatted="false">▣   Meus pedidos                       ›</string>
+    <string name="ui_configuracion" formatted="false">⚙   Configurações                     ›</string>
+    <string name="ui_mis_entregas" formatted="false">🚚   Minhas entregas                       ›</string>
+    <string name="ui_cerrar_sesion" formatted="false">↪  SAIR DA CONTA</string>
+    <string name="ui_gyselmood_tu_estilo_tu_esencia" formatted="false">GYSELMOOD · Seu estilo, sua essência</string>
+    <string name="ui_gyselmood_tu_compra" formatted="false">GYSELMOOD / SUA COMPRA</string>
+    <string name="ui_mi_carrito" formatted="false">Meu carrinho</string>
+    <string name="ui_preparando_tu_carrito" formatted="false">Preparando seu carrinho...</string>
+    <string name="ui_literal_015" formatted="false">🛍️</string>
+    <string name="ui_bolsa_de_compras" formatted="false">Sacola de compras</string>
+    <string name="ui_tu_carrito_esta_vacio" formatted="false">Seu carrinho está vazio</string>
+    <string name="ui_descubre_nuestra_coleccion_y_encuentra_tu_proxim" formatted="false">Descubra nossa coleção e encontre sua próxima peça favorita.</string>
+    <string name="ui_explorar_productos" formatted="false">EXPLORAR PRODUTOS</string>
+    <string name="ui_resumen_de_compra" formatted="false">RESUMO DA COMPRA</string>
+    <string name="ui_productos" formatted="false">Produtos</string>
+    <string name="ui_0_unidades" formatted="false">0 unidades</string>
+    <string name="ui_envio" formatted="false">Entrega</string>
+    <string name="ui_se_calcula_al_continuar" formatted="false">Calculado na próxima etapa</string>
+    <string name="ui_subtotal" formatted="false">Subtotal</string>
+    <string name="ui_s_0_00" formatted="false">S/ 0.00</string>
+    <string name="ui_continuar_pedido" formatted="false">CONTINUAR PEDIDO  →</string>
+    <string name="ui_el_total_final_se_confirma_en_el_checkout" formatted="false">O total final será confirmado na finalização</string>
+    <string name="ui_gyselmood_finalizar_compra" formatted="false">GYSELMOOD / FINALIZAR COMPRA</string>
+    <string name="ui_confirmar_pedido" formatted="false">Confirmar pedido</string>
+    <string name="ui_revisa_los_datos_antes_de_continuar_al_pago" formatted="false">Confira os dados antes de prosseguir ao pagamento.</string>
+    <string name="ui_01_datos_de_entrega" formatted="false">01  ·  DADOS DE ENTREGA</string>
+    <string name="ui_donde_recibiras_tu_pedido" formatted="false">Onde você deseja receber seu pedido?</string>
+    <string name="ui_direccion_de_entrega" formatted="false">Endereço de entrega *</string>
+    <string name="ui_calle_avenida_numero" formatted="false">Rua, avenida, número...</string>
+    <string name="ui_referencia_opcional" formatted="false">Referência (opcional)</string>
+    <string name="ui_ej_casa_de_porton_negro_segundo_piso" formatted="false">Ex.: casa com portão preto, segundo andar...</string>
+    <string name="ui_02_ubicacion_exacta" formatted="false">02  ·  LOCALIZAÇÃO EXATA</string>
+    <string name="ui_marca_el_punto_de_entrega" formatted="false">Marque o ponto de entrega</string>
+    <string name="ui_selecciona_la_ubicacion_exacta_en_el_mapa_para_f" formatted="false">Selecione o local exato no mapa para facilitar a entrega.</string>
+    <string name="ui_mapa" formatted="false">Mapa</string>
+    <string name="ui_aun_no_seleccionaste_una_ubicacion" formatted="false">Você ainda não selecionou um local</string>
+    <string name="ui_seleccionar_en_el_mapa" formatted="false">SELECIONAR NO MAPA  →</string>
+    <string name="ui_03_resumen_de_compra" formatted="false">03  ·  RESUMO DA COMPRA</string>
+    <string name="ui_cargando_productos" formatted="false">Carregando produtos...</string>
+    <string name="ui_subtotal_de_prendas" formatted="false">Subtotal dos produtos</string>
+    <string name="ui_costo_de_envio" formatted="false">Custo de entrega</string>
+    <string name="ui_total_estimado" formatted="false">TOTAL ESTIMADO</string>
+    <string name="ui_primero_confirmaremos_tu_pedido_despues_continua" formatted="false">Primeiro confirmaremos seu pedido. Depois você seguirá para o pagamento.</string>
+    <string name="ui_confirmar_pedido_50" formatted="false">CONFIRMAR PEDIDO  →</string>
+    <string name="ui_revisa_los_datos_antes_de_confirmar" formatted="false">Confira os dados antes de confirmar</string>
+    <string name="ui_gyselmood" formatted="false">GYSELMOOD</string>
+    <string name="ui_confirmacion_de_compra" formatted="false">CONFIRMAÇÃO DA COMPRA</string>
+    <string name="ui_literal_054" formatted="false">✓</string>
+    <string name="ui_pago_confirmado" formatted="false">Pagamento confirmado!</string>
+    <string name="ui_tu_pago_fue_confirmado_correctamente_puedes_cons" formatted="false">Seu pagamento foi confirmado. Você pode acompanhar seu pedido no GyselMood.</string>
+    <string name="ui_tu_numero_de_pedido" formatted="false">SEU NÚMERO DE PEDIDO</string>
+    <string name="ui_pedido" formatted="false">Pedido nº</string>
+    <string name="ui_estado_del_pago" formatted="false">STATUS DO PAGAMENTO</string>
+    <string name="ui_pago_aprobado" formatted="false">✓ PAGAMENTO APROVADO</string>
+    <string name="ui_guarda_tu_numero_de_pedido_para_realizar_consult" formatted="false">Guarde o número do pedido para consultar sua compra.</string>
+    <string name="ui_volver_a_gyselmood" formatted="false">VOLTAR AO GYSELMOOD  →</string>
+    <string name="ui_gyselmood_administracion" formatted="false">GYSELMOOD / ADMINISTRAÇÃO</string>
+    <string name="ui_detalle_del_producto" formatted="false">Detalhes do produto</string>
+    <string name="ui_categoria" formatted="false">Categoria</string>
+    <string name="ui_nombre_del_producto" formatted="false">Nome do produto</string>
+    <string name="ui_precio_del_producto" formatted="false">PREÇO DO PRODUTO</string>
+    <string name="ui_descripcion" formatted="false">DESCRIÇÃO</string>
+    <string name="ui_descripcion_del_producto" formatted="false">Descrição do produto</string>
+    <string name="ui_informacion_adicional" formatted="false">INFORMAÇÕES ADICIONAIS</string>
+    <string name="ui_informacion_del_producto" formatted="false">Informações do produto</string>
+    <string name="ui_tallas_disponibles" formatted="false">TAMANHOS DISPONÍVEIS</string>
+    <string name="ui_s_m_l" formatted="false">P, M, G</string>
+    <string name="ui_gestionar_producto" formatted="false">GERENCIAR PRODUTO</string>
+    <string name="ui_editar_producto" formatted="false">EDITAR PRODUTO</string>
+    <string name="ui_compartir_producto" formatted="false">COMPARTILHAR PRODUTO</string>
+    <string name="ui_eliminar_producto" formatted="false">EXCLUIR PRODUTO</string>
+    <string name="ui_gyselmood_panel_administrativo" formatted="false">GYSELMOOD · PAINEL ADMINISTRATIVO</string>
+    <string name="ui_gyselmood_tienda" formatted="false">GYSELMOOD / LOJA</string>
+    <string name="ui_producto_sin_fotografia" formatted="false">Produto sem foto</string>
+    <string name="ui_1_3" formatted="false">1 / 3</string>
+    <string name="ui_categoria_82" formatted="false">CATEGORIA</string>
+    <string name="ui_precio_por_unidad" formatted="false">PREÇO UNITÁRIO</string>
+    <string name="ui_sobre_esta_prenda" formatted="false">SOBRE ESTA PEÇA</string>
+    <string name="ui_informacion_adicional_85" formatted="false">Informações adicionais</string>
+    <string name="ui_selecciona_tu_talla" formatted="false">Selecione seu tamanho</string>
+    <string name="ui_cantidad" formatted="false">Quantidade</string>
+    <string name="ui_literal_088" formatted="false">−</string>
+    <string name="ui_literal_089" formatted="false">1</string>
+    <string name="ui_literal_090" formatted="false">+</string>
+    <string name="ui_subtotal_estimado" formatted="false">Subtotal estimado</string>
+    <string name="ui_anadir_al_carrito" formatted="false">ADICIONAR AO CARRINHO</string>
+    <string name="ui_personalizar_por_whatsapp" formatted="false">PERSONALIZAR PELO WHATSAPP</string>
+    <string name="ui_consulta_modificaciones_de_diseno_color_o_estamp" formatted="false">Consulte alterações de design, cor ou estampa. O preço final será combinado com a loja.</string>
+    <string name="ui_hasta_3_fotografias_elige_cual_sera_la_principal" formatted="false">Até 3 fotos. Escolha qual será a principal.</string>
+    <string name="ui_precios_de_la_prenda" formatted="false">Preços da peça</string>
+    <string name="ui_0_00" formatted="false">0.00</string>
+    <string name="ui_categoria_y_tallas" formatted="false">Categoria e tamanhos</string>
+    <string name="ui_revisa_la_informacion_antes_de_guardar_los_cambi" formatted="false">Confira as informações antes de salvar as alterações.</string>
+    <string name="ui_literal_100" formatted="false">♡</string>
+    <string name="ui_literal_101" formatted="false">‹</string>
+    <string name="ui_volver" formatted="false">Voltar</string>
+    <string name="ui_gestion_de_pedidos" formatted="false">Gerenciar categorias</string>
+    <string name="ui_revisa_las_ventas_y_organiza_su_atencion" formatted="false">Nova categoria</string>
+    <string name="ui_total_de_pedidos" formatted="false">Adicione uma nova categoria ao catálogo.</string>
+    <string name="ui_literal_106" formatted="false">Nome</string>
+    <string name="ui_pedidos_pagados" formatted="false">+  SALVAR</string>
+    <string name="ui_buscar_pedido_cliente_o_producto" formatted="false">Categorias cadastradas</string>
+    <string name="ui_cargando_pedidos" formatted="false">Carregando registros...</string>
+    <string name="ui_no_hay_pedidos_registrados" formatted="false">Buscar...</string>
+    <string name="ui_gestionar_categorias" formatted="false">Carregando...</string>
+    <string name="ui_nueva_categoria" formatted="false">GYSELMOOD / ADMIN</string>
+    <string name="ui_agrega_una_nueva_categoria_al_catalogo" formatted="false">Gerenciar produtos</string>
+    <string name="ui_nombre" formatted="false">Busque, organize e edite seu catálogo.</string>
+    <string name="ui_guardar" formatted="false">Buscar produto pelo nome...</string>
+    <string name="ui_categorias_registradas" formatted="false">Ordenar  ↕</string>
+    <string name="ui_cargando_registros" formatted="false">Nenhum produto corresponde à sua busca.</string>
+    <string name="ui_buscar" formatted="false">Gestão de pedidos</string>
+    <string name="ui_cargando" formatted="false">Confira as vendas e organize o atendimento.</string>
+    <string name="ui_gyselmood_admin" formatted="false">Total de pedidos</string>
+    <string name="ui_gestionar_productos" formatted="false">0</string>
+    <string name="ui_busca_organiza_y_edita_tu_catalogo" formatted="false">Pedidos pagos</string>
+    <string name="ui_buscar_producto_por_nombre" formatted="false">Buscar pedido, cliente ou produto</string>
+    <string name="ui_ordenar" formatted="false">Carregando pedidos...</string>
+    <string name="ui_no_hay_productos_que_coincidan_con_tu_busqueda" formatted="false">Nenhum pedido registrado</string>
+    <string name="ui_tu_estilo_tu_esencia" formatted="false">SEU ESTILO, SUA ESSÊNCIA</string>
+    <string name="ui_abrir_carrito" formatted="false">Abrir carrinho</string>
+    <string name="ui_buscar_128" formatted="false">Buscar</string>
+    <string name="ui_buscar_prendas" formatted="false">Buscar roupas...</string>
+    <string name="ui_limpiar_busqueda" formatted="false">Limpar busca</string>
+    <string name="ui_descubre_lo_nuevo" formatted="false">DESCUBRA AS NOVIDADES</string>
+    <string name="ui_encuentra_tu_proximo_estilo" formatted="false">Encontre seu próximo estilo</string>
+    <string name="ui_literal_133" formatted="false">● ○ ○</string>
+    <string name="ui_categorias" formatted="false">Categorias</string>
+    <string name="ui_ver_todas" formatted="false">Ver todas  ›</string>
+    <string name="ui_seleccionados_para_ti" formatted="false">Selecionados para você</string>
+    <string name="ui_explora_nuestros_productos" formatted="false">Explore nossos produtos</string>
+    <string name="ui_ver_todo" formatted="false">Ver tudo  ›</string>
+    <string name="ui_no_se_encontraron_productos" formatted="false">Nenhum produto encontrado</string>
+    <string name="ui_centro_de_gestion" formatted="false">Centro de gestão</string>
+    <string name="ui_administra_tu_catalogo_pedidos_y_operaciones_des" formatted="false">Gerencie seu catálogo, pedidos e operações em um só lugar.</string>
+    <string name="ui_publicar_producto" formatted="false">PUBLICAR PRODUTO</string>
+    <string name="ui_nuevo_producto" formatted="false">Novo produto</string>
+    <string name="ui_agrega_una_nueva_prenda_a_tu_catalogo" formatted="false">Adicione uma nova peça ao seu catálogo.</string>
+    <string name="ui_herramientas_de_gestion" formatted="false">Ferramentas de gestão</string>
+    <string name="ui_buscar_y_editar" formatted="false">Buscar e editar</string>
+    <string name="ui_organizar_catalogo" formatted="false">Organizar catálogo</string>
+    <string name="ui_tallas" formatted="false">Tamanhos</string>
+    <string name="ui_medidas_y_opciones" formatted="false">Medidas e opções</string>
+    <string name="ui_proximamente_entregas" formatted="false">Em breve: entregas</string>
+    <string name="ui_imagenes" formatted="false">Imagens</string>
+    <string name="ui_galeria_de_prendas" formatted="false">Galeria de roupas</string>
+    <string name="ui_pedidos_y_operaciones" formatted="false">Pedidos e operações</string>
+    <string name="ui_gestionar_pedidos" formatted="false">Gerenciar pedidos</string>
+    <string name="ui_revisa_pedidos_y_sus_estados" formatted="false">Confira os pedidos e seus status</string>
+    <string name="ui_literal_156" formatted="false">›</string>
+    <string name="ui_mis_entregas_157" formatted="false">Minhas entregas</string>
+    <string name="ui_pedidos_asignados_a_tu_cuenta" formatted="false">Pedidos atribuídos à sua conta</string>
+    <string name="ui_actualizar_entregas" formatted="false">Atualizar entregas</string>
+    <string name="ui_cargando_entregas" formatted="false">Carregando entregas...</string>
+    <string name="ui_gyselmood_mis_compras" formatted="false">GYSELMOOD / MINHAS COMPRAS</string>
+    <string name="ui_mis_pedidos_162" formatted="false">Meus pedidos</string>
+    <string name="ui_consulta_tus_compras_y_revisa_su_estado" formatted="false">Confira suas compras e acompanhe o status.</string>
+    <string name="ui_buscar_pedido_o_producto" formatted="false">Buscar pedido ou produto...</string>
+    <string name="ui_todavia_no_tienes_pedidos" formatted="false">Você ainda não tem pedidos</string>
+    <string name="ui_sin_internet" formatted="false">Sem internet</string>
+    <string name="ui_ups" formatted="false">Ops!</string>
+    <string name="ui_no_logramos_conectarnos_a_la_red_npuedes_reinten" formatted="false">Não foi possível conectar à rede.\nTente novamente ou veja os produtos salvos.</string>
+    <string name="ui_reintentar" formatted="false">Tentar novamente</string>
+    <string name="ui_ver_productos_guardados" formatted="false">Ver produtos salvos</string>
+    <string name="ui_gyselmood_pago_seguro" formatted="false">GYSELMOOD / PAGAMENTO SEGURO</string>
+    <string name="ui_finaliza_tu_compra" formatted="false">Finalize sua compra</string>
+    <string name="ui_tu_pedido_esta_registrado_falta_confirmar_el_pag" formatted="false">Seu pedido foi registrado. Falta confirmar o pagamento.</string>
+    <string name="ui_numero_de_pedido" formatted="false">NÚMERO DO PEDIDO</string>
+    <string name="ui_metodo_de_pago" formatted="false">MÉTODO DE PAGAMENTO</string>
+    <string name="ui_mercado_pago" formatted="false">Mercado Pago</string>
+    <string name="ui_consultando_el_estado_del_pedido" formatted="false">Verificando status do pedido...</string>
+    <string name="ui_como_funciona" formatted="false">COMO FUNCIONA?</string>
+    <string name="ui_abriremos_mercado_pago_en_tu_navegador_para_comp" formatted="false">Abriremos o Mercado Pago no navegador para concluir a transação com segurança.</string>
+    <string name="ui_1_continua_a_mercado_pago_n2_completa_el_pago_en" formatted="false">1. Continue para o Mercado Pago.\n2. Conclua o pagamento na plataforma.\n3. Volte ao GyselMood e confira o resultado.</string>
+    <string name="ui_si_ya_realizaste_el_pago_verifica_su_estado_ante" formatted="false">Se já pagou, confira o status antes de tentar novamente.</string>
+    <string name="ui_pagar_con_mercado_pago" formatted="false">PAGAR COM MERCADO PAGO</string>
+    <string name="ui_la_confirmacion_dependera_del_estado_verificado" formatted="false">A confirmação dependerá do status do pagamento verificado.</string>
+    <string name="ui_gyselmood_catalogo" formatted="false">GYSELMOOD / CATÁLOGO</string>
+    <string name="ui_explora_la_coleccion" formatted="false">Explore a coleção</string>
+    <string name="ui_borrar_busqueda" formatted="false">Limpar busca</string>
+    <string name="ui_categorias_187" formatted="false">CATEGORIAS</string>
+    <string name="ui_talla_todas" formatted="false">Tamanho: Todos  ▾</string>
+    <string name="ui_ordenar_relevancia" formatted="false">Ordenar: Relevância  ▾</string>
+    <string name="ui_limpiar_filtros" formatted="false">Limpar filtros</string>
+    <string name="ui_no_encontramos_productos" formatted="false">Não encontramos produtos</string>
+    <string name="ui_seguimiento_de_pedido" formatted="false">Acompanhamento do pedido</string>
+    <string name="ui_consultando_repartidor" formatted="false">Consultando entregador...</string>
+    <string name="ui_esperando_ubicacion" formatted="false">Aguardando localização...</string>
+    <string name="ui_centrar_en_repartidor" formatted="false">Centralizar no entregador</string>
+    <string name="ui_ubicacion_de_entrega" formatted="false">Local de entrega</string>
+    <string name="ui_mi_ubicacion" formatted="false">◎ Minha localização</string>
+    <string name="ui_selecciona_donde_recibir_tu_pedido" formatted="false">Selecione onde receber seu pedido</string>
+    <string name="ui_toca_el_mapa_para_indicar_el_punto_exacto_de_ent" formatted="false">Toque no mapa para indicar o ponto exato de entrega.</string>
+    <string name="ui_ubicacion_aun_no_seleccionada" formatted="false">Local ainda não selecionado</string>
+    <string name="ui_confirmar_ubicacion" formatted="false">Confirmar localização</string>
+    <string name="ui_detalle_de_tu_compra" formatted="false">DETALHES DA SUA COMPRA</string>
+    <string name="ui_pedido_1" formatted="false">Pedido nº 1</string>
+    <string name="ui_estado_actual" formatted="false">STATUS ATUAL</string>
+    <string name="ui_pendiente" formatted="false">PENDENTE</string>
+    <string name="ui_revisa_el_estado_de_tu_compra" formatted="false">Confira o status da sua compra.</string>
+    <string name="ui_productos_207" formatted="false">PRODUTOS</string>
+    <string name="ui_total_s_0_00" formatted="false">TOTAL: S/ 0.00</string>
+    <string name="ui_direccion_de_entrega_209" formatted="false">ENDEREÇO DE ENTREGA</string>
+    <string name="ui_referencia" formatted="false">REFERÊNCIA</string>
+    <string name="ui_seguimiento_en_vivo_proximamente" formatted="false">Rastreamento ao vivo · Em breve</string>
+    <string name="ui_completar_pago" formatted="false">Concluir pagamento</string>
+    <string name="ui_cerrar" formatted="false">Fechar</string>
+    <string name="ui_detalle_de_compra" formatted="false">DETALHES DA COMPRA</string>
+    <string name="ui_estado" formatted="false">STATUS</string>
+    <string name="ui_total_del_pedido" formatted="false">TOTAL DO PEDIDO</string>
+    <string name="ui_informacion_del_cliente" formatted="false">INFORMAÇÕES DO CLIENTE</string>
+    <string name="ui_seguimiento_de_entrega_proximamente" formatted="false">Acompanhamento da entrega · Em breve</string>
+    <string name="ui_informacion_de_entrega" formatted="false">INFORMAÇÕES DE ENTREGA</string>
+    <string name="ui_consultando_entrega" formatted="false">Verificando entrega...</string>
+    <string name="ui_asignar_repartidor" formatted="false">Atribuir entregador</string>
+    <string name="ui_imagen_del_producto" formatted="false">Imagem do produto</string>
+    <string name="ui_talla_m" formatted="false">Tamanho: M</string>
+    <string name="ui_s_45_00" formatted="false">S/ 45.00</string>
+    <string name="ui_subtotal_225" formatted="false">SUBTOTAL</string>
+    <string name="ui_eliminar" formatted="false">Excluir</string>
+    <string name="ui_ver_detalle" formatted="false">VER DETALHES  ↗</string>
+    <string name="ui_pedido_31" formatted="false">Pedido nº 31</string>
+    <string name="ui_estado_asignada" formatted="false">Status: ATRIBUÍDA</string>
+    <string name="ui_direccion_de_entrega_230" formatted="false">Endereço de entrega</string>
+    <string name="ui_ver_detalles" formatted="false">Ver detalhes</string>
+    <string name="ui_como_llegar_con_google_maps" formatted="false">Como chegar pelo Google Maps</string>
+    <string name="ui_compartir_ubicacion_gps" formatted="false">Compartilhar localização GPS</string>
+    <string name="ui_iniciar_entrega" formatted="false">Iniciar entrega</string>
+    <string name="ui_finalizar_entrega" formatted="false">Finalizar entrega</string>
+    <string name="ui_pagado" formatted="false">PAGO</string>
+    <string name="ui_21_10_2026_10_30" formatted="false">21/10/2026 10:30</string>
+    <string name="ui_productos_del_pedido" formatted="false">Produtos do pedido</string>
+    <string name="ui_ver_detalles_239" formatted="false">Ver detalhes ›</string>
+    <string name="ui_producto_destacado" formatted="false">Produto em destaque</string>
+    <string name="ui_destacado" formatted="false">DESTAQUE</string>
+    <string name="ui_desde_s_0_00" formatted="false">A partir de S/ 0.00</string>
+    <string name="ui_ver_producto" formatted="false">VER PRODUTO  →</string>
+    <string name="ui_ver_detalle_del_producto" formatted="false">Ver detalhes do produto</string>
+    <string name="ui_fecha_del_pedido" formatted="false">Data do pedido</string>
+    <string name="ui_ver_pedido" formatted="false">Ver pedido  ›</string>
+    <string name="ui_editar_producto_247" formatted="false">Editar produto</string>
+    <string name="ui_literal_248" formatted="false">↗</string>
+    <string name="ui_literal_249" formatted="false">←</string>
+</resources>

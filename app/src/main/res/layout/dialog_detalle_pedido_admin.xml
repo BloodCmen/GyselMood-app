@@ -1,6 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false"
+    android:background="#202025"
+    android:scrollbars="none">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ui_detalle_de_compra"
+            android:textColor="#AAAAAF"
+            android:textSize="11sp"
+            android:letterSpacing="0.08"/>
+
+        <TextView
+            android:id="@+id/txtDetalleNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="@string/ui_pedido_1"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtDetalleEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/ui_estado"
+            android:textColor="#80DDA5"
+            android:textStyle="bold"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/txtDetalleFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:textColor="#B4B4BF"
+            android:textSize="12sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="18dp"
+            android:background="#404049"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/ui_productos_207"
+            android:textColor="#AAAAAF"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/txtDetalleProductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:lineSpacingExtra="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:orientation="vertical"
+            android:background="#323239"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ui_total_del_pedido"
+                android:textColor="#B7B7C0"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:id="@+id/txtDetalleTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/ui_s_0_00"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/ui_informacion_del_cliente"
+            android:textColor="#AAAAAF"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/txtDetalleCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textIsSelectable="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/ui_direccion_de_entrega_209"
+            android:textColor="#AAAAAF"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/txtDetalleDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textIsSelectable="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/ui_referencia"
+            android:textColor="#AAAAAF"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/txtDetalleReferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textIsSelectable="true"/>
+
+        <!-- FUTURO SEGUIMIENTO -->
+        <Button
+            android:id="@+id/btnSeguimientoPedido"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="23dp"
+            android:text="@string/ui_seguimiento_de_entrega_proximamente"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:enabled="false"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:background="#303036"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ui_informacion_de_entrega"
+                android:textColor="#AAAAAF"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <ProgressBar
+                android:id="@+id/progressConsultaEntrega"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txtEstadoEntregaAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/ui_consultando_entrega"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtRepartidorAsignado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#BBBBBB"
+                android:textSize="13sp"
+                android:textIsSelectable="true"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAsignarRepartidor"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/ui_asignar_repartidor"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/gysel_red"
+            android:visibility="gone"/>
+
+
+        <!-- ACCIÓN ADMINISTRATIVA ACTUAL -->
+        <Button
+            android:id="@+id/btnConfirmarPedido"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/ui_confirmar_pedido"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/gysel_red"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnCerrarDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/ui_cerrar"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#41414A"/>
+
+    </LinearLayout>
+
+</ScrollView>

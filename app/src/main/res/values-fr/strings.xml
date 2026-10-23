@@ -186,4 +186,11 @@
     <string name="image_main_check">Principale ✓</string>
     <string name="image_number">Image %1$d</string>
     <string name="image_set_main">Définir comme principale</string>
+
+    <!-- Menú inferior / Navegación -->
+    <string name="nav_menu_home">Accueil</string>
+    <string name="nav_menu_products">Produits</string>
+    <string name="nav_menu_cart">Panier</string>
+    <string name="nav_menu_account">Compte</string>
+    <string name="nav_menu_admin">Admin</string>
 </resources>
