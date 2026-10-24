@@ -193,4 +193,17 @@
     <string name="nav_menu_cart">Carrito</string>
     <string name="nav_menu_account">Cuenta</string>
     <string name="nav_menu_admin">Admin</string>
+
+
+    <!-- Login y recuperación de contraseña -->
+    <string name="auth_welcome_title">Bienvenido de nuevo</string>
+    <string name="auth_welcome_subtitle">Inicia sesión para continuar con GyselMood.</string>
+    <string name="auth_forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="auth_recover_title">Recuperar contraseña</string>
+    <string name="auth_recover_message">Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</string>
+    <string name="auth_recover_send">Enviar enlace</string>
+    <string name="auth_invalid_email">Ingresa un correo electrónico válido.</string>
+    <string name="auth_recover_success">Si la solicitud es válida, recibirás un enlace de recuperación. Revisa también spam.</string>
+    <string name="auth_recover_error">No se pudo enviar el enlace. Inténtalo nuevamente.</string>
+
 </resources>

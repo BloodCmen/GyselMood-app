@@ -193,4 +193,17 @@
     <string name="nav_menu_cart">Panier</string>
     <string name="nav_menu_account">Compte</string>
     <string name="nav_menu_admin">Admin</string>
+
+
+    <!-- Connexion et réinitialisation du mot de passe -->
+    <string name="auth_welcome_title">Bon retour</string>
+    <string name="auth_welcome_subtitle">Connectez-vous pour continuer sur GyselMood.</string>
+    <string name="auth_forgot_password">Mot de passe oublié ?</string>
+    <string name="auth_recover_title">Réinitialiser le mot de passe</string>
+    <string name="auth_recover_message">Saisissez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.</string>
+    <string name="auth_recover_send">Envoyer le lien</string>
+    <string name="auth_invalid_email">Saisissez une adresse e-mail valide.</string>
+    <string name="auth_recover_success">Si la demande est valide, vous recevrez un lien de réinitialisation. Vérifiez également vos courriers indésirables.</string>
+    <string name="auth_recover_error">Impossible d’envoyer le lien. Veuillez réessayer.</string>
+
 </resources>

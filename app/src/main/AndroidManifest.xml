@@ -43,26 +43,12 @@
         </activity>
 
 
-        <activity
-            android:name=".ProductoLinkActivity"
-            android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:scheme="gyselmood"
-                    android:host="producto" />
-            </intent-filter>
-
-        </activity>
 
 
         <activity android:name=".ui.user.MainActivity" android:exported="false" />
         <activity android:name=".NoInternetActivity" android:exported="false" />
-        <activity android:name=".FavoritesActivity" android:exported="false"/>
+        <activity android:name=".feature.FavoritesActivity" android:exported="false"/>
         <activity android:name=".ui.user.pedidos.CartActivity" android:exported="false"/>
         <activity android:name=".account.AccountActivity" android:exported="false" />
         <activity android:name=".ui.user.ProductosActivity" android:exported="false" />

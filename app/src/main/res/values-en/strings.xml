@@ -161,4 +161,17 @@
     <string name="nav_menu_cart">Cart</string>
     <string name="nav_menu_account">Account</string>
     <string name="nav_menu_admin">Admin</string>
+
+
+    <!-- Login and password recovery -->
+    <string name="auth_welcome_title">Welcome back</string>
+    <string name="auth_welcome_subtitle">Sign in to continue with GyselMood.</string>
+    <string name="auth_forgot_password">Forgot your password?</string>
+    <string name="auth_recover_title">Reset password</string>
+    <string name="auth_recover_message">Enter your email address and we will send you a link to reset your password.</string>
+    <string name="auth_recover_send">Send link</string>
+    <string name="auth_invalid_email">Enter a valid email address.</string>
+    <string name="auth_recover_success">If the request is valid, you will receive a password reset link. Check your spam folder too.</string>
+    <string name="auth_recover_error">Could not send the link. Please try again.</string>
+
 </resources>

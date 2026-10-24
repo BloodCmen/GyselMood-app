@@ -193,4 +193,6 @@
     <string name="nav_menu_cart">Carrinho</string>
     <string name="nav_menu_account">Conta</string>
     <string name="nav_menu_admin">Admin</string>
+
+
 </resources>

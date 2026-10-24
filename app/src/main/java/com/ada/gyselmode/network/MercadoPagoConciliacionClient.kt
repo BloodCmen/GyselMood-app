@@ -8,7 +8,7 @@ object MercadoPagoConciliacionClient {
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(
-            "https://api-rest-gyselmood-app-production.up.railway.app/"
+            "https://api-rest-gym.onrender.com/"
         )
         .addConverterFactory(GsonConverterFactory.create())
         .build()

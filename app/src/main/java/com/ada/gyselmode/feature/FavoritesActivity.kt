@@ -1,7 +1,8 @@
-package com.ada.gyselmode
+package com.ada.gyselmode.feature
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.ada.gyselmode.R
 import com.ada.gyselmode.helper.NavigationHelper
 
 class FavoritesActivity : AppCompatActivity() {
